@@ -5,6 +5,8 @@
 [resource]
 albedo_texture = ExtResource("1_awmuf")
 emission_enabled = true
-emission = Color(0.690436, 8.18223e-07, 0.314009, 1)
-emission_energy_multiplier = 0.5
+emission = Color(0.289872, 0.515853, 0.800904, 1)
+emission_energy_multiplier = 8.0
+emission_operator = 1
+emission_texture = ExtResource("1_awmuf")
 texture_filter = 2
