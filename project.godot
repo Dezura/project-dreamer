@@ -15,6 +15,10 @@ run/main_scene="res://Environment/Game World.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Toolkit="*res://addons/godottoolkit/toolkit.gd"
+
 [display]
 
 window/size/viewport_width=320
@@ -26,7 +30,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/extra_snaps/plugin.cfg")
+enabled=PackedStringArray("res://addons/extra_snaps/plugin.cfg", "res://addons/godottoolkit/plugin.cfg")
 
 [file_customization]
 

@@ -343,6 +343,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 [node name="Camera" type="Camera3D" parent="Head"]
 fov = 80.0
 
+[node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera"]
+light_energy = 2.125
+spot_range = 75.0
+spot_angle = 65.0
+
 [node name="HeadbobAnimation" type="AnimationPlayer" parent="Head"]
 libraries = {
 "": SubResource("AnimationLibrary_cfhvc")
