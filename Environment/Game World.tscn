@@ -76,11 +76,11 @@ glow_bloom = 0.65
 
 [node name="Character" parent="." instance=ExtResource("1_677kc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.9618, 0.5431, 3.81881)
-base_speed = 2.0
-sprint_speed = 3.4
+base_speed = 2.5
+sprint_speed = 3.75
 acceleration = 7.0
 jump_velocity = 3.0
-JUMP = "jump"
+JUMP = ""
 LEFT = "moveLeft"
 RIGHT = "moveRight"
 FORWARD = "moveForward"
@@ -358,75 +358,85 @@ cast_shadow = 0
 use_collision = true
 
 [node name="Control" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 4.85, -32.8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 7.55, -33.6)
 cast_shadow = 0
 flip_faces = true
 size = Vector3(32, 6.5, 16)
 
-[node name="Intersection" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 4.1, -18.8)
+[node name="door" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup/Control"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -2.15, 8.5)
 cast_shadow = 0
 flip_faces = true
-size = Vector3(10, 5, 10.4)
-
-[node name="door to control" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup/Intersection"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8, -5.8)
-cast_shadow = 0
-flip_faces = true
-size = Vector3(6, 3.4, 4)
+size = Vector3(2.6, 2.2, 1)
 
 [node name="Central" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.95, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 3.65, 0)
 cast_shadow = 0
 flip_faces = true
-size = Vector3(18, 3.9, 26)
+size = Vector3(18, 7.3, 26)
 
 [node name="hall doorway" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup/Central"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, -0.85, 13.6)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, -2.55, 13.6)
 cast_shadow = 0
 flip_faces = true
 size = Vector3(2, 2.2, 2.6)
 
-[node name="ramp" type="CSGPolygon3D" parent="Map/Start Area Prototype/CSG Area Mockup/Central"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.5, -1.95, -10)
-operation = 2
-flip_faces = true
-polygon = PackedVector2Array(0, 0, 0, 1.6, 0, 1.6, 2.8, 0)
-depth = 5.0
-
-[node name="side" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup/Central"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.75, 0, -9.6)
+[node name="cutout" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup/Central"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.05, 6.5)
 cast_shadow = 0
 operation = 2
 flip_faces = true
-size = Vector3(6.5, 3.9, 6.8)
+size = Vector3(18, 3.4, 13)
 
-[node name="side2" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup/Central"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.75, 0, -9.6)
+[node name="exit platform" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup/Central"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.4, -11.5)
 cast_shadow = 0
 operation = 2
 flip_faces = true
-size = Vector3(6.5, 3.9, 6.8)
+size = Vector3(10, 0.5, 3)
 
-[node name="exit_platform" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup/Central"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.15, -11.5)
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Map/Start Area Prototype/CSG Area Mockup/Central/exit platform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -0.75, 0.5)
+flip_faces = true
+polygon = PackedVector2Array(0, 0.5, 0, 1, 2.6, -0.9, 2.6, -1.4)
+depth = 2.0
+
+[node name="platform" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup/Central"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.29941, -1.5, -11)
 cast_shadow = 0
 operation = 2
 flip_faces = true
-size = Vector3(5, 1.6, 3)
+size = Vector3(3.40117, 0.5, 4)
 
-[node name="door to central" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup/Central"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, -14.3)
+[node name="CSGPolygon3D2" type="CSGPolygon3D" parent="Map/Start Area Prototype/CSG Area Mockup/Central/platform"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.299414, -0.75, 2)
+flip_faces = true
+polygon = PackedVector2Array(0, 0.5, 0, 1, 3.2, -1.5, 3.2, -2)
+depth = 2.0
+
+[node name="Intersection" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 6.3, -19.6)
 cast_shadow = 0
 flip_faces = true
-size = Vector3(2.6, 2, 2.6)
+size = Vector3(16, 4, 10)
 
-[node name="middle platform" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup/Central"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.75, 4)
+[node name="door to central" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup/Intersection"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 5.8)
 cast_shadow = 0
-operation = 2
 flip_faces = true
-size = Vector3(6.4, 1.2, 10)
+size = Vector3(2.6, 2.2, 1.6)
+
+[node name="fakedoor" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup/Intersection"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.4, -0.9, 0)
+cast_shadow = 0
+flip_faces = true
+size = Vector3(2.6, 2.2, 0.8)
+
+[node name="fakedoor2" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup/Intersection"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.35, -0.9, 2.9)
+cast_shadow = 0
+flip_faces = true
+size = Vector3(2.6, 2.2, 0.9)
 
 [node name="Start Room" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 1.9, -3)
@@ -435,10 +445,10 @@ flip_faces = true
 size = Vector3(12, 3.8, 18)
 
 [node name="Start Doorway" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup/Start Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -0.7, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, -0.8, 0)
 cast_shadow = 0
 flip_faces = true
-size = Vector3(2, 2.4, 2.6)
+size = Vector3(1, 2.2, 2.6)
 
 [node name="Hallway A" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.3, 16)
