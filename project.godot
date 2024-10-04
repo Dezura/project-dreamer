@@ -30,7 +30,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/extra_snaps/plugin.cfg", "res://addons/godottoolkit/plugin.cfg", "res://addons/proto_shape/plugin.cfg")
+enabled=PackedStringArray("res://addons/extra_snaps/plugin.cfg", "res://addons/godottoolkit/plugin.cfg")
 
 [file_customization]
 

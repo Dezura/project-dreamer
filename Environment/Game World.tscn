@@ -27,7 +27,7 @@ glow_bloom = 0.65
 [node name="World" type="Node3D"]
 
 [node name="Character" parent="." instance=ExtResource("1_677kc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9618, 0.5431, 2.8188)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.4094, 0, 15.3871)
 base_speed = 2.7
 sprint_speed = 3.9
 acceleration = 7.0
@@ -39,7 +39,6 @@ FORWARD = "moveForward"
 BACKWARD = "moveBackward"
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Character"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 light_energy = 0.75
 
 [node name="Map" type="Node" parent="."]
@@ -143,17 +142,164 @@ cast_shadow = 0
 flip_faces = true
 size = Vector3(12, 3.8, 18)
 
-[node name="Start Doorway" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup/Start Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, -0.8, 0)
+[node name="Start Room2" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.5, 1.9, 2.5)
 cast_shadow = 0
 flip_faces = true
-size = Vector3(1, 2.2, 2.6)
+size = Vector3(13, 3.8, 21)
+
+[node name="Start Room5" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53, 1.9, 7.5)
+cast_shadow = 0
+flip_faces = true
+size = Vector3(4, 3.8, 13)
+
+[node name="Start Room3" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.45, 1.9, 4.25)
+cast_shadow = 0
+operation = 2
+flip_faces = true
+size = Vector3(0.3, 3.8, 9.5)
+
+[node name="Start Room4" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 38.45, 1.9, -0.348304)
+cast_shadow = 0
+operation = 2
+flip_faces = true
+size = Vector3(0.3, 3.8, 6)
 
 [node name="Hallway A" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.3, 16)
 cast_shadow = 0
 flip_faces = true
 size = Vector3(72, 2.6, 4)
+
+[node name="Hallway A10" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12.8, 1.3, 26.5)
+cast_shadow = 0
+flip_faces = true
+size = Vector3(15, 2.6, 6)
+
+[node name="Hallway A12" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.8, 1.3, 24.7914)
+cast_shadow = 0
+flip_faces = true
+size = Vector3(9.36481, 2.6, 6)
+
+[node name="Hallway A13" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.37254, 1.3, 24.7914)
+cast_shadow = 0
+flip_faces = true
+size = Vector3(9.36481, 2.6, 6)
+
+[node name="Hallway A14" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -11.2, 1.3, 24.7914)
+cast_shadow = 0
+flip_faces = true
+size = Vector3(9.36481, 2.6, 6)
+
+[node name="Hallway A11" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7, 1.3, 32)
+cast_shadow = 0
+flip_faces = true
+size = Vector3(28, 2.6, 4)
+
+[node name="Hallway A15" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19.3394, 1.3, 27.2036)
+cast_shadow = 0
+flip_faces = true
+size = Vector3(13.5928, 2.6, 4)
+
+[node name="Hallway A16" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -54.0131, 2.29586, 36.4399)
+cast_shadow = 0
+flip_faces = true
+size = Vector3(13.5928, 2.6, 17.0415)
+
+[node name="Hallway A2" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 1.3, 21.5)
+cast_shadow = 0
+flip_faces = true
+size = Vector3(5, 2.6, 15)
+
+[node name="Hallway A21" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.45, 1.3, -4.15)
+cast_shadow = 0
+flip_faces = true
+size = Vector3(5.9, 2.6, 7.7)
+
+[node name="Start Room5" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup/Hallway A21"]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 0.0473671, -0.05, -1.9)
+cast_shadow = 0
+operation = 2
+flip_faces = true
+size = Vector3(0.3, 2.3, 8)
+
+[node name="Hallway A4" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 0.8, 23.5)
+cast_shadow = 0
+flip_faces = true
+size = Vector3(2, 1.6, 2)
+
+[node name="Hallway A5" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.7, 0.8, 16.1)
+cast_shadow = 0
+flip_faces = true
+size = Vector3(2, 1.6, 3)
+
+[node name="Hallway A17" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, 40.7, 0.8, 13.1)
+cast_shadow = 0
+flip_faces = true
+size = Vector3(2, 1.6, 3)
+
+[node name="Hallway A18" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(-5.96046e-08, 0, 1, 0, 1, 0, -1, 0, -5.96046e-08, 38.1, 0.8, -8.9)
+cast_shadow = 0
+flip_faces = true
+size = Vector3(2, 1.6, 3)
+
+[node name="Hallway A19" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(-1, 0, -1.03316e-07, 0, 1, 0, 1.03316e-07, 0, -1, 34.1, 0.8, 2.1)
+cast_shadow = 0
+flip_faces = true
+size = Vector3(2, 1.6, 3)
+
+[node name="Hallway A20" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(-1, 0, -1.03316e-07, 0, 1, 0, 1.03316e-07, 0, -1, 48.7, 0.8, -4.3)
+cast_shadow = 0
+flip_faces = true
+size = Vector3(2, 1.6, 3)
+
+[node name="Hallway A3" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, 2, 22.85)
+cast_shadow = 0
+flip_faces = true
+size = Vector3(28, 4, 5.7)
+
+[node name="Hallway A8" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, 2, 29.85)
+cast_shadow = 0
+flip_faces = true
+size = Vector3(12, 4, 5.7)
+
+[node name="Hallway A9" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5, 2, 25.85)
+cast_shadow = 0
+flip_faces = true
+size = Vector3(5, 4, 5.7)
+
+[node name="Hallway A6" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.5, 2, 27.85)
+cast_shadow = 0
+flip_faces = true
+size = Vector3(6, 4, 5.7)
+
+[node name="Hallway A7" type="CSGBox3D" parent="Map/Start Area Prototype/CSG Area Mockup"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5, 2, 27.85)
+cast_shadow = 0
+flip_faces = true
+size = Vector3(6, 4, 5.7)
 
 [node name="Sprite3D" type="Sprite3D" parent="Map/Start Area Prototype"]
 transform = Transform3D(17.5, 0, 0, 0, -7.64949e-07, 17.5, 0, -17.5, -7.64949e-07, 0, 0, 0)

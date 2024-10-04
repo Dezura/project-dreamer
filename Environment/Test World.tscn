@@ -251,7 +251,7 @@ mesh = ExtResource("3_vjyjj")
 skeleton = NodePath("../..")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Map/Test Area/Corridor Deco/Ceiling Lights/CorridorLight7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5125, -1.8125, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.513095, -1.82847, 0.0308592)
 light_color = Color(0.960784, 0.0784314, 0.32549, 1)
 light_energy = 0.2
 shadow_enabled = true
