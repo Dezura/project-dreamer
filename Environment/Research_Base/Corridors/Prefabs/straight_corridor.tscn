@@ -12,4 +12,5 @@ mesh = ExtResource("1_t2qm3")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+visible = false
 shape = SubResource("ConcavePolygonShape3D_coroi")

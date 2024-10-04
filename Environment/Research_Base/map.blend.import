@@ -83,6 +83,42 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/path": "res://Environment/Research_Base/Corridors/Models/Straight Corridor.res"
 },
+"map_corridor_threeway": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Environment/Research_Base/Corridors/Models/Threeway Corridor.res"
+},
+"map_corridor_threeway_dooralt": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Environment/Research_Base/Corridors/Models/Threeway Corridor Alt_A.res"
+},
+"map_door": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Environment/Research_Base/Corridors/Models/Door.res"
+},
+"map_door_end": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Environment/Research_Base/Corridors/Models/Door End.res"
+},
 "map_floor_rail": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,

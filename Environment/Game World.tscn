@@ -1,26 +1,20 @@
-[gd_scene load_steps=28 format=3 uid="uid://ctcx42m5sek14"]
+[gd_scene load_steps=36 format=3 uid="uid://ctcx42m5sek14"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_677kc"]
-[ext_resource type="MeshLibrary" uid="uid://dk544xwc3m664" path="res://Environment/Research_Base/Corridors/Corridor Tileset Data.tres" id="2_tof1c"]
 [ext_resource type="ArrayMesh" uid="uid://dogfencmo7oqe" path="res://Environment/Research_Base/Decorative/Models/Maintenance Box_A.res" id="3_4vnxh"]
 [ext_resource type="PackedScene" uid="uid://dc2ma8vovhmy1" path="res://Environment/Research_Base/Decorative/corridor_light.tscn" id="3_8207f"]
 [ext_resource type="ArrayMesh" uid="uid://bi3otauopb65c" path="res://Environment/Research_Base/Decorative/Models/Floor Rail.res" id="3_hgo7r"]
 [ext_resource type="ArrayMesh" uid="uid://x1tg06q2qfd0" path="res://Environment/Research_Base/Decorative/Models/Plain Panel.res" id="4_71wo6"]
 [ext_resource type="ArrayMesh" uid="uid://cb7065hptxtgf" path="res://Environment/Research_Base/Decorative/Models/Small Rail.res" id="5_dlkss"]
-[ext_resource type="Texture2D" uid="uid://bht2he82ykhus" path="res://Environment/Research_Base/Decorative/Textures/Corridor Deco.png" id="5_gbwwt"]
 [ext_resource type="ArrayMesh" uid="uid://boxejeb8ga1vn" path="res://Environment/Research_Base/Decorative/Models/Tiny Vent.res" id="6_70ga8"]
 [ext_resource type="ArrayMesh" uid="uid://br4jd6k8nhqhh" path="res://Environment/Research_Base/Decorative/Models/Corridor Light.res" id="8_nw74d"]
-[ext_resource type="PackedScene" uid="uid://nflnwcnlqyrs" path="res://Environment/Research_Base/Corridors/straight_corridor.tscn" id="11_bc1k0"]
+[ext_resource type="PackedScene" uid="uid://btubwy4kugquj" path="res://Environment/Research_Base/Corridors/Prefabs/corridor_alt_a.tscn" id="10_oarar"]
+[ext_resource type="PackedScene" uid="uid://nflnwcnlqyrs" path="res://Environment/Research_Base/Corridors/Prefabs/straight_corridor.tscn" id="11_bc1k0"]
+[ext_resource type="PackedScene" uid="uid://8xnlchlidty1" path="res://Environment/Research_Base/Corridors/Prefabs/corridor_corner.tscn" id="11_vw4pw"]
+[ext_resource type="PackedScene" uid="uid://7wqnohk1u4my" path="res://Environment/Research_Base/Corridors/Prefabs/corridor_threeway.tscn" id="12_gx0a1"]
 [ext_resource type="Texture2D" uid="uid://dh01y6sna4170" path="res://Environment/Prototype_Pieces/map2.png" id="13_c2hxh"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0yg2d"]
-albedo_color = Color(0.96, 0.0768, 0.32704, 1)
-albedo_texture = ExtResource("5_gbwwt")
-emission_enabled = true
-emission = Color(0.960784, 0.0784314, 0.32549, 1)
-emission_operator = 1
-emission_texture = ExtResource("5_gbwwt")
-texture_filter = 2
+[ext_resource type="PackedScene" uid="uid://qslfet42mqtl" path="res://Environment/Research_Base/Corridors/Prefabs/corridor_threeway_alt_a.tscn" id="13_mcibb"]
+[ext_resource type="ArrayMesh" uid="uid://hdus0d2ac2on" path="res://Environment/Research_Base/Corridors/Models/Door End.res" id="16_2dj1p"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0jagy"]
 data = PackedVector3Array(0.875, 0, -0.1875, 1.75, 0.0625, -0.125, 0.875, 0.0625, -0.125, 0.875, 0, -0.1875, 1.75, 0, -0.1875, 1.75, 0.0625, -0.125, -0.875, 0, 0.1875, -1.75, 0.0625, 0.125, -0.875, 0.0625, 0.125, -0.875, 0, 0.1875, -1.75, 0, 0.1875, -1.75, 0.0625, 0.125, -0.875, 0.0625, -0.125, -1.75, 0.0625, 0.125, -1.75, 0.0625, -0.125, -0.875, 0.0625, -0.125, -0.875, 0.0625, 0.125, -1.75, 0.0625, 0.125, 1.75, 0.0625, -0.125, 0.875, 0.0625, 0.125, 0.875, 0.0625, -0.125, 1.75, 0.0625, -0.125, 1.75, 0.0625, 0.125, 0.875, 0.0625, 0.125, 0.875, 0.0625, -0.125, 0, 0.0625, 0.125, 0, 0.0625, -0.125, 0.875, 0.0625, -0.125, 0.875, 0.0625, 0.125, 0, 0.0625, 0.125, 0, 0.0625, -0.125, -0.875, 0.0625, 0.125, -0.875, 0.0625, -0.125, 0, 0.0625, -0.125, 0, 0.0625, 0.125, -0.875, 0.0625, 0.125, 1.75, 0, 0.1875, 0.875, 0.0625, 0.125, 1.75, 0.0625, 0.125, 1.75, 0, 0.1875, 0.875, 0, 0.1875, 0.875, 0.0625, 0.125, 0.875, 0, 0.1875, 0, 0.0625, 0.125, 0.875, 0.0625, 0.125, 0.875, 0, 0.1875, 0, 0, 0.1875, 0, 0.0625, 0.125, 0, 0, 0.1875, -0.875, 0.0625, 0.125, 0, 0.0625, 0.125, 0, 0, 0.1875, -0.875, 0, 0.1875, -0.875, 0.0625, 0.125, -1.75, 0, -0.1875, -0.875, 0.0625, -0.125, -1.75, 0.0625, -0.125, -1.75, 0, -0.1875, -0.875, 0, -0.1875, -0.875, 0.0625, -0.125, -0.875, 0, -0.1875, 0, 0.0625, -0.125, -0.875, 0.0625, -0.125, -0.875, 0, -0.1875, 0, 0, -0.1875, 0, 0.0625, -0.125, 0, 0, -0.1875, 0.875, 0.0625, -0.125, 0, 0.0625, -0.125, 0, 0, -0.1875, 0.875, 0, -0.1875, 0.875, 0.0625, -0.125, -1.75, 0, 0.1875, -1.75, 0.0625, -0.125, -1.75, 0.0625, 0.125, -1.75, 0, 0.1875, -1.75, 0, -0.1875, -1.75, 0.0625, -0.125, 1.75, 0, -0.1875, 1.75, 0.0625, 0.125, 1.75, 0.0625, -0.125, 1.75, 0, -0.1875, 1.75, 0, 0.1875, 1.75, 0.0625, 0.125)
@@ -52,11 +46,75 @@ data = PackedVector3Array(0.875, 0, -0.1875, 1.75, 0.0625, -0.125, 0.875, 0.0625
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_21cg8"]
 data = PackedVector3Array(0.875, 0, -0.1875, 1.75, 0.0625, -0.125, 0.875, 0.0625, -0.125, 0.875, 0, -0.1875, 1.75, 0, -0.1875, 1.75, 0.0625, -0.125, -0.875, 0, 0.1875, -1.75, 0.0625, 0.125, -0.875, 0.0625, 0.125, -0.875, 0, 0.1875, -1.75, 0, 0.1875, -1.75, 0.0625, 0.125, -0.875, 0.0625, -0.125, -1.75, 0.0625, 0.125, -1.75, 0.0625, -0.125, -0.875, 0.0625, -0.125, -0.875, 0.0625, 0.125, -1.75, 0.0625, 0.125, 1.75, 0.0625, -0.125, 0.875, 0.0625, 0.125, 0.875, 0.0625, -0.125, 1.75, 0.0625, -0.125, 1.75, 0.0625, 0.125, 0.875, 0.0625, 0.125, 0.875, 0.0625, -0.125, 0, 0.0625, 0.125, 0, 0.0625, -0.125, 0.875, 0.0625, -0.125, 0.875, 0.0625, 0.125, 0, 0.0625, 0.125, 0, 0.0625, -0.125, -0.875, 0.0625, 0.125, -0.875, 0.0625, -0.125, 0, 0.0625, -0.125, 0, 0.0625, 0.125, -0.875, 0.0625, 0.125, 1.75, 0, 0.1875, 0.875, 0.0625, 0.125, 1.75, 0.0625, 0.125, 1.75, 0, 0.1875, 0.875, 0, 0.1875, 0.875, 0.0625, 0.125, 0.875, 0, 0.1875, 0, 0.0625, 0.125, 0.875, 0.0625, 0.125, 0.875, 0, 0.1875, 0, 0, 0.1875, 0, 0.0625, 0.125, 0, 0, 0.1875, -0.875, 0.0625, 0.125, 0, 0.0625, 0.125, 0, 0, 0.1875, -0.875, 0, 0.1875, -0.875, 0.0625, 0.125, -1.75, 0, -0.1875, -0.875, 0.0625, -0.125, -1.75, 0.0625, -0.125, -1.75, 0, -0.1875, -0.875, 0, -0.1875, -0.875, 0.0625, -0.125, -0.875, 0, -0.1875, 0, 0.0625, -0.125, -0.875, 0.0625, -0.125, -0.875, 0, -0.1875, 0, 0, -0.1875, 0, 0.0625, -0.125, 0, 0, -0.1875, 0.875, 0.0625, -0.125, 0, 0.0625, -0.125, 0, 0, -0.1875, 0.875, 0, -0.1875, 0.875, 0.0625, -0.125, -1.75, 0, 0.1875, -1.75, 0.0625, -0.125, -1.75, 0.0625, 0.125, -1.75, 0, 0.1875, -1.75, 0, -0.1875, -1.75, 0.0625, -0.125, 1.75, 0, -0.1875, 1.75, 0.0625, 0.125, 1.75, 0.0625, -0.125, 1.75, 0, -0.1875, 1.75, 0, 0.1875, 1.75, 0.0625, 0.125)
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_q1jqh"]
+data = PackedVector3Array(0, 2.75, -4, -1.75, 2.1875, -4.25, -0.9375, 2.75, -4, -1.4688, 2.1875, -4.25, 0, 2.75, -4, 0, 2.1875, -4.25, -1.75, 2.1875, -4.25, 0, 2.75, -4, -1.4688, 2.1875, -4.25, -1.4688, 0.6249, -4.25, -1.4688, 0, -4.25, -1.4688, 0.4375, -4.25, -1.4688, 0, -4.25, -1.2501, 1.8125, -4.25, -1.2501, 0, -4.25, -1.4688, 0.6249, -4.25, -1.2501, 1.8125, -4.25, -1.4688, 0, -4.25, -1.4688, 2.1875, -4.25, -1.2501, 1.8125, -4.25, -1.4688, 0.6249, -4.25, -1.4688, 2.1875, -4.25, -0.875, 2.1875, -4.25, -1.2501, 1.8125, -4.25, 0, 2.1875, -4.25, -0.875, 2.1875, -4.25, -1.4688, 2.1875, -4.25, -0.9375, 2.75, -4, -1.75, 2.1875, -4.25, -1.75, 2.1875, -4, -1.75, 2.1875, -4, -2.0312, 0.625, -4.25, -2.0312, 0.625, -4, -1.75, 2.1875, -4, -1.75, 2.1875, -4.25, -2.0312, 0.625, -4.25, -2.0312, 0.625, -4, -1.75, 0.4375, -4.25, -1.75, 0.4375, -4, -2.0312, 0.625, -4, -2.0312, 0.625, -4.25, -1.75, 0.4375, -4.25, -1.75, 0.4375, -4, -1.6875, 0, -4.25, -1.6875, 0, -4, -1.75, 0.4375, -4, -1.75, 0.4375, -4.25, -1.6875, 0, -4.25, -1.1875, 0, -4.125, -1.2501, 1.8125, -4.25, -1.1875, 1.8125, -4.125, -1.1875, 0, -4.125, -1.2501, 0, -4.25, -1.2501, 1.8125, -4.25, -1.1875, 1.8125, -4.125, -0.9375, 0, -4.125, -1.1875, 0, -4.125, -1.1875, 1.8125, -4.125, -0.9375, 1.6875, -4.125, -0.9375, 0, -4.125, -0.875, 2.125, -4.125, -0.9375, 1.6875, -4.125, -1.1875, 1.8125, -4.125, -0.875, 2.125, -4.125, -0.75, 1.875, -4.125, -0.9375, 1.6875, -4.125, -0.875, 2.125, -4.125, 0, 1.875, -4.125, -0.75, 1.875, -4.125, -0.875, 2.125, -4.125, 0, 2.125, -4.125, 0, 1.875, -4.125, -0.875, 2.1875, -4.25, 0, 2.125, -4.125, -0.875, 2.125, -4.125, -0.875, 2.1875, -4.25, 0, 2.1875, -4.25, 0, 2.125, -4.125, -1.2501, 1.8125, -4.25, -0.875, 2.125, -4.125, -1.1875, 1.8125, -4.125, -1.2501, 1.8125, -4.25, -0.875, 2.1875, -4.25, -0.875, 2.125, -4.125, -1, 1.6875, -4.5, -0.9375, 0, -4.125, -0.9375, 1.6875, -4.125, -1, 1.6875, -4.5, -1, 0, -4.5, -0.9375, 0, -4.125, -0.9375, 1.6875, -4.125, -0.75, 1.9375, -4.5, -1, 1.6875, -4.5, -0.9375, 1.6875, -4.125, -0.75, 1.875, -4.125, -0.75, 1.9375, -4.5, 0, 1.875, -4.125, -0.75, 1.9375, -4.5, -0.75, 1.875, -4.125, 0, 1.875, -4.125, 0, 1.9375, -4.5, -0.75, 1.9375, -4.5, 0, 0, -4, -1, 0, -4.5, 0, 0, -4.5, 0, 0, -4, -0.9375, 0, -4.125, -1, 0, -4.5, -1.4688, 0, -4.25, -1.6875, 0, -4, -1.6875, 0, -4.25, -1.1875, 0, -4.125, -1.4688, 0, -4.25, -1.2501, 0, -4.25, 0, 0, -4, -1.1875, 0, -4.125, -0.9375, 0, -4.125, -1.1875, 0, -4.125, -1.6875, 0, -4, -1.4688, 0, -4.25, -1.6875, 0, -4, -1.1875, 0, -4.125, 0, 0, -4, -1.4688, 0, -4.25, -1.75, 0.4375, -4.25, -1.4688, 0.4375, -4.25, -1.4688, 0, -4.25, -1.6875, 0, -4.25, -1.75, 0.4375, -4.25, -1.75, 0.4375, -4.25, -1.4688, 0.6249, -4.25, -1.4688, 0.4375, -4.25, -1.75, 0.4375, -4.25, -2.0312, 0.625, -4.25, -1.4688, 0.6249, -4.25, -2.0312, 0.625, -4.25, -1.4688, 2.1875, -4.25, -1.4688, 0.6249, -4.25, -2.0312, 0.625, -4.25, -1.75, 2.1875, -4.25, -1.4688, 2.1875, -4.25, 1.7499, 2.1875, -4.25, 0, 2.75, -4, 0.9374, 2.75, -4, 0, 2.75, -4, 1.4687, 2.1875, -4.25, 0, 2.1875, -4.25, 0, 2.75, -4, 1.7499, 2.1875, -4.25, 1.4687, 2.1875, -4.25, 1.25, 1.8125, -4.25, 1.4687, 0, -4.25, 1.25, 0, -4.25, 1.4687, 0, -4.25, 1.4687, 0.6249, -4.25, 1.4687, 0.4375, -4.25, 1.25, 1.8125, -4.25, 1.4687, 0.6249, -4.25, 1.4687, 0, -4.25, 1.25, 1.8125, -4.25, 1.4687, 2.1875, -4.25, 1.4687, 0.6249, -4.25, 0.875, 2.1875, -4.25, 1.4687, 2.1875, -4.25, 1.25, 1.8125, -4.25, 0, 2.1875, -4.25, 1.4687, 2.1875, -4.25, 0.875, 2.1875, -4.25, 0.9374, 2.75, -4, 1.7499, 2.1875, -4, 1.7499, 2.1875, -4.25, 1.7499, 2.1875, -4, 2.0312, 0.625, -4.25, 1.7499, 2.1875, -4.25, 1.7499, 2.1875, -4, 2.0312, 0.625, -4, 2.0312, 0.625, -4.25, 2.0312, 0.625, -4, 1.7499, 0.4375, -4.25, 2.0312, 0.625, -4.25, 2.0312, 0.625, -4, 1.7499, 0.4375, -4, 1.7499, 0.4375, -4.25, 1.7499, 0.4375, -4, 1.6875, 0, -4.25, 1.7499, 0.4375, -4.25, 1.7499, 0.4375, -4, 1.6875, 0, -4, 1.6875, 0, -4.25, 1.1874, 0, -4.125, 1.25, 1.8125, -4.25, 1.25, 0, -4.25, 1.1874, 0, -4.125, 1.1874, 1.8125, -4.125, 1.25, 1.8125, -4.25, 1.1874, 1.8125, -4.125, 0.9374, 0, -4.125, 0.9374, 1.6875, -4.125, 1.1874, 1.8125, -4.125, 1.1874, 0, -4.125, 0.9374, 0, -4.125, 0.875, 2.125, -4.125, 0.9374, 1.6875, -4.125, 0.75, 1.875, -4.125, 0.875, 2.125, -4.125, 1.1874, 1.8125, -4.125, 0.9374, 1.6875, -4.125, 0.875, 2.125, -4.125, 0, 1.875, -4.125, 0, 2.125, -4.125, 0.875, 2.125, -4.125, 0.75, 1.875, -4.125, 0, 1.875, -4.125, 0.875, 2.1875, -4.25, 0, 2.125, -4.125, 0, 2.1875, -4.25, 0.875, 2.1875, -4.25, 0.875, 2.125, -4.125, 0, 2.125, -4.125, 1.25, 1.8125, -4.25, 0.875, 2.125, -4.125, 0.875, 2.1875, -4.25, 1.25, 1.8125, -4.25, 1.1874, 1.8125, -4.125, 0.875, 2.125, -4.125, 1, 1.6875, -4.5, 0.9374, 0, -4.125, 1, 0, -4.5, 1, 1.6875, -4.5, 0.9374, 1.6875, -4.125, 0.9374, 0, -4.125, 0.9374, 1.6875, -4.125, 0.75, 1.9375, -4.5, 0.75, 1.875, -4.125, 0.9374, 1.6875, -4.125, 1, 1.6875, -4.5, 0.75, 1.9375, -4.5, 0, 1.875, -4.125, 0.75, 1.9375, -4.5, 0, 1.9375, -4.5, 0, 1.875, -4.125, 0.75, 1.875, -4.125, 0.75, 1.9375, -4.5, 1.6875, 0, -4, 1.4687, 0, -4.25, 1.6875, 0, -4.25, 1.4687, 0, -4.25, 1.1874, 0, -4.125, 1.25, 0, -4.25, 0.9374, 0, -4.125, 0, 0, -4.5, 1, 0, -4.5, 1.6875, 0, -4, 1.1874, 0, -4.125, 1.4687, 0, -4.25, 0.9374, 0, -4.125, 0, 0, -4, 0, 0, -4.5, 1.6875, 0, -4, 0.9374, 0, -4.125, 1.1874, 0, -4.125, 1.6875, 0, -4, 0, 0, -4, 0.9374, 0, -4.125, 1.4687, 0, -4.25, 1.7499, 0.4375, -4.25, 1.6875, 0, -4.25, 1.4687, 0, -4.25, 1.4687, 0.4375, -4.25, 1.7499, 0.4375, -4.25, 1.7499, 0.4375, -4.25, 1.4687, 0.6249, -4.25, 2.0312, 0.625, -4.25, 1.7499, 0.4375, -4.25, 1.4687, 0.4375, -4.25, 1.4687, 0.6249, -4.25, 2.0312, 0.625, -4.25, 1.4687, 2.1875, -4.25, 1.7499, 2.1875, -4.25, 2.0312, 0.625, -4.25, 1.4687, 0.6249, -4.25, 1.4687, 2.1875, -4.25)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_133be"]
+data = PackedVector3Array(0, 2.75, -4, -1.75, 2.1875, -4.25, -0.9375, 2.75, -4, -1.4688, 2.1875, -4.25, 0, 2.75, -4, 0, 2.1875, -4.25, -1.75, 2.1875, -4.25, 0, 2.75, -4, -1.4688, 2.1875, -4.25, -1.4688, 0.6249, -4.25, -1.4688, 0, -4.25, -1.4688, 0.4375, -4.25, -1.4688, 0, -4.25, -1.2501, 1.8125, -4.25, -1.2501, 0, -4.25, -1.4688, 0.6249, -4.25, -1.2501, 1.8125, -4.25, -1.4688, 0, -4.25, -1.4688, 2.1875, -4.25, -1.2501, 1.8125, -4.25, -1.4688, 0.6249, -4.25, -1.4688, 2.1875, -4.25, -0.875, 2.1875, -4.25, -1.2501, 1.8125, -4.25, 0, 2.1875, -4.25, -0.875, 2.1875, -4.25, -1.4688, 2.1875, -4.25, -0.9375, 2.75, -4, -1.75, 2.1875, -4.25, -1.75, 2.1875, -4, -1.75, 2.1875, -4, -2.0312, 0.625, -4.25, -2.0312, 0.625, -4, -1.75, 2.1875, -4, -1.75, 2.1875, -4.25, -2.0312, 0.625, -4.25, -2.0312, 0.625, -4, -1.75, 0.4375, -4.25, -1.75, 0.4375, -4, -2.0312, 0.625, -4, -2.0312, 0.625, -4.25, -1.75, 0.4375, -4.25, -1.75, 0.4375, -4, -1.6875, 0, -4.25, -1.6875, 0, -4, -1.75, 0.4375, -4, -1.75, 0.4375, -4.25, -1.6875, 0, -4.25, -1.1875, 0, -4.125, -1.2501, 1.8125, -4.25, -1.1875, 1.8125, -4.125, -1.1875, 0, -4.125, -1.2501, 0, -4.25, -1.2501, 1.8125, -4.25, -1.1875, 1.8125, -4.125, -0.9375, 0, -4.125, -1.1875, 0, -4.125, -1.1875, 1.8125, -4.125, -0.9375, 1.6875, -4.125, -0.9375, 0, -4.125, -0.875, 2.125, -4.125, -0.9375, 1.6875, -4.125, -1.1875, 1.8125, -4.125, -0.875, 2.125, -4.125, -0.75, 1.875, -4.125, -0.9375, 1.6875, -4.125, -0.875, 2.125, -4.125, 0, 1.875, -4.125, -0.75, 1.875, -4.125, -0.875, 2.125, -4.125, 0, 2.125, -4.125, 0, 1.875, -4.125, -0.875, 2.1875, -4.25, 0, 2.125, -4.125, -0.875, 2.125, -4.125, -0.875, 2.1875, -4.25, 0, 2.1875, -4.25, 0, 2.125, -4.125, -1.2501, 1.8125, -4.25, -0.875, 2.125, -4.125, -1.1875, 1.8125, -4.125, -1.2501, 1.8125, -4.25, -0.875, 2.1875, -4.25, -0.875, 2.125, -4.125, -1, 1.6875, -4.5, -0.9375, 0, -4.125, -0.9375, 1.6875, -4.125, -1, 1.6875, -4.5, -1, 0, -4.5, -0.9375, 0, -4.125, -0.9375, 1.6875, -4.125, -0.75, 1.9375, -4.5, -1, 1.6875, -4.5, -0.9375, 1.6875, -4.125, -0.75, 1.875, -4.125, -0.75, 1.9375, -4.5, 0, 1.875, -4.125, -0.75, 1.9375, -4.5, -0.75, 1.875, -4.125, 0, 1.875, -4.125, 0, 1.9375, -4.5, -0.75, 1.9375, -4.5, 0, 0, -4, -1, 0, -4.5, 0, 0, -4.5, 0, 0, -4, -0.9375, 0, -4.125, -1, 0, -4.5, -1.4688, 0, -4.25, -1.6875, 0, -4, -1.6875, 0, -4.25, -1.1875, 0, -4.125, -1.4688, 0, -4.25, -1.2501, 0, -4.25, 0, 0, -4, -1.1875, 0, -4.125, -0.9375, 0, -4.125, -1.1875, 0, -4.125, -1.6875, 0, -4, -1.4688, 0, -4.25, -1.6875, 0, -4, -1.1875, 0, -4.125, 0, 0, -4, -1.4688, 0, -4.25, -1.75, 0.4375, -4.25, -1.4688, 0.4375, -4.25, -1.4688, 0, -4.25, -1.6875, 0, -4.25, -1.75, 0.4375, -4.25, -1.75, 0.4375, -4.25, -1.4688, 0.6249, -4.25, -1.4688, 0.4375, -4.25, -1.75, 0.4375, -4.25, -2.0312, 0.625, -4.25, -1.4688, 0.6249, -4.25, -2.0312, 0.625, -4.25, -1.4688, 2.1875, -4.25, -1.4688, 0.6249, -4.25, -2.0312, 0.625, -4.25, -1.75, 2.1875, -4.25, -1.4688, 2.1875, -4.25, 1.7499, 2.1875, -4.25, 0, 2.75, -4, 0.9374, 2.75, -4, 0, 2.75, -4, 1.4687, 2.1875, -4.25, 0, 2.1875, -4.25, 0, 2.75, -4, 1.7499, 2.1875, -4.25, 1.4687, 2.1875, -4.25, 1.25, 1.8125, -4.25, 1.4687, 0, -4.25, 1.25, 0, -4.25, 1.4687, 0, -4.25, 1.4687, 0.6249, -4.25, 1.4687, 0.4375, -4.25, 1.25, 1.8125, -4.25, 1.4687, 0.6249, -4.25, 1.4687, 0, -4.25, 1.25, 1.8125, -4.25, 1.4687, 2.1875, -4.25, 1.4687, 0.6249, -4.25, 0.875, 2.1875, -4.25, 1.4687, 2.1875, -4.25, 1.25, 1.8125, -4.25, 0, 2.1875, -4.25, 1.4687, 2.1875, -4.25, 0.875, 2.1875, -4.25, 0.9374, 2.75, -4, 1.7499, 2.1875, -4, 1.7499, 2.1875, -4.25, 1.7499, 2.1875, -4, 2.0312, 0.625, -4.25, 1.7499, 2.1875, -4.25, 1.7499, 2.1875, -4, 2.0312, 0.625, -4, 2.0312, 0.625, -4.25, 2.0312, 0.625, -4, 1.7499, 0.4375, -4.25, 2.0312, 0.625, -4.25, 2.0312, 0.625, -4, 1.7499, 0.4375, -4, 1.7499, 0.4375, -4.25, 1.7499, 0.4375, -4, 1.6875, 0, -4.25, 1.7499, 0.4375, -4.25, 1.7499, 0.4375, -4, 1.6875, 0, -4, 1.6875, 0, -4.25, 1.1874, 0, -4.125, 1.25, 1.8125, -4.25, 1.25, 0, -4.25, 1.1874, 0, -4.125, 1.1874, 1.8125, -4.125, 1.25, 1.8125, -4.25, 1.1874, 1.8125, -4.125, 0.9374, 0, -4.125, 0.9374, 1.6875, -4.125, 1.1874, 1.8125, -4.125, 1.1874, 0, -4.125, 0.9374, 0, -4.125, 0.875, 2.125, -4.125, 0.9374, 1.6875, -4.125, 0.75, 1.875, -4.125, 0.875, 2.125, -4.125, 1.1874, 1.8125, -4.125, 0.9374, 1.6875, -4.125, 0.875, 2.125, -4.125, 0, 1.875, -4.125, 0, 2.125, -4.125, 0.875, 2.125, -4.125, 0.75, 1.875, -4.125, 0, 1.875, -4.125, 0.875, 2.1875, -4.25, 0, 2.125, -4.125, 0, 2.1875, -4.25, 0.875, 2.1875, -4.25, 0.875, 2.125, -4.125, 0, 2.125, -4.125, 1.25, 1.8125, -4.25, 0.875, 2.125, -4.125, 0.875, 2.1875, -4.25, 1.25, 1.8125, -4.25, 1.1874, 1.8125, -4.125, 0.875, 2.125, -4.125, 1, 1.6875, -4.5, 0.9374, 0, -4.125, 1, 0, -4.5, 1, 1.6875, -4.5, 0.9374, 1.6875, -4.125, 0.9374, 0, -4.125, 0.9374, 1.6875, -4.125, 0.75, 1.9375, -4.5, 0.75, 1.875, -4.125, 0.9374, 1.6875, -4.125, 1, 1.6875, -4.5, 0.75, 1.9375, -4.5, 0, 1.875, -4.125, 0.75, 1.9375, -4.5, 0, 1.9375, -4.5, 0, 1.875, -4.125, 0.75, 1.875, -4.125, 0.75, 1.9375, -4.5, 1.6875, 0, -4, 1.4687, 0, -4.25, 1.6875, 0, -4.25, 1.4687, 0, -4.25, 1.1874, 0, -4.125, 1.25, 0, -4.25, 0.9374, 0, -4.125, 0, 0, -4.5, 1, 0, -4.5, 1.6875, 0, -4, 1.1874, 0, -4.125, 1.4687, 0, -4.25, 0.9374, 0, -4.125, 0, 0, -4, 0, 0, -4.5, 1.6875, 0, -4, 0.9374, 0, -4.125, 1.1874, 0, -4.125, 1.6875, 0, -4, 0, 0, -4, 0.9374, 0, -4.125, 1.4687, 0, -4.25, 1.7499, 0.4375, -4.25, 1.6875, 0, -4.25, 1.4687, 0, -4.25, 1.4687, 0.4375, -4.25, 1.7499, 0.4375, -4.25, 1.7499, 0.4375, -4.25, 1.4687, 0.6249, -4.25, 2.0312, 0.625, -4.25, 1.7499, 0.4375, -4.25, 1.4687, 0.4375, -4.25, 1.4687, 0.6249, -4.25, 2.0312, 0.625, -4.25, 1.4687, 2.1875, -4.25, 1.7499, 2.1875, -4.25, 2.0312, 0.625, -4.25, 1.4687, 0.6249, -4.25, 1.4687, 2.1875, -4.25)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ibme6"]
 albedo_color = Color(0.39633, 0.501518, 0.699859, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_moqle"]
 size = Vector3(10.8, 7.2, 0.0515137)
+
+[sub_resource type="Animation" id="Animation_kcb2u"]
+length = 3.0
+step = 0.25
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("leftdoor")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, -0.65, 0.5, 1, 0, 0, -0.65, 1, 1, 0, 0, -0.8, 1.5, 1, 0, 0, -0.8, 2.75, 1, 0, 0, -1.85, 5.25, 1, 0, 0, -1.4)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("rightdoor")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0.65, 0.5, 1, 0, 0, 0.65, 1, 1, 0, 0, 0.8, 1.5, 1, 0, 0, 0.8, 2.75, 1, 0, 0, 1.85, 5.25, 1, 0, 0, 1.4)
+
+[sub_resource type="Animation" id="Animation_56sdd"]
+resource_name = "door_open"
+step = 0.5
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("leftdoor")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, -0.65, 1, 1, 0, 0, -1.85)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("rightdoor")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0.65, 1, 1, 0, 0, 1.85)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ir7n0"]
+_data = {
+"RESET": SubResource("Animation_kcb2u"),
+"door_open": SubResource("Animation_56sdd")
+}
+
+[sub_resource type="Environment" id="Environment_wxb1m"]
+background_mode = 1
+background_color = Color(0.129558, 0.129558, 0.129558, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.158472, 0.158472, 0.158472, 1)
+ambient_light_energy = 0.3
+reflected_light_source = 1
+tonemap_mode = 3
+tonemap_exposure = 4.0
+glow_enabled = true
+glow_intensity = 0.4
+glow_strength = 0.62
+glow_bloom = 0.52
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_rfr4q"]
 
 [sub_resource type="Environment" id="Environment_bx8ok"]
 background_mode = 2
@@ -70,14 +128,12 @@ glow_intensity = 1.37
 glow_strength = 0.88
 glow_bloom = 0.65
 
-[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_rfr4q"]
-
 [node name="World" type="Node3D"]
 
 [node name="Character" parent="." instance=ExtResource("1_677kc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.9618, 0.5431, 3.81881)
-base_speed = 2.5
-sprint_speed = 3.75
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9618, 0.5431, -70.1812)
+base_speed = 2.7
+sprint_speed = 3.9
 acceleration = 7.0
 jump_velocity = 3.0
 JUMP = ""
@@ -85,25 +141,15 @@ LEFT = "moveLeft"
 RIGHT = "moveRight"
 FORWARD = "moveForward"
 BACKWARD = "moveBackward"
-sprint_mode = 1
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Character"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 
 [node name="Map" type="Node" parent="."]
 
 [node name="Test Area" type="Node3D" parent="Map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -78)
-
-[node name="GridMap" type="GridMap" parent="Map/Test Area"]
-mesh_library = ExtResource("2_tof1c")
-cell_size = Vector3(8, 8, 8)
-cell_center_x = false
-cell_center_y = false
-cell_center_z = false
-data = {
-"cells": PackedInt32Array(0, 0, 2, 0, 1, 0, 65535, 1, 1441793, 65534, 1, 1441794, 65533, 0, 655360, 65533, 1, 1441792, 65534, 0, 1048577, 65535, 0, 0, 65535, 65535, 655360, 0, 65535, 1048576)
-}
 
 [node name="Corridor Deco" type="Node3D" parent="Map/Test Area"]
 
@@ -120,11 +166,22 @@ skeleton = NodePath("../..")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19.9375, 2.75, 8)
 skeleton = NodePath("../..")
 
+[node name="CorridorLight10" parent="Map/Test Area/Corridor Deco/Ceiling Lights" instance=ExtResource("3_8207f")]
+transform = Transform3D(-0.68, 2.06545e-08, 2.56693e-08, 5.1483e-08, 0.5, 0.294449, -1.35059e-08, 0.866025, -0.17, -24, 2.339, 10.683)
+skeleton = NodePath("../..")
+
+[node name="CorridorLight8" parent="Map/Test Area/Corridor Deco/Ceiling Lights" instance=ExtResource("3_8207f")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -27.9375, 2.75, 8)
+skeleton = NodePath("../..")
+
+[node name="CorridorLight9" parent="Map/Test Area/Corridor Deco/Ceiling Lights" instance=ExtResource("3_8207f")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -31.9375, 2.75, 4)
+skeleton = NodePath("../..")
+
 [node name="CorridorLight6" type="MeshInstance3D" parent="Map/Test Area/Corridor Deco/Ceiling Lights"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15.9375, 2.75, 1.74846e-07)
 mesh = ExtResource("8_nw74d")
 skeleton = NodePath("../..")
-surface_material_override/1 = SubResource("StandardMaterial3D_0yg2d")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Map/Test Area/Corridor Deco/Ceiling Lights/CorridorLight6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5125, -1.8125, 0)
@@ -144,7 +201,6 @@ omni_range = 10.0
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -7.9375, 2.75, -4)
 mesh = ExtResource("8_nw74d")
 skeleton = NodePath("../..")
-surface_material_override/1 = SubResource("StandardMaterial3D_0yg2d")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Map/Test Area/Corridor Deco/Ceiling Lights/CorridorLight7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5125, -1.8125, 0)
@@ -258,8 +314,30 @@ visible = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Test Area/Corridor Deco/Floor Rails/FloorRail9/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_hhwjd")
 
+[node name="FloorRail11" type="MeshInstance3D" parent="Map/Test Area/Corridor Deco/Floor Rails"]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -28, 0, 0)
+mesh = ExtResource("3_hgo7r")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Test Area/Corridor Deco/Floor Rails/FloorRail11"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Test Area/Corridor Deco/Floor Rails/FloorRail11/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_hhwjd")
+
+[node name="FloorRail12" type="MeshInstance3D" parent="Map/Test Area/Corridor Deco/Floor Rails"]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -28, 0, 8)
+mesh = ExtResource("3_hgo7r")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Test Area/Corridor Deco/Floor Rails/FloorRail12"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Test Area/Corridor Deco/Floor Rails/FloorRail12/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_hhwjd")
+
 [node name="FloorRail10" type="MeshInstance3D" parent="Map/Test Area/Corridor Deco/Floor Rails"]
-transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -24, 0, 4)
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -32, 0, 4)
 mesh = ExtResource("3_hgo7r")
 skeleton = NodePath("../..")
 
@@ -339,6 +417,69 @@ skeleton = NodePath("../../..")
 transform = Transform3D(1, 3.09625e-08, 1.72082e-07, 0, 0.984196, -0.177085, -1.74846e-07, 0.177085, 0.984196, -3.3445, 1.391, 6.107)
 mesh = ExtResource("3_4vnxh")
 skeleton = NodePath("../../../../..")
+
+[node name="Tiles" type="Node3D" parent="Map/Test Area/Corridor Deco"]
+
+[node name="Corridor Alt_A" parent="Map/Test Area/Corridor Deco/Tiles" instance=ExtResource("10_oarar")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8, 0, 8)
+
+[node name="Corridor Corner" parent="Map/Test Area/Corridor Deco/Tiles" instance=ExtResource("11_vw4pw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="Corridor Corner2" parent="Map/Test Area/Corridor Deco/Tiles" instance=ExtResource("11_vw4pw")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -8)
+
+[node name="Corridor Corner3" parent="Map/Test Area/Corridor Deco/Tiles" instance=ExtResource("11_vw4pw")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8, 0, -8)
+
+[node name="Corridor Corner4" parent="Map/Test Area/Corridor Deco/Tiles" instance=ExtResource("11_vw4pw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+
+[node name="Corridor Corner5" parent="Map/Test Area/Corridor Deco/Tiles" instance=ExtResource("11_vw4pw")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -32, 0, 0)
+
+[node name="Corridor Corner6" parent="Map/Test Area/Corridor Deco/Tiles" instance=ExtResource("11_vw4pw")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -32, 0, 8)
+
+[node name="Corridor Threeway" parent="Map/Test Area/Corridor Deco/Tiles" instance=ExtResource("12_gx0a1")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Corridor Threeway Alt_A" parent="Map/Test Area/Corridor Deco/Tiles" instance=ExtResource("13_mcibb")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -24, 0, 8)
+
+[node name="Corridor Threeway Alt_A2" parent="Map/Test Area/Corridor Deco/Tiles" instance=ExtResource("13_mcibb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 14)
+
+[node name="Straight Corridor" parent="Map/Test Area/Corridor Deco/Tiles" instance=ExtResource("11_bc1k0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16, 0, 8)
+
+[node name="Straight Corridor2" parent="Map/Test Area/Corridor Deco/Tiles" instance=ExtResource("11_bc1k0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -24, 0, 0)
+
+[node name="Straight Corridor3" parent="Map/Test Area/Corridor Deco/Tiles" instance=ExtResource("11_bc1k0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16, 0, 0)
+
+[node name="DoorEnd" type="MeshInstance3D" parent="Map/Test Area/Corridor Deco/Tiles"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -24, 0, 6.5)
+mesh = ExtResource("16_2dj1p")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Test Area/Corridor Deco/Tiles/DoorEnd"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Test Area/Corridor Deco/Tiles/DoorEnd/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_q1jqh")
+
+[node name="DoorEnd2" type="MeshInstance3D" parent="Map/Test Area/Corridor Deco/Tiles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 15.5)
+mesh = ExtResource("16_2dj1p")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Test Area/Corridor Deco/Tiles/DoorEnd2"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Test Area/Corridor Deco/Tiles/DoorEnd2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_133be")
 
 [node name="VoxelGI" type="VoxelGI" parent="Map/Test Area"]
 process_mode = 4
@@ -469,11 +610,27 @@ process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.026)
 shape = SubResource("BoxShape3D_moqle")
 
+[node name="Node3D" type="Node3D" parent="Map/Start Area Prototype"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, 1.1, -3)
+
+[node name="leftdoor" type="CSGBox3D" parent="Map/Start Area Prototype/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.65)
+size = Vector3(0.5, 2.2, 1.3)
+
+[node name="rightdoor" type="CSGBox3D" parent="Map/Start Area Prototype/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.65)
+size = Vector3(0.5, 2.2, 1.3)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Map/Start Area Prototype/Node3D"]
+libraries = {
+"": SubResource("AnimationLibrary_ir7n0")
+}
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Map"]
-process_mode = 4
-environment = SubResource("Environment_bx8ok")
+environment = SubResource("Environment_wxb1m")
 camera_attributes = SubResource("CameraAttributesPractical_rfr4q")
 
 [node name="WorldEnvironment2" type="WorldEnvironment" parent="Map"]
+process_mode = 4
 environment = SubResource("Environment_bx8ok")
 camera_attributes = SubResource("CameraAttributesPractical_rfr4q")

@@ -8,14 +8,14 @@ mesh = ExtResource("1_gydfj")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5125, -1.8125, 0)
-light_color = Color(0.468169, 0.665271, 0.894273, 1)
-light_energy = 0.2
+light_color = Color(0.529524, 0.706651, 0.913829, 1)
+light_energy = 0.15
 shadow_enabled = true
 omni_range = 10.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -1.8125, 0)
-light_color = Color(0.468169, 0.665271, 0.894273, 1)
-light_energy = 0.2
+light_color = Color(0.529524, 0.706651, 0.913829, 1)
+light_energy = 0.15
 shadow_enabled = true
 omni_range = 10.0
