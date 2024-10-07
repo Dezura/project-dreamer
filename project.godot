@@ -18,19 +18,18 @@ config/icon="res://icon.svg"
 [autoload]
 
 Toolkit="*res://addons/godottoolkit/toolkit.gd"
+DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
+g="*res://Misc/globals.gd"
 
 [display]
 
-window/size/viewport_width=320
-window/size/viewport_height=240
 window/size/window_width_override=1152
 window/size/window_height_override=648
-window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/extra_snaps/plugin.cfg", "res://addons/godottoolkit/plugin.cfg")
+enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/extra_snaps/plugin.cfg", "res://addons/godottoolkit/plugin.cfg")
 
 [file_customization]
 

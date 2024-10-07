@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cvhobn16qp0nw"]
+[gd_scene load_steps=31 format=3 uid="uid://cvhobn16qp0nw"]
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_0x7iv"]
 [ext_resource type="PackedScene" uid="uid://dc2ma8vovhmy1" path="res://Environment/Research_Base/Decorative/corridor_light.tscn" id="2_ce2an"]
@@ -14,7 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://qslfet42mqtl" path="res://Environment/Research_Base/Corridors/Prefabs/corridor_threeway_alt_a.tscn" id="12_fe370"]
 [ext_resource type="PackedScene" uid="uid://nflnwcnlqyrs" path="res://Environment/Research_Base/Corridors/Prefabs/straight_corridor.tscn" id="13_syp0f"]
 [ext_resource type="ArrayMesh" uid="uid://hdus0d2ac2on" path="res://Environment/Research_Base/Corridors/Models/Door End.res" id="14_g64hn"]
-[ext_resource type="PackedScene" uid="uid://i86xexw7c1xm" path="res://Environment/Research_Base/interactable_door.tscn" id="15_7ybbe"]
+[ext_resource type="PackedScene" uid="uid://i86xexw7c1xm" path="res://Environment/Research_Base/Interactable/interactable_door.tscn" id="15_7ybbe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uu1ve"]
+font_size = 28
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0jagy"]
 data = PackedVector3Array(0.875, 0, -0.1875, 1.75, 0.0625, -0.125, 0.875, 0.0625, -0.125, 0.875, 0, -0.1875, 1.75, 0, -0.1875, 1.75, 0.0625, -0.125, -0.875, 0, 0.1875, -1.75, 0.0625, 0.125, -0.875, 0.0625, 0.125, -0.875, 0, 0.1875, -1.75, 0, 0.1875, -1.75, 0.0625, 0.125, -0.875, 0.0625, -0.125, -1.75, 0.0625, 0.125, -1.75, 0.0625, -0.125, -0.875, 0.0625, -0.125, -0.875, 0.0625, 0.125, -1.75, 0.0625, 0.125, 1.75, 0.0625, -0.125, 0.875, 0.0625, 0.125, 0.875, 0.0625, -0.125, 1.75, 0.0625, -0.125, 1.75, 0.0625, 0.125, 0.875, 0.0625, 0.125, 0.875, 0.0625, -0.125, 0, 0.0625, 0.125, 0, 0.0625, -0.125, 0.875, 0.0625, -0.125, 0.875, 0.0625, 0.125, 0, 0.0625, 0.125, 0, 0.0625, -0.125, -0.875, 0.0625, 0.125, -0.875, 0.0625, -0.125, 0, 0.0625, -0.125, 0, 0.0625, 0.125, -0.875, 0.0625, 0.125, 1.75, 0, 0.1875, 0.875, 0.0625, 0.125, 1.75, 0.0625, 0.125, 1.75, 0, 0.1875, 0.875, 0, 0.1875, 0.875, 0.0625, 0.125, 0.875, 0, 0.1875, 0, 0.0625, 0.125, 0.875, 0.0625, 0.125, 0.875, 0, 0.1875, 0, 0, 0.1875, 0, 0.0625, 0.125, 0, 0, 0.1875, -0.875, 0.0625, 0.125, 0, 0.0625, 0.125, 0, 0, 0.1875, -0.875, 0, 0.1875, -0.875, 0.0625, 0.125, -1.75, 0, -0.1875, -0.875, 0.0625, -0.125, -1.75, 0.0625, -0.125, -1.75, 0, -0.1875, -0.875, 0, -0.1875, -0.875, 0.0625, -0.125, -0.875, 0, -0.1875, 0, 0.0625, -0.125, -0.875, 0.0625, -0.125, -0.875, 0, -0.1875, 0, 0, -0.1875, 0, 0.0625, -0.125, 0, 0, -0.1875, 0.875, 0.0625, -0.125, 0, 0.0625, -0.125, 0, 0, -0.1875, 0.875, 0, -0.1875, 0.875, 0.0625, -0.125, -1.75, 0, 0.1875, -1.75, 0.0625, -0.125, -1.75, 0.0625, 0.125, -1.75, 0, 0.1875, -1.75, 0, -0.1875, -1.75, 0.0625, -0.125, 1.75, 0, -0.1875, 1.75, 0.0625, 0.125, 1.75, 0.0625, -0.125, 1.75, 0, -0.1875, 1.75, 0, 0.1875, 1.75, 0.0625, 0.125)
@@ -54,7 +57,6 @@ data = PackedVector3Array(0, 2.75, -4, -1.75, 2.1875, -4.25, -0.9375, 2.75, -4, 
 
 [sub_resource type="Environment" id="Environment_wxb1m"]
 background_mode = 1
-background_color = Color(0.129558, 0.129558, 0.129558, 1)
 ambient_light_source = 2
 ambient_light_color = Color(0.158472, 0.158472, 0.158472, 1)
 ambient_light_energy = 0.3
@@ -70,8 +72,8 @@ glow_bloom = 0.52
 
 [node name="World" type="Node3D"]
 
-[node name="Character" parent="." instance=ExtResource("1_0x7iv")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -23.9618, 0.5431, 8)
+[node name="Player" parent="." instance=ExtResource("1_0x7iv")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -23.9433, -1.19209e-07, 8.99996)
 base_speed = 2.7
 sprint_speed = 3.9
 acceleration = 7.0
@@ -82,10 +84,13 @@ RIGHT = "moveRight"
 FORWARD = "moveForward"
 BACKWARD = "moveBackward"
 
-[node name="SpotLight3D" parent="Character/Head/Camera" index="0"]
+[node name="SpotLight3D" parent="Player/Head/Camera" index="0"]
 light_energy = 0.0
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Character"]
+[node name="Label" parent="Player/UserInterface" index="2"]
+label_settings = SubResource("LabelSettings_uu1ve")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 visible = false
 
@@ -106,10 +111,6 @@ skeleton = NodePath("../..")
 
 [node name="CorridorLight3" parent="Map/Test Area/Corridor Deco/Ceiling Lights" instance=ExtResource("2_ce2an")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -19.9375, 2.75, 8)
-skeleton = NodePath("../..")
-
-[node name="CorridorLight10" parent="Map/Test Area/Corridor Deco/Ceiling Lights" instance=ExtResource("2_ce2an")]
-transform = Transform3D(-0.68, 2.06545e-08, 2.56693e-08, 5.1483e-08, 0.5, 0.294449, -1.35059e-08, 0.866025, -0.17, -24, 2.339, 10.683)
 skeleton = NodePath("../..")
 
 [node name="CorridorLight8" parent="Map/Test Area/Corridor Deco/Ceiling Lights" instance=ExtResource("2_ce2an")]
@@ -164,6 +165,10 @@ skeleton = NodePath("../..")
 
 [node name="CorridorLight5" parent="Map/Test Area/Corridor Deco/Ceiling Lights" instance=ExtResource("2_ce2an")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.9375, 2.75, 8)
+skeleton = NodePath("../..")
+
+[node name="CorridorLight11" parent="Map/Test Area/Corridor Deco/Ceiling Lights" instance=ExtResource("2_ce2an")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0625, 2.75, 4)
 skeleton = NodePath("../..")
 
 [node name="Floor Rails" type="Node3D" parent="Map/Test Area/Corridor Deco"]
@@ -412,6 +417,25 @@ visible = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Test Area/Corridor Deco/Tiles/DoorEnd/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_q1jqh")
 
+[node name="CorridorLight10" parent="Map/Test Area/Corridor Deco/Tiles/DoorEnd" instance=ExtResource("2_ce2an")]
+transform = Transform3D(0.68, -9.63648e-08, -1.08074e-08, 5.1483e-08, 0.5, 0.294449, -4.59416e-08, -0.866025, 0.17, 0, 2.339, -4.183)
+skeleton = NodePath("../../..")
+
+[node name="DoorEnd3" type="MeshInstance3D" parent="Map/Test Area/Corridor Deco/Tiles"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+mesh = ExtResource("14_g64hn")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Test Area/Corridor Deco/Tiles/DoorEnd3"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Test Area/Corridor Deco/Tiles/DoorEnd3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_q1jqh")
+
+[node name="CorridorLight10" parent="Map/Test Area/Corridor Deco/Tiles/DoorEnd3" instance=ExtResource("2_ce2an")]
+transform = Transform3D(0.68, -9.63648e-08, -1.08074e-08, 5.1483e-08, 0.5, 0.294449, -4.59416e-08, -0.866025, 0.17, 0, 2.339, -4.183)
+skeleton = NodePath("../../..")
+
 [node name="DoorEnd2" type="MeshInstance3D" parent="Map/Test Area/Corridor Deco/Tiles"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 0, 15.5)
 mesh = ExtResource("14_g64hn")
@@ -423,11 +447,26 @@ visible = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Test Area/Corridor Deco/Tiles/DoorEnd2/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_133be")
 
+[node name="CorridorLight11" parent="Map/Test Area/Corridor Deco/Tiles/DoorEnd2" instance=ExtResource("2_ce2an")]
+transform = Transform3D(0.68, 0, 0, 0, 0.5, 0.294449, 0, -0.866025, 0.17, 0, 2.339, -4.183)
+skeleton = NodePath("../../..")
+
 [node name="interactable_door" parent="Map/Test Area/Corridor Deco/Tiles" instance=ExtResource("15_7ybbe")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24, 0, 11)
+
+[node name="DoorEnd4" type="MeshInstance3D" parent="Map/Test Area/Corridor Deco/Tiles"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9, 0, 0)
+mesh = ExtResource("14_g64hn")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/Test Area/Corridor Deco/Tiles/DoorEnd4"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/Test Area/Corridor Deco/Tiles/DoorEnd4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_133be")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Map"]
 environment = SubResource("Environment_wxb1m")
 camera_attributes = SubResource("CameraAttributesPractical_rfr4q")
 
-[editable path="Character"]
+[editable path="Player"]

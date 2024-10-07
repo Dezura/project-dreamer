@@ -9,6 +9,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	test.visible = is_colliding()
-	if Input.is_action_just_pressed("Interact"):
-		pass
+	if get_collider() != null:
+		if get_collider().owner.interactable:
+			test.visible = true
+			if Input.is_action_just_pressed("Interact"):
+				if (get_collider() != null):
+					get_collider().get_node("../").emit_signal("activated")
+		else:
+			test.visible = false
+	else:
+		test.visible = false
