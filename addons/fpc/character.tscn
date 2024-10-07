@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://cc1m2a1obsyn4"]
+[gd_scene load_steps=22 format=3 uid="uid://cc1m2a1obsyn4"]
 
 [ext_resource type="Script" path="res://addons/fpc/character.gd" id="1_0t4e8"]
+[ext_resource type="Script" path="res://Common/raycastInteract.gd" id="2_i7tdh"]
 [ext_resource type="Script" path="res://addons/fpc/EditorModule.gd" id="3_v3ckk"]
 [ext_resource type="Script" path="res://addons/fpc/debug.gd" id="3_x1wcc"]
 
@@ -340,6 +341,15 @@ libraries = {
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 0)
 
+[node name="RayCast3D" type="RayCast3D" parent="Head" node_paths=PackedStringArray("test")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+exclude_parent = false
+target_position = Vector3(0, -2, 0)
+collide_with_areas = true
+collide_with_bodies = false
+script = ExtResource("2_i7tdh")
+test = NodePath("../../UserInterface/Label")
+
 [node name="Camera" type="Camera3D" parent="Head"]
 fov = 120.0
 
@@ -384,6 +394,21 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UserInterface/DebugPanel/MarginContainer"]
 layout_mode = 2
+
+[node name="Label" type="Label" parent="UserInterface"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = -23.0
+offset_right = 70.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Press E to interact"
 
 [node name="CrouchCeilingDetection" type="ShapeCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
