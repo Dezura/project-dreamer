@@ -19,7 +19,7 @@ func _on_activated() -> void:
 	g.player.get_node("UserInterface").visible = false
 	g.player.immobile = true
 	
-	await get_tree().create_timer(0.45).timeout
+	await get_tree().create_timer(0.75).timeout
 	$AnimationPlayer.play("drift_camera")
 
 func _teleport_player() -> void:
