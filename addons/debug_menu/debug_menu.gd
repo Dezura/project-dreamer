@@ -169,13 +169,13 @@ func update_settings_label() -> void:
 	# The size of the viewport rendering, which determines which resolution 3D is rendered at.
 	var viewport_render_size := Vector2i()
 
-	if viewport.content_scale_mode == Window.CONTENT_SCALE_MODE_VIEWPORT:
-		viewport_render_size = viewport.get_visible_rect().size
-		settings.text += "Viewport: %d×%d, Window: %d×%d\n" % [viewport.get_visible_rect().size.x, viewport.get_visible_rect().size.y, viewport.size.x, viewport.size.y]
-	else:
-		# Window size matches viewport size.
-		viewport_render_size = viewport.size
-		settings.text += "Viewport: %d×%d\n" % [viewport.size.x, viewport.size.y]
+	#if viewport.content_scale_mode == Window.CONTENT_SCALE_MODE_VIEWPORT:
+		#viewport_render_size = viewport.get_visible_rect().size
+		#settings.text += "Viewport: %d×%d, Window: %d×%d\n" % [viewport.get_visible_rect().size.x, viewport.get_visible_rect().size.y, viewport.size.x, viewport.size.y]
+	#else:
+		## Window size matches viewport size.
+		#viewport_render_size = viewport.size
+		#settings.text += "Viewport: %d×%d\n" % [viewport.size.x, viewport.size.y]
 
 	# Display 3D settings only if relevant.
 	if viewport.get_camera_3d():

@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://ctcx42m5sek14"]
 
-[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://addons/fpc/character.tscn" id="1_677kc"]
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://Entities/Player/character.tscn" id="1_677kc"]
 [ext_resource type="PackedScene" uid="uid://nflnwcnlqyrs" path="res://Environment/Research_Base/Corridors/Prefabs/straight_corridor.tscn" id="11_bc1k0"]
 [ext_resource type="Texture2D" uid="uid://dh01y6sna4170" path="res://Environment/Prototype_Pieces/map2.png" id="13_c2hxh"]
 

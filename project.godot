@@ -11,25 +11,29 @@ config_version=5
 [application]
 
 config/name="project-dreamer"
-run/main_scene="res://Environment/Game World.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+run/main_scene="res://Environment/Test World.tscn"
+config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Toolkit="*res://addons/godottoolkit/toolkit.gd"
 DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
-g="*res://Misc/globals.gd"
+g="*res://Misc/Globals.gd"
 
 [display]
 
+window/size/viewport_width=640
+window/size/viewport_height=420
 window/size/window_width_override=1152
 window/size/window_height_override=648
+window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/extra_snaps/plugin.cfg", "res://addons/godottoolkit/plugin.cfg")
+enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/extra_snaps/plugin.cfg", "res://addons/godottoolkit/plugin.cfg", "res://addons/scene-library/plugin.cfg")
 
 [file_customization]
 
@@ -38,7 +42,63 @@ folder_colors={
 "res://Common/": "blue",
 "res://Entities/": "red",
 "res://Environment/": "teal",
+"res://Environment/Post Processing/": "purple",
+"res://Environment/Research_Base/Interactable/": "red",
+"res://Environment/Research_Base/Interactable/Items/": "yellow",
+"res://Textures/": "pink",
 "res://addons/": "gray"
+}
+
+[importer_defaults]
+
+scene={
+"_subresources": {
+"materials": {
+"Corridor": {
+"use_external/enabled": false,
+"use_external/path": "uid://cor7sf7gl3itm"
+}
+}
+},
+"animation/fps": 30,
+"animation/import": false,
+"animation/import_rest_as_RESET": false,
+"animation/remove_immutable_tracks": true,
+"animation/trimming": false,
+"blender/animation/always_sample": true,
+"blender/animation/group_tracks": true,
+"blender/animation/limit_playback": true,
+"blender/materials/export_materials": 0,
+"blender/materials/unpack_enabled": false,
+"blender/meshes/colors": false,
+"blender/meshes/export_bones_deforming_mesh_only": false,
+"blender/meshes/export_geometry_nodes_instances": false,
+"blender/meshes/normals": true,
+"blender/meshes/skins": 2,
+"blender/meshes/tangents": true,
+"blender/meshes/uvs": true,
+"blender/nodes/active_collection_only": false,
+"blender/nodes/cameras": false,
+"blender/nodes/custom_properties": true,
+"blender/nodes/modifiers": 1,
+"blender/nodes/punctual_lights": false,
+"blender/nodes/visible": 2,
+"gltf/embedded_image_handling": 1,
+"gltf/naming_version": 1,
+"import_script/path": "uid://1km1o4co7dg2",
+"meshes/create_shadow_meshes": true,
+"meshes/ensure_tangents": true,
+"meshes/force_disable_compression": false,
+"meshes/generate_lods": true,
+"meshes/light_baking": 1,
+"meshes/lightmap_texel_size": 0.2,
+"nodes/apply_root_scale": true,
+"nodes/import_as_skeleton_bones": false,
+"nodes/root_name": "",
+"nodes/root_scale": 1.0,
+"nodes/root_type": "",
+"nodes/use_node_type_suffixes": false,
+"skins/use_named_skins": true
 }
 
 [input]
@@ -81,6 +141,11 @@ sprint={
 Interact={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
+"Open Inventory"={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194306,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 

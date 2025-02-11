@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dmfrxhib4a2wx"]
+
+[ext_resource type="Texture2D" uid="uid://bht2he82ykhus" path="res://Textures/Corridor Deco.png" id="1_oknsu"]
+[ext_resource type="Texture2D" uid="uid://yyoh4kej1ki7" path="res://Textures/Corridor.png" id="2_flyhn"]
+
+[resource]
+albedo_texture = ExtResource("2_flyhn")
+metallic_specular = 0.0
+roughness = 0.0
+emission = Color(0.289872, 0.515853, 0.800904, 1)
+emission_energy_multiplier = 8.0
+emission_operator = 1
+emission_texture = ExtResource("1_oknsu")
+texture_filter = 0

@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=4 uid="uid://dkc0vfyb80dis"]
+
+[ext_resource type="Material" uid="uid://b5cpyej2ocyd3" path="res://Textures/Corridor Deco.tres" id="1_64p0h"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_64p0h"]
+_surfaces = [{
+"aabb": AABB(-1.75, 0, -0.1875, 3.5, 0.0625, 0.375),
+"format": 34359742465,
+"index_count": 84,
+"index_data": PackedByteArray("CAAOAA8ACAAMAA4ABwAIAA8ADAAQAA4ADAANABAADgAQABEADQARABAADgARAA8ADQALABEACwAJABEADwARAAkACwAKAAkABwAPAAYADwAJAAYABQAHAAYACgASAAkABgAJABIACgAEABIABQAGAAAABgASAAAAAwAFAAAABAATABIAAAASABMABAABABMAAwAAAAIAAQADAAIAAAATAAIAAQACABMA"),
+"lods": [0.0486678, PackedByteArray("AAABAAIAAQADAAIAAwAAAAIAAAAEAAEAAwAFAAAABQAGAAAABgAEAAAABQAHAAYABwAIAAYABgAJAAQACAAJAAYACgAEAAkACwAKAAkACAALAAkADAALAAgADAANAAsA")],
+"name": "Corridor Deco",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("AABgvwAAgD0AAAC+AADgvwAAAAAAAEA+AADgvwAAgD0AAAC+AADgvwAAAAAAAEC+AABgvwAAAAAAAEA+AABgvwAAAAAAAEC+AAAAAAAAgD0AAAC+AAAAAAAAAAAAAEC+AABgPwAAAAAAAEC+AAAAAAAAgD0AAAA+AAAAAAAAAAAAAEA+AABgPwAAAAAAAEA+AADgPwAAAAAAAEC+AADgPwAAAAAAAEA+AADgPwAAgD0AAAC+AABgPwAAgD0AAAC+AADgPwAAgD0AAAA+AABgPwAAgD0AAAA+AABgvwAAgD0AAAA+AADgvwAAgD0AAAA+")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dkne7"]
+resource_name = "floor_rail_floor_rail"
+_surfaces = [{
+"aabb": AABB(-1.75, 0, -0.1875, 3.5, 0.0625, 0.375),
+"attribute_data": PackedByteArray("qKoaPsBgpjyAqqo7+P+fPYCqqjvgYKY8qKoaPvj/nz2Aqqo7gKqqO6iqGj6Aqqo7qKoaPgCqqjuAqqo7+P+fPYCqqjuAqqo7qKoaPvj/nz2oqho+gKqqO4CqqjtwEoE9gKqqO+BgpjyAqqo7gKqqO6iqGj74/589gKqqO/j/nz2oqho+wGCmPICqqjv4/589gKqqO+BgpjyAqqo7gKqqO6aqGj6Aqqo7qKoaPnASgT2oqho++P+fPYCqqjv4/589gKqqO4CqqjuAqqo74GCmPKiqGj7AYKY8gKqqO8BgpjyAqqo7cBKBPaiqGj5wEoE9qKoaPsBgpjyAqqo7cBKBPYCqqjvgYKY8qKoaPnASgT2oqho+wGCmPICqqjtwEoE9gKqqO8Bgpjyoqho+aBKBPaiqGj7AYKY8gKqqO3ASgT2Aqqo74GCmPKiqGj5wEoE9qKoaPsBgpjyAqqo7cBKBPYCqqjvgYKY8qKoaPnASgT2Aqqo7cBKBPaiqGj5oEoE9qKoaPnASgT2Aqqo7cBKBPaiqGj7AYKY8gKqqO3ASgT2oqho+AKqqO6iqGj5oEoE9qKoaPsBgpjyoqho++P+fPQ=="),
+"format": 34359742487,
+"index_count": 84,
+"index_data": PackedByteArray("CAAaABsACAAGABoAAwAcAB0AAwABABwAHgAfACAAHgAhAB8AIgAjACQAIgAlACMAJgAnACgAJgApACcAKgArACwAKgAtACsACQAuAC8ACQAHAC4ADgALADAADgAPAAsAFgAxABUAFgARADEABAAAAAIABAAFAAAAEwAQABIAEwAUABAADQAyAAwADQAKADIAFwAZADMAFwAYABkANAA1ADYANAA3ADUA"),
+"lods": [0.0486678, PackedByteArray("AAABAAIAAAADAAEABAAAAAIABAAFAAAABgAHAAgABgAJAAcACgALAAwADQAKAAwACgAOAAsADgAPAAsAEAARABIAEwAQABIAEwAUABAAEAAVABEAFgARABUAFwAYABkA")],
+"material": ExtResource("1_64p0h"),
+"name": "Corridor Deco",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 56,
+"vertex_data": PackedByteArray("AABgvwAAgD0AAAC+AADgvwAAAAAAAEA+AADgvwAAgD0AAAC+AABgvwAAAAAAAEA+AADgvwAAAAAAAEC+AABgvwAAAAAAAEC+AADgPwAAAAAAAEC+AABgPwAAAAAAAEA+AABgPwAAAAAAAEC+AADgPwAAAAAAAEA+AABgPwAAAAAAAEC+AAAAAAAAgD0AAAA+AAAAAAAAgD0AAAC+AAAAAAAAAAAAAEC+AABgPwAAAAAAAEA+AAAAAAAAAAAAAEA+AAAAAAAAgD0AAAC+AABgvwAAAAAAAEA+AABgvwAAgD0AAAC+AABgvwAAAAAAAEC+AAAAAAAAAAAAAEC+AAAAAAAAgD0AAAA+AAAAAAAAAAAAAEA+AADgvwAAAAAAAEA+AADgvwAAAAAAAEC+AADgvwAAgD0AAAC+AADgPwAAgD0AAAC+AABgPwAAgD0AAAC+AADgvwAAgD0AAAA+AABgvwAAgD0AAAA+AABgvwAAgD0AAAC+AADgvwAAgD0AAAA+AADgvwAAgD0AAAC+AABgvwAAgD0AAAA+AADgPwAAgD0AAAC+AABgPwAAgD0AAAA+AABgPwAAgD0AAAC+AADgPwAAgD0AAAA+AABgPwAAgD0AAAC+AAAAAAAAgD0AAAA+AAAAAAAAgD0AAAC+AABgPwAAgD0AAAA+AAAAAAAAgD0AAAC+AABgvwAAgD0AAAA+AABgvwAAgD0AAAC+AAAAAAAAgD0AAAA+AABgPwAAgD0AAAA+AADgPwAAgD0AAAA+AABgPwAAgD0AAAA+AABgvwAAgD0AAAA+AABgPwAAgD0AAAC+AADgvwAAgD0AAAA+AADgPwAAAAAAAEC+AADgPwAAgD0AAAA+AADgPwAAgD0AAAC+AADgPwAAAAAAAEA+/7///////7//f/+/////v/+////+//+//3//v////7//v////v//v/+///////+//7////7//7//f/+/////v/+///////+//3//v/7//7//v///////v/9//7////+//7////7//7//v////v//v/9//7////+//3//v////7//v///////v/9//7////+//7////7//7//v////v//v/+///////+//3//v////7//f/+/////vwAA/3////+/AAD/f////78AAP9/////v/+////+//+//7///////7//f/+/////v/9//7////+//3///////7//f////v//v/9////+//+//3///////7//f////v//v/9///////+//3///////7//f////v//v/9///////+//3////7//7//f////v//v/9///////+//3///////7//f////v//v/9////+//+//3///////7//f/+/////v/9//7/+//+//3//v////7//f/+/////v/+///////+/AAD/f////7////9/////v////3////+/////f////7////9/////vw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_64p0h")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3yr3k"]
+data = PackedVector3Array(0.875, 0, -0.1875, 1.75, 0.0625, -0.125, 0.875, 0.0625, -0.125, 0.875, 0, -0.1875, 1.75, 0, -0.1875, 1.75, 0.0625, -0.125, -0.875, 0, 0.1875, -1.75, 0.0625, 0.125, -0.875, 0.0625, 0.125, -0.875, 0, 0.1875, -1.75, 0, 0.1875, -1.75, 0.0625, 0.125, -0.875, 0.0625, -0.125, -1.75, 0.0625, 0.125, -1.75, 0.0625, -0.125, -0.875, 0.0625, -0.125, -0.875, 0.0625, 0.125, -1.75, 0.0625, 0.125, 1.75, 0.0625, -0.125, 0.875, 0.0625, 0.125, 0.875, 0.0625, -0.125, 1.75, 0.0625, -0.125, 1.75, 0.0625, 0.125, 0.875, 0.0625, 0.125, 0.875, 0.0625, -0.125, 0, 0.0625, 0.125, 0, 0.0625, -0.125, 0.875, 0.0625, -0.125, 0.875, 0.0625, 0.125, 0, 0.0625, 0.125, 0, 0.0625, -0.125, -0.875, 0.0625, 0.125, -0.875, 0.0625, -0.125, 0, 0.0625, -0.125, 0, 0.0625, 0.125, -0.875, 0.0625, 0.125, 1.75, 0, 0.1875, 0.875, 0.0625, 0.125, 1.75, 0.0625, 0.125, 1.75, 0, 0.1875, 0.875, 0, 0.1875, 0.875, 0.0625, 0.125, 0.875, 0, 0.1875, 0, 0.0625, 0.125, 0.875, 0.0625, 0.125, 0.875, 0, 0.1875, 0, 0, 0.1875, 0, 0.0625, 0.125, 0, 0, 0.1875, -0.875, 0.0625, 0.125, 0, 0.0625, 0.125, 0, 0, 0.1875, -0.875, 0, 0.1875, -0.875, 0.0625, 0.125, -1.75, 0, -0.1875, -0.875, 0.0625, -0.125, -1.75, 0.0625, -0.125, -1.75, 0, -0.1875, -0.875, 0, -0.1875, -0.875, 0.0625, -0.125, -0.875, 0, -0.1875, 0, 0.0625, -0.125, -0.875, 0.0625, -0.125, -0.875, 0, -0.1875, 0, 0, -0.1875, 0, 0.0625, -0.125, 0, 0, -0.1875, 0.875, 0.0625, -0.125, 0, 0.0625, -0.125, 0, 0, -0.1875, 0.875, 0, -0.1875, 0.875, 0.0625, -0.125, -1.75, 0, 0.1875, -1.75, 0.0625, -0.125, -1.75, 0.0625, 0.125, -1.75, 0, 0.1875, -1.75, 0, -0.1875, -1.75, 0.0625, -0.125, 1.75, 0, -0.1875, 1.75, 0.0625, 0.125, 1.75, 0.0625, -0.125, 1.75, 0, -0.1875, 1.75, 0, 0.1875, 1.75, 0.0625, 0.125)
+
+[node name="floor_rail" type="StaticBody3D"]
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_dkne7")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+visible = false
+shape = SubResource("ConcavePolygonShape3D_3yr3k")

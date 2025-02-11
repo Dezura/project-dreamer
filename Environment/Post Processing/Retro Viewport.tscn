@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://fphoh6drefw1"]
+
+[ext_resource type="Shader" uid="uid://b4dhp4wr42co1" path="res://Environment/Post Processing/psx_post_processing.gdshader" id="1_rd5qx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4013k"]
+shader = ExtResource("1_rd5qx")
+shader_parameter/enabled = true
+shader_parameter/dithering = true
+shader_parameter/colors = 14
+shader_parameter/dither_size = 1
+
+[node name="Retro Viewport" type="SubViewportContainer"]
+material = SubResource("ShaderMaterial_4013k")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="."]
+handle_input_locally = false
+size = Vector2i(640, 420)
+render_target_update_mode = 4

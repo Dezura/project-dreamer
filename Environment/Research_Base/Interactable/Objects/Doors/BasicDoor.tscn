@@ -1,0 +1,232 @@
+[gd_scene load_steps=13 format=3 uid="uid://i86xexw7c1xm"]
+
+[ext_resource type="Script" uid="uid://b3yi1j182n28m" path="res://Environment/Research_Base/Interactable/Objects/Doors/BasicDoor.gd" id="1_u56dk"]
+[ext_resource type="ArrayMesh" uid="uid://dwm66hyy1txfw" path="res://Environment/Research_Base/Interactable/Objects/Doors/Models/Twosided_Door_bigside.res" id="2_kumlc"]
+[ext_resource type="ArrayMesh" uid="uid://d13cfwhg2e8q8" path="res://Environment/Research_Base/Interactable/Objects/Doors/Models/Twosided_Door_knob.res" id="3_ioou2"]
+[ext_resource type="ArrayMesh" uid="uid://db7cvstfy4pds" path="res://Environment/Research_Base/Interactable/Objects/Doors/Models/Twosided_Door_smallside.res" id="4_mtvf4"]
+[ext_resource type="Script" uid="uid://deo5jrdtb5a1p" path="res://Common/SimpleMasterAttacher.gd" id="4_vkp7i"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bciq1"]
+data = PackedVector3Array(0.0625, 0, 0.2188, 0.0625, 0.5625, 0.2813, 0.0625, 0.5625, 0.2188, 0.0625, 0, 0.2188, 0.0625, 0, 0.2813, 0.0625, 0.5625, 0.2813, 0.75, 1.9375, 0.2187, 0.0625, 1.375, 0.2188, 0.0625, 1.9375, 0.2188, 0.0625, 1.375, 0.2188, -0.1875, 0.75, 0.2188, -0.1875, 1.1875, 0.2188, 0.0625, 0.5625, 0.2188, 1, 0, 0.2187, 0.0625, 0, 0.2188, 0.0625, 1.375, 0.2188, 0.0625, 0.5625, 0.2188, -0.1875, 0.75, 0.2188, 1, 1.6875, 0.2187, 0.0625, 1.375, 0.2188, 0.75, 1.9375, 0.2187, 0.0625, 0.5625, 0.2188, 1, 1.6875, 0.2187, 1, 0, 0.2187, 0.0625, 1.375, 0.2188, 1, 1.6875, 0.2187, 0.0625, 0.5625, 0.2188, 0.0625, 1.9375, 0.2813, -0.0625, 1.4375, 0.2813, -0.0625, 1.9375, 0.2813, -0.0625, 0.5, 0.2813, 0.0625, 0, 0.2813, -0.0625, 0, 0.2813, 0.0625, 1.375, 0.2813, -0.0625, 1.4375, 0.2813, 0.0625, 1.9375, 0.2813, -0.0625, 0.5, 0.2813, 0.0625, 0.5625, 0.2813, 0.0625, 0, 0.2813, -0.0625, 0.5, 0.2813, -0.1875, 0.75, 0.2813, 0.0625, 0.5625, 0.2813, 0.0625, 1.375, 0.2813, -0.3125, 1.25, 0.2813, -0.0625, 1.4375, 0.2813, -0.1875, 1.1875, 0.2813, -0.3125, 1.25, 0.2813, 0.0625, 1.375, 0.2813, -0.3125, 0.6875, 0.2813, -0.1875, 0.75, 0.2813, -0.0625, 0.5, 0.2813, -0.1875, 0.75, 0.2813, -0.3125, 1.25, 0.2813, -0.1875, 1.1875, 0.2813, -0.3125, 1.25, 0.2813, -0.1875, 0.75, 0.2813, -0.3125, 0.6875, 0.2813, 0.0625, 1.375, 0.2188, 0.0625, 1.9375, 0.2813, 0.0625, 1.9375, 0.2188, 0.0625, 1.375, 0.2188, 0.0625, 1.375, 0.2813, 0.0625, 1.9375, 0.2813, -0.0625, 1.4375, 0, -0.3125, 1.25, 0.2813, -0.3125, 1.25, 0, -0.0625, 1.4375, 0, -0.0625, 1.4375, 0.2813, -0.3125, 1.25, 0.2813, -0.0625, 0.5, 0, -0.0625, 0, 0.2813, -0.0625, 0, 0, -0.0625, 0.5, 0, -0.0625, 0.5, 0.2813, -0.0625, 0, 0.2813, 0.0625, 0.5625, 0.2188, -0.1875, 0.75, 0.2813, -0.1875, 0.75, 0.2188, 0.0625, 0.5625, 0.2188, 0.0625, 0.5625, 0.2813, -0.1875, 0.75, 0.2813, -0.0625, 1.9375, 0, -0.0625, 1.4375, 0.2813, -0.0625, 1.4375, 0, -0.0625, 1.9375, 0, -0.0625, 1.9375, 0.2813, -0.0625, 1.4375, 0.2813, -0.1875, 0.75, 0.2188, -0.1875, 1.1875, 0.2813, -0.1875, 1.1875, 0.2188, -0.1875, 0.75, 0.2188, -0.1875, 0.75, 0.2813, -0.1875, 1.1875, 0.2813, -0.3125, 0.6875, 0, -0.0625, 0.5, 0.2813, -0.0625, 0.5, 0, -0.3125, 0.6875, 0, -0.3125, 0.6875, 0.2813, -0.0625, 0.5, 0.2813, -0.1875, 1.1875, 0.2188, 0.0625, 1.375, 0.2813, 0.0625, 1.375, 0.2188, -0.1875, 1.1875, 0.2188, -0.1875, 1.1875, 0.2813, 0.0625, 1.375, 0.2813, -0.3125, 1.25, 0, -0.3125, 0.6875, 0.2813, -0.3125, 0.6875, 0, -0.3125, 1.25, 0, -0.3125, 1.25, 0.2813, -0.3125, 0.6875, 0.2813, 0.0625, 0, -0.2188, 0.0625, 0.5625, -0.2813, 0.0625, 0, -0.2813, 0.0625, 0, -0.2188, 0.0625, 0.5625, -0.2188, 0.0625, 0.5625, -0.2813, 0.0625, 1.375, -0.2188, 0.75, 1.9375, -0.2187, 0.0625, 1.9375, -0.2188, 0.75, 1.9375, -0.2187, 1, 0, -0.2187, 1, 1.6875, -0.2187, 1, 0, -0.2187, 0.0625, 0.5625, -0.2188, 0.0625, 0, -0.2188, 0.0625, 0.5625, -0.2188, -0.1875, 1.1875, -0.2188, -0.1875, 0.75, -0.2188, 0.0625, 1.375, -0.2188, 1, 0, -0.2187, 0.75, 1.9375, -0.2187, 0.0625, 0.5625, -0.2188, 0.0625, 1.375, -0.2188, -0.1875, 1.1875, -0.2188, 1, 0, -0.2187, 0.0625, 1.375, -0.2188, 0.0625, 0.5625, -0.2188, -0.0625, 1.4375, -0.2813, 0.0625, 1.9375, -0.2813, -0.0625, 1.9375, -0.2813, 0.0625, 0.5625, -0.2813, -0.0625, 0, -0.2813, 0.0625, 0, -0.2813, 0.0625, 0.5625, -0.2813, -0.0625, 0.5, -0.2813, -0.0625, 0, -0.2813, -0.1875, 0.75, -0.2813, -0.0625, 0.5, -0.2813, 0.0625, 0.5625, -0.2813, -0.0625, 1.4375, -0.2813, 0.0625, 1.375, -0.2813, 0.0625, 1.9375, -0.2813, -0.0625, 1.4375, -0.2813, -0.1875, 1.1875, -0.2813, 0.0625, 1.375, -0.2813, -0.1875, 0.75, -0.2813, -0.3125, 0.6875, -0.2813, -0.0625, 0.5, -0.2813, -0.3125, 1.25, -0.2813, -0.1875, 1.1875, -0.2813, -0.0625, 1.4375, -0.2813, -0.1875, 1.1875, -0.2813, -0.3125, 0.6875, -0.2813, -0.1875, 0.75, -0.2813, -0.1875, 1.1875, -0.2813, -0.3125, 1.25, -0.2813, -0.3125, 0.6875, -0.2813, 0.0625, 1.375, -0.2188, 0.0625, 1.9375, -0.2813, 0.0625, 1.375, -0.2813, 0.0625, 1.375, -0.2188, 0.0625, 1.9375, -0.2188, 0.0625, 1.9375, -0.2813, -0.0625, 1.4375, 0, -0.3125, 1.25, -0.2813, -0.0625, 1.4375, -0.2813, -0.0625, 1.4375, 0, -0.3125, 1.25, 0, -0.3125, 1.25, -0.2813, -0.0625, 0.5, 0, -0.0625, 0, -0.2813, -0.0625, 0.5, -0.2813, -0.0625, 0.5, 0, -0.0625, 0, 0, -0.0625, 0, -0.2813, 0.0625, 0.5625, -0.2188, -0.1875, 0.75, -0.2813, 0.0625, 0.5625, -0.2813, 0.0625, 0.5625, -0.2188, -0.1875, 0.75, -0.2188, -0.1875, 0.75, -0.2813, -0.0625, 1.9375, 0, -0.0625, 1.4375, -0.2813, -0.0625, 1.9375, -0.2813, -0.0625, 1.9375, 0, -0.0625, 1.4375, 0, -0.0625, 1.4375, -0.2813, -0.1875, 0.75, -0.2188, -0.1875, 1.1875, -0.2813, -0.1875, 0.75, -0.2813, -0.1875, 0.75, -0.2188, -0.1875, 1.1875, -0.2188, -0.1875, 1.1875, -0.2813, -0.3125, 0.6875, 0, -0.0625, 0.5, -0.2813, -0.3125, 0.6875, -0.2813, -0.3125, 0.6875, 0, -0.0625, 0.5, 0, -0.0625, 0.5, -0.2813, -0.1875, 1.1875, -0.2188, 0.0625, 1.375, -0.2813, -0.1875, 1.1875, -0.2813, -0.1875, 1.1875, -0.2188, 0.0625, 1.375, -0.2188, 0.0625, 1.375, -0.2813, -0.3125, 1.25, 0, -0.3125, 0.6875, -0.2813, -0.3125, 1.25, -0.2813, -0.3125, 1.25, 0, -0.3125, 0.6875, 0, -0.3125, 0.6875, -0.2813)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ikb8n"]
+data = PackedVector3Array(-0.0625, 1.9375, 0.2187, -1, 1.6875, 0.2187, -0.75, 1.9375, 0.2187, -1, 1.6875, 0.2187, -0.0625, 0, 0.2187, -1, 0, 0.2187, -0.0625, 0, 0.2187, -0.3125, 0.6875, 0.2187, -0.0625, 0.5, 0.2187, -0.3125, 1.25, 0.2187, -0.0625, 1.9375, 0.2187, -0.0625, 1.4375, 0.2187, -1, 1.6875, 0.2187, -0.3125, 0.6875, 0.2187, -0.0625, 0, 0.2187, -0.3125, 1.25, 0.2187, -1, 1.6875, 0.2187, -0.0625, 1.9375, 0.2187, -1, 1.6875, 0.2187, -0.3125, 1.25, 0.2187, -0.3125, 0.6875, 0.2187, -1, 1.6875, -0.2049, -0.0625, 1.9375, -0.2049, -0.75, 1.9375, -0.2049, -0.0625, 1.9375, -0.2049, -0.3125, 1.25, -0.2049, -0.0625, 1.4375, -0.2049, -0.3125, 0.6875, -0.2049, -0.0625, 0, -0.2049, -0.0625, 0.5, -0.2049, -1, 1.6875, -0.2049, -0.3125, 1.25, -0.2049, -0.0625, 1.9375, -0.2049, -0.3125, 0.6875, -0.2049, -1, 0, -0.2049, -0.0625, 0, -0.2049, -1, 1.6875, -0.2049, -0.3125, 0.6875, -0.2049, -0.3125, 1.25, -0.2049, -0.3125, 0.6875, -0.2049, -1, 1.6875, -0.2049, -1, 0, -0.2049, -0.0625, 1.9375, 0.2187, -0.0625, 1.4375, -0.2049, -0.0625, 1.4375, 0.2187, -0.0625, 1.9375, 0.2187, -0.0625, 1.9375, -0.2049, -0.0625, 1.4375, -0.2049, -0.0625, 1.4375, 0.2187, -0.3125, 1.25, -0.2049, -0.3125, 1.25, 0.2187, -0.0625, 1.4375, 0.2187, -0.0625, 1.4375, -0.2049, -0.3125, 1.25, -0.2049, -0.3125, 1.25, 0.2187, -0.3125, 0.6875, -0.2049, -0.3125, 0.6875, 0.2187, -0.3125, 1.25, 0.2187, -0.3125, 1.25, -0.2049, -0.3125, 0.6875, -0.2049, -0.3125, 0.6875, 0.2187, -0.0625, 0.5, -0.2049, -0.0625, 0.5, 0.2187, -0.3125, 0.6875, 0.2187, -0.3125, 0.6875, -0.2049, -0.0625, 0.5, -0.2049, -0.0625, 0.5, 0.2187, -0.0625, 0, -0.2049, -0.0625, 0, 0.2187, -0.0625, 0.5, 0.2187, -0.0625, 0.5, -0.2049, -0.0625, 0, -0.2049)
+
+[sub_resource type="Animation" id="Animation_r1vxh"]
+length = 0.001
+step = 0.25
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("big_side")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("big_side/knob:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 1.5708)]
+}
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("small_side")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera Side Pivot/Camera3D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.3, 1.1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera Side Pivot/Camera3D:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1eqd3"]
+resource_name = "door_close"
+step = 0.25
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("big_side")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.25, 1, 0, 0, -1, 0.5, 1, 0, 0, 0, 1, 1, 0, 0, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("small_side")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0.25, 1, 0, 0, 1, 0.5, 1, 0, 0, 0, 1, 1, 0, 0, 0)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("big_side/knob:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.5708)]
+}
+
+[sub_resource type="Animation" id="Animation_67xet"]
+resource_name = "door_open"
+length = 2.5
+step = 0.25
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("big_side")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1.25, 1, 0, 0, 0, 1.5, 1, 0, 0, -1)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("small_side")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1.25, 1, 0, 0, 0, 1.5, 1, 0, 0, 1)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("big_side/knob:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 1.5708), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera Side Pivot/Camera3D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(2, 1.1, 0), Vector3(2, 1.1, 0), Vector3(-0.5, 1.1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mo1je"]
+resource_name = "drift_camera"
+length = 0.3
+step = 0.05
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera Side Pivot/Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [Vector3(2, 1.1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera Side Pivot/Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [Vector3(0, 1.5708, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nr8o5"]
+_data = {
+&"RESET": SubResource("Animation_r1vxh"),
+&"door_close": SubResource("Animation_1eqd3"),
+&"door_open": SubResource("Animation_67xet"),
+&"start_cutscene": SubResource("Animation_mo1je")
+}
+
+[node name="BasicDoor" type="Node3D"]
+script = ExtResource("1_u56dk")
+title = "Basic Door"
+interactionText = "Enter"
+
+[node name="Camera Side Pivot" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Camera Side Pivot"]
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 1.3, 1.1, 0)
+cull_mask = 1048574
+fov = 90.0
+far = 6.0
+
+[node name="big_side" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.78814e-07, 0, 1, 0, 1, 0, -1, 0, 1.78814e-07, 0, 0, 0)
+layers = 3
+mesh = ExtResource("2_kumlc")
+skeleton = NodePath("")
+
+[node name="knob" type="MeshInstance3D" parent="big_side"]
+transform = Transform3D(-3.61999e-06, -1, 0, 1, -3.61999e-06, 0, 0, 0, 1, 0.125, 0.96875, 0)
+layers = 3
+mesh = ExtResource("3_ioou2")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="big_side" node_paths=PackedStringArray("master")]
+visible = false
+script = ExtResource("4_vkp7i")
+master = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="big_side/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_bciq1")
+
+[node name="small_side" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.78814e-07, 0, 1, 0, 1, 0, -1, 0, 1.78814e-07, 0, 0, 0)
+layers = 3
+mesh = ExtResource("4_mtvf4")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="small_side" node_paths=PackedStringArray("master")]
+visible = false
+script = ExtResource("4_vkp7i")
+master = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="small_side/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ikb8n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nr8o5")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
