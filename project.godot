@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="project-dreamer"
-run/main_scene="res://Environment/Test World.tscn"
+run/main_scene="uid://re723q2wgqky"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -33,7 +33,7 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/extra_snaps/plugin.cfg", "res://addons/godottoolkit/plugin.cfg", "res://addons/scene-library/plugin.cfg")
+enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/godottoolkit/plugin.cfg", "res://addons/scene_tools/plugin.cfg")
 
 [file_customization]
 

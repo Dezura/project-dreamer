@@ -13,12 +13,16 @@ func _post_import(scene) -> Object:
 			else:
 				print_rich("[color=red] No existing material under '" + materialName + "' in ./Textures... Leaving field unchanged")
 	
+	# Create a container to set changes into and return at the end
 	var modifiedScene: Node = generate_mesh_scene(scene)
 	
+	# Check if file is under a Models folder, auto prefabs will be made for files in this folder type
 	var prefabPath: String = get_source_file()
 	if prefabPath.split("/")[-2] == "Models":
 		prefabPath = prefabPath.rsplit("/", true, 2)[0]
 		prefabPath += "/" + get_source_file_name() + ".tscn"
+		
+		# Only create a new prefab if a current one doesn't exist
 		if ResourceLoader.exists(prefabPath):
 			print_rich("[color=green]     Found scene exists at \"" + prefabPath + "\", doing magic.")
 		else:
