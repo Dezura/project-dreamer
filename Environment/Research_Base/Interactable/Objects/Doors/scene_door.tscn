@@ -1,0 +1,165 @@
+[gd_scene load_steps=13 format=3 uid="uid://cowxwf163lgcr"]
+
+[ext_resource type="Script" uid="uid://c4apqieaglme1" path="res://Environment/Research_Base/Interactable/Objects/Doors/Door.gd" id="1_nmi42"]
+[ext_resource type="PackedScene" uid="uid://bylgscr7txrbb" path="res://Environment/Research_Base/Interactable/Objects/Doors/door_frame.tscn" id="2_41jkh"]
+[ext_resource type="Material" uid="uid://dro7p4j10m1va" path="res://Textures/interactive_highlight.tres" id="3_nmi42"]
+[ext_resource type="ArrayMesh" uid="uid://dwm66hyy1txfw" path="res://Environment/Research_Base/Interactable/Objects/Doors/Models/Twosided_Door_bigside.res" id="3_pwyb7"]
+[ext_resource type="ArrayMesh" uid="uid://d13cfwhg2e8q8" path="res://Environment/Research_Base/Interactable/Objects/Doors/Models/Twosided_Door_knob.res" id="4_r10q0"]
+[ext_resource type="ArrayMesh" uid="uid://db7cvstfy4pds" path="res://Environment/Research_Base/Interactable/Objects/Doors/Models/Twosided_Door_smallside.res" id="6_e04la"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bciq1"]
+data = PackedVector3Array(0.0625, 0, 0.2188, 0.0625, 0.5625, 0.2813, 0.0625, 0.5625, 0.2188, 0.0625, 0, 0.2188, 0.0625, 0, 0.2813, 0.0625, 0.5625, 0.2813, 0.75, 1.9375, 0.2187, 0.0625, 1.375, 0.2188, 0.0625, 1.9375, 0.2188, 0.0625, 1.375, 0.2188, -0.1875, 0.75, 0.2188, -0.1875, 1.1875, 0.2188, 0.0625, 0.5625, 0.2188, 1, 0, 0.2187, 0.0625, 0, 0.2188, 0.0625, 1.375, 0.2188, 0.0625, 0.5625, 0.2188, -0.1875, 0.75, 0.2188, 1, 1.6875, 0.2187, 0.0625, 1.375, 0.2188, 0.75, 1.9375, 0.2187, 0.0625, 0.5625, 0.2188, 1, 1.6875, 0.2187, 1, 0, 0.2187, 0.0625, 1.375, 0.2188, 1, 1.6875, 0.2187, 0.0625, 0.5625, 0.2188, 0.0625, 1.9375, 0.2813, -0.0625, 1.4375, 0.2813, -0.0625, 1.9375, 0.2813, -0.0625, 0.5, 0.2813, 0.0625, 0, 0.2813, -0.0625, 0, 0.2813, 0.0625, 1.375, 0.2813, -0.0625, 1.4375, 0.2813, 0.0625, 1.9375, 0.2813, -0.0625, 0.5, 0.2813, 0.0625, 0.5625, 0.2813, 0.0625, 0, 0.2813, -0.0625, 0.5, 0.2813, -0.1875, 0.75, 0.2813, 0.0625, 0.5625, 0.2813, 0.0625, 1.375, 0.2813, -0.3125, 1.25, 0.2813, -0.0625, 1.4375, 0.2813, -0.1875, 1.1875, 0.2813, -0.3125, 1.25, 0.2813, 0.0625, 1.375, 0.2813, -0.3125, 0.6875, 0.2813, -0.1875, 0.75, 0.2813, -0.0625, 0.5, 0.2813, -0.1875, 0.75, 0.2813, -0.3125, 1.25, 0.2813, -0.1875, 1.1875, 0.2813, -0.3125, 1.25, 0.2813, -0.1875, 0.75, 0.2813, -0.3125, 0.6875, 0.2813, 0.0625, 1.375, 0.2188, 0.0625, 1.9375, 0.2813, 0.0625, 1.9375, 0.2188, 0.0625, 1.375, 0.2188, 0.0625, 1.375, 0.2813, 0.0625, 1.9375, 0.2813, -0.0625, 1.4375, 0, -0.3125, 1.25, 0.2813, -0.3125, 1.25, 0, -0.0625, 1.4375, 0, -0.0625, 1.4375, 0.2813, -0.3125, 1.25, 0.2813, -0.0625, 0.5, 0, -0.0625, 0, 0.2813, -0.0625, 0, 0, -0.0625, 0.5, 0, -0.0625, 0.5, 0.2813, -0.0625, 0, 0.2813, 0.0625, 0.5625, 0.2188, -0.1875, 0.75, 0.2813, -0.1875, 0.75, 0.2188, 0.0625, 0.5625, 0.2188, 0.0625, 0.5625, 0.2813, -0.1875, 0.75, 0.2813, -0.0625, 1.9375, 0, -0.0625, 1.4375, 0.2813, -0.0625, 1.4375, 0, -0.0625, 1.9375, 0, -0.0625, 1.9375, 0.2813, -0.0625, 1.4375, 0.2813, -0.1875, 0.75, 0.2188, -0.1875, 1.1875, 0.2813, -0.1875, 1.1875, 0.2188, -0.1875, 0.75, 0.2188, -0.1875, 0.75, 0.2813, -0.1875, 1.1875, 0.2813, -0.3125, 0.6875, 0, -0.0625, 0.5, 0.2813, -0.0625, 0.5, 0, -0.3125, 0.6875, 0, -0.3125, 0.6875, 0.2813, -0.0625, 0.5, 0.2813, -0.1875, 1.1875, 0.2188, 0.0625, 1.375, 0.2813, 0.0625, 1.375, 0.2188, -0.1875, 1.1875, 0.2188, -0.1875, 1.1875, 0.2813, 0.0625, 1.375, 0.2813, -0.3125, 1.25, 0, -0.3125, 0.6875, 0.2813, -0.3125, 0.6875, 0, -0.3125, 1.25, 0, -0.3125, 1.25, 0.2813, -0.3125, 0.6875, 0.2813, 0.0625, 0, -0.2188, 0.0625, 0.5625, -0.2813, 0.0625, 0, -0.2813, 0.0625, 0, -0.2188, 0.0625, 0.5625, -0.2188, 0.0625, 0.5625, -0.2813, 0.0625, 1.375, -0.2188, 0.75, 1.9375, -0.2187, 0.0625, 1.9375, -0.2188, 0.75, 1.9375, -0.2187, 1, 0, -0.2187, 1, 1.6875, -0.2187, 1, 0, -0.2187, 0.0625, 0.5625, -0.2188, 0.0625, 0, -0.2188, 0.0625, 0.5625, -0.2188, -0.1875, 1.1875, -0.2188, -0.1875, 0.75, -0.2188, 0.0625, 1.375, -0.2188, 1, 0, -0.2187, 0.75, 1.9375, -0.2187, 0.0625, 0.5625, -0.2188, 0.0625, 1.375, -0.2188, -0.1875, 1.1875, -0.2188, 1, 0, -0.2187, 0.0625, 1.375, -0.2188, 0.0625, 0.5625, -0.2188, -0.0625, 1.4375, -0.2813, 0.0625, 1.9375, -0.2813, -0.0625, 1.9375, -0.2813, 0.0625, 0.5625, -0.2813, -0.0625, 0, -0.2813, 0.0625, 0, -0.2813, 0.0625, 0.5625, -0.2813, -0.0625, 0.5, -0.2813, -0.0625, 0, -0.2813, -0.1875, 0.75, -0.2813, -0.0625, 0.5, -0.2813, 0.0625, 0.5625, -0.2813, -0.0625, 1.4375, -0.2813, 0.0625, 1.375, -0.2813, 0.0625, 1.9375, -0.2813, -0.0625, 1.4375, -0.2813, -0.1875, 1.1875, -0.2813, 0.0625, 1.375, -0.2813, -0.1875, 0.75, -0.2813, -0.3125, 0.6875, -0.2813, -0.0625, 0.5, -0.2813, -0.3125, 1.25, -0.2813, -0.1875, 1.1875, -0.2813, -0.0625, 1.4375, -0.2813, -0.1875, 1.1875, -0.2813, -0.3125, 0.6875, -0.2813, -0.1875, 0.75, -0.2813, -0.1875, 1.1875, -0.2813, -0.3125, 1.25, -0.2813, -0.3125, 0.6875, -0.2813, 0.0625, 1.375, -0.2188, 0.0625, 1.9375, -0.2813, 0.0625, 1.375, -0.2813, 0.0625, 1.375, -0.2188, 0.0625, 1.9375, -0.2188, 0.0625, 1.9375, -0.2813, -0.0625, 1.4375, 0, -0.3125, 1.25, -0.2813, -0.0625, 1.4375, -0.2813, -0.0625, 1.4375, 0, -0.3125, 1.25, 0, -0.3125, 1.25, -0.2813, -0.0625, 0.5, 0, -0.0625, 0, -0.2813, -0.0625, 0.5, -0.2813, -0.0625, 0.5, 0, -0.0625, 0, 0, -0.0625, 0, -0.2813, 0.0625, 0.5625, -0.2188, -0.1875, 0.75, -0.2813, 0.0625, 0.5625, -0.2813, 0.0625, 0.5625, -0.2188, -0.1875, 0.75, -0.2188, -0.1875, 0.75, -0.2813, -0.0625, 1.9375, 0, -0.0625, 1.4375, -0.2813, -0.0625, 1.9375, -0.2813, -0.0625, 1.9375, 0, -0.0625, 1.4375, 0, -0.0625, 1.4375, -0.2813, -0.1875, 0.75, -0.2188, -0.1875, 1.1875, -0.2813, -0.1875, 0.75, -0.2813, -0.1875, 0.75, -0.2188, -0.1875, 1.1875, -0.2188, -0.1875, 1.1875, -0.2813, -0.3125, 0.6875, 0, -0.0625, 0.5, -0.2813, -0.3125, 0.6875, -0.2813, -0.3125, 0.6875, 0, -0.0625, 0.5, 0, -0.0625, 0.5, -0.2813, -0.1875, 1.1875, -0.2188, 0.0625, 1.375, -0.2813, -0.1875, 1.1875, -0.2813, -0.1875, 1.1875, -0.2188, 0.0625, 1.375, -0.2188, 0.0625, 1.375, -0.2813, -0.3125, 1.25, 0, -0.3125, 0.6875, -0.2813, -0.3125, 1.25, -0.2813, -0.3125, 1.25, 0, -0.3125, 0.6875, 0, -0.3125, 0.6875, -0.2813)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ikb8n"]
+data = PackedVector3Array(-0.0625, 1.9375, 0.2187, -1, 1.6875, 0.2187, -0.75, 1.9375, 0.2187, -1, 1.6875, 0.2187, -0.0625, 0, 0.2187, -1, 0, 0.2187, -0.0625, 0, 0.2187, -0.3125, 0.6875, 0.2187, -0.0625, 0.5, 0.2187, -0.3125, 1.25, 0.2187, -0.0625, 1.9375, 0.2187, -0.0625, 1.4375, 0.2187, -1, 1.6875, 0.2187, -0.3125, 0.6875, 0.2187, -0.0625, 0, 0.2187, -0.3125, 1.25, 0.2187, -1, 1.6875, 0.2187, -0.0625, 1.9375, 0.2187, -1, 1.6875, 0.2187, -0.3125, 1.25, 0.2187, -0.3125, 0.6875, 0.2187, -1, 1.6875, -0.2049, -0.0625, 1.9375, -0.2049, -0.75, 1.9375, -0.2049, -0.0625, 1.9375, -0.2049, -0.3125, 1.25, -0.2049, -0.0625, 1.4375, -0.2049, -0.3125, 0.6875, -0.2049, -0.0625, 0, -0.2049, -0.0625, 0.5, -0.2049, -1, 1.6875, -0.2049, -0.3125, 1.25, -0.2049, -0.0625, 1.9375, -0.2049, -0.3125, 0.6875, -0.2049, -1, 0, -0.2049, -0.0625, 0, -0.2049, -1, 1.6875, -0.2049, -0.3125, 0.6875, -0.2049, -0.3125, 1.25, -0.2049, -0.3125, 0.6875, -0.2049, -1, 1.6875, -0.2049, -1, 0, -0.2049, -0.0625, 1.9375, 0.2187, -0.0625, 1.4375, -0.2049, -0.0625, 1.4375, 0.2187, -0.0625, 1.9375, 0.2187, -0.0625, 1.9375, -0.2049, -0.0625, 1.4375, -0.2049, -0.0625, 1.4375, 0.2187, -0.3125, 1.25, -0.2049, -0.3125, 1.25, 0.2187, -0.0625, 1.4375, 0.2187, -0.0625, 1.4375, -0.2049, -0.3125, 1.25, -0.2049, -0.3125, 1.25, 0.2187, -0.3125, 0.6875, -0.2049, -0.3125, 0.6875, 0.2187, -0.3125, 1.25, 0.2187, -0.3125, 1.25, -0.2049, -0.3125, 0.6875, -0.2049, -0.3125, 0.6875, 0.2187, -0.0625, 0.5, -0.2049, -0.0625, 0.5, 0.2187, -0.3125, 0.6875, 0.2187, -0.3125, 0.6875, -0.2049, -0.0625, 0.5, -0.2049, -0.0625, 0.5, 0.2187, -0.0625, 0, -0.2049, -0.0625, 0, 0.2187, -0.0625, 0.5, 0.2187, -0.0625, 0.5, -0.2049, -0.0625, 0, -0.2049)
+
+[sub_resource type="Animation" id="Animation_hp3rc"]
+length = 0.001
+step = 0.25
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("big_side")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("big_side/knob:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 1.5708)]
+}
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("small_side")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_1eqd3"]
+resource_name = "door_close"
+length = 0.75
+step = 0.25
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("big_side")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, -1, 0.25, 1, 0, 0, 0, 0.75, 1, 0, 0, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("small_side")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 1, 0.25, 1, 0, 0, 0, 0.75, 1, 0, 0, 0)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("big_side/knob:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 0.75),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.5708)]
+}
+
+[sub_resource type="Animation" id="Animation_67xet"]
+resource_name = "door_open"
+step = 0.25
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("big_side")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.75, 1, 0, 0, 0, 1, 1, 0, 0, -1)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("small_side")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.75, 1, 0, 0, 0, 1, 1, 0, 0, 1)
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("big_side/knob:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 1.5708), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nr8o5"]
+_data = {
+&"RESET": SubResource("Animation_hp3rc"),
+&"door_close": SubResource("Animation_1eqd3"),
+&"door_open": SubResource("Animation_67xet")
+}
+
+[node name="scene_door" type="Node3D" node_paths=PackedStringArray("_interact_meshes")]
+script = ExtResource("1_nmi42")
+interaction_title = "Door"
+interaction_text = "Open"
+_interact_meshes = [NodePath("big_side"), NodePath("big_side/knob"), NodePath("small_side")]
+
+[node name="door_frame" parent="." instance=ExtResource("2_41jkh")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Mesh" parent="door_frame" index="0"]
+layers = 1
+
+[node name="big_side" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.78814e-07, 0, 1, 0, 1, 0, -1, 0, 1.78814e-07, 0, 0, 0)
+material_overlay = ExtResource("3_nmi42")
+mesh = ExtResource("3_pwyb7")
+skeleton = NodePath("")
+
+[node name="knob" type="MeshInstance3D" parent="big_side"]
+transform = Transform3D(-3.61999e-06, -1, 0, 1, -3.61999e-06, 0, 0, 0, 1, 0.125, 0.96875, 0)
+material_overlay = ExtResource("3_nmi42")
+mesh = ExtResource("4_r10q0")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="big_side"]
+visible = false
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="big_side/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_bciq1")
+
+[node name="small_side" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.78814e-07, 0, 1, 0, 1, 0, -1, 0, 1.78814e-07, 0, 0, 0)
+material_overlay = ExtResource("3_nmi42")
+mesh = ExtResource("6_e04la")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="small_side"]
+visible = false
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="small_side/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ikb8n")
+
+[node name="DoorAnimations" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nr8o5")
+}
+
+[connection signal="animation_finished" from="DoorAnimations" to="." method="_on_door_animation_finished"]
+
+[editable path="door_frame"]

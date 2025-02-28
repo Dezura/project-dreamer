@@ -13,7 +13,6 @@ func _post_import(scene) -> Object:
 			else:
 				print_rich("[color=red] No existing material under '" + materialName + "' in ./Textures... Leaving field unchanged")
 	
-	# Create a container to set changes into and return at the end
 	var modifiedScene: Node = generate_mesh_scene(scene)
 	
 	# Check if file is under a Models folder, auto prefabs will be made for files in this folder type
@@ -28,26 +27,42 @@ func _post_import(scene) -> Object:
 		else:
 			print_rich("[color=cyan]     No scene exists at \"" + prefabPath + "\", creating new file.")
 			
-			var newPrefabRoot := StaticBody3D.new()
+			# Empty StaticBody3D as root for prefab
+			var newPrefabRoot: Node3D = StaticBody3D.new()
 			newPrefabRoot.name = get_source_file_name()
 			
-			var newMeshInstance: MeshInstance3D = modifiedScene.duplicate()
-			newPrefabRoot.add_child(newMeshInstance)
-			newMeshInstance.owner = newPrefabRoot
-			newMeshInstance.name = "Mesh"
+			match modifiedScene.get_class():
+				"MeshInstance3D":
+					var newMeshInstance: MeshInstance3D = modifiedScene.duplicate()
+					newPrefabRoot.add_child(newMeshInstance)
+					newMeshInstance.owner = newPrefabRoot
+					newMeshInstance.name = "Mesh"
+					
+					newMeshInstance.create_trimesh_collision()
+					var meshCollision: CollisionShape3D = newMeshInstance.get_child(0).get_child(0)
+					newMeshInstance.get_child(0).remove_child(meshCollision)
+					meshCollision.owner = null
+					newPrefabRoot.add_child(meshCollision)
+					meshCollision.owner = newPrefabRoot
+					meshCollision.visible = false
+					newMeshInstance.get_child(0).free()
+				"Node3D":
+					var modelNodesRoot: Node3D = modifiedScene.duplicate()
+					# Remove unnecessary empty roots
+					if modelNodesRoot.get_child_count() == 1 and modelNodesRoot.get_child(0).is_class("Node3D"):
+						for child in modelNodesRoot.get_child(0).get_children():
+							add_distant_child(child, newPrefabRoot)
+					else:
+						print_rich("[color=red]     Scene processing error, no new file will be generated.")
+				# Default to this if can't recognize scene root
+				_:
+					print_rich("[color=red]     Scene processing error, no new file will be generated.")
 			
-			newMeshInstance.create_trimesh_collision()
-			var meshCollision: CollisionShape3D = newMeshInstance.get_child(0).get_child(0)
-			newMeshInstance.get_child(0).remove_child(meshCollision)
-			meshCollision.owner = null
-			newPrefabRoot.add_child(meshCollision)
-			meshCollision.owner = newPrefabRoot
-			meshCollision.visible = false
-			newMeshInstance.get_child(0).free()
-			
+			# Pack generated prefab scene and check if good to save
 			var savedPrefab = PackedScene.new()
 			var result = savedPrefab.pack(newPrefabRoot)
 			if result == OK:
+				# Save to file
 				var error = ResourceSaver.save(savedPrefab, prefabPath)
 				if error != OK:
 					push_error(("An error occurred while saving the scene to disk."))
@@ -119,3 +134,11 @@ func set_children_owner(node, owner):
 	for n in node.get_children():
 		n.owner = owner
 		set_children_owner(n, owner)
+
+func add_distant_child(node, owner):
+	if node.get_parent() != null:
+		node.get_parent().remove_child(node)
+	node.owner = null
+	owner.add_child(node)
+	node.owner = owner
+	set_children_owner(node, owner)

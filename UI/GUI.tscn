@@ -1,10 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://dhikqgv1exdfa"]
+[gd_scene load_steps=12 format=3 uid="uid://dhikqgv1exdfa"]
 
 [ext_resource type="Script" uid="uid://icu036qyx44q" path="res://UI/GUI.gd" id="1_plgwl"]
 [ext_resource type="Shader" uid="uid://dhvq7ujahyg5d" path="res://Environment/Post Processing/screen_vhs_shader.gdshader" id="1_wjkhb"]
-[ext_resource type="Script" uid="uid://df88h2hh86lk5" path="res://UI/InventoryManager.gd" id="3_ffukj"]
-[ext_resource type="Script" uid="uid://cqkf0aijcej0c" path="res://Environment/Research_Base/Interactable/Items/ItemResource.gd" id="4_u703e"]
-[ext_resource type="Resource" uid="uid://b1jvb3meaf6c3" path="res://Environment/Research_Base/Interactable/Items/Misc/FunCube/FunCube.tres" id="5_sf8lx"]
+[ext_resource type="Script" uid="uid://df88h2hh86lk5" path="res://UI/InventoryUI.gd" id="3_ffukj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2h5bw"]
 shader = ExtResource("1_wjkhb")
@@ -27,8 +25,8 @@ shader_parameter/brightness = 1.3
 shader_parameter/discolor = false
 shader_parameter/warp_amount = 0.0
 shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.25
-shader_parameter/vignette_opacity = 0.8
+shader_parameter/vignette_intensity = 0.05
+shader_parameter/vignette_opacity = 0.7
 
 [sub_resource type="Animation" id="Animation_p5bn2"]
 length = 0.001
@@ -81,7 +79,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_l60vi"]
 resource_name = "fade_out"
-length = 0.8
+length = 0.6
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -90,7 +88,7 @@ tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.8),
+"times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
@@ -108,9 +106,8 @@ _data = {
 font_size = 10
 shadow_color = Color(0, 0, 0, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_r7ify"]
-font_size = 20
-shadow_color = Color(0, 0, 0, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dl5f7"]
+bg_color = Color(0, 0, 0, 0.470588)
 
 [node name="GUI" type="Control" node_paths=PackedStringArray("interfaceElements")]
 layout_mode = 3
@@ -133,6 +130,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="BlackscreenCover" type="ColorRect" parent="."]
 top_level = true
@@ -143,6 +141,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
 [node name="FadeAnimation" type="AnimationPlayer" parent="BlackscreenCover"]
@@ -157,6 +156,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Reticle" type="CenterContainer" parent="HUD"]
 layout_mode = 1
@@ -190,6 +190,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="ObjectTitle" type="Label" parent="HUD/Interaction UI"]
 layout_mode = 1
@@ -254,7 +255,7 @@ text = "[E] Interact"
 label_settings = SubResource("LabelSettings_1ry3x")
 vertical_alignment = 2
 
-[node name="Inventory" type="Control" parent="."]
+[node name="Inventory" type="Panel" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -262,46 +263,28 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dl5f7")
 script = ExtResource("3_ffukj")
-itemDatabase = Dictionary[String, ExtResource("4_u703e")]({
-"fun_cube": ExtResource("5_sf8lx")
-})
 
-[node name="ColorRect" type="ColorRect" parent="Inventory"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Inventory"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
 anchor_bottom = 1.0
+offset_left = -106.0
+offset_top = 90.0
+offset_right = 106.0
+offset_bottom = -90.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.862745)
 
-[node name="Label" type="Label" parent="Inventory"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -108.0
-offset_right = 108.0
-offset_bottom = 57.0
-grow_horizontal = 2
-text = "Inventory"
-label_settings = SubResource("LabelSettings_r7ify")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+alignment = 1
 
-[node name="TempItemDisplay" type="RichTextLabel" parent="Inventory"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -125.0
-offset_right = 250.0
-offset_bottom = 125.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 12
-shortcut_keys_enabled = false
+[node name="Button" type="Button" parent="Inventory/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Green Keycard"

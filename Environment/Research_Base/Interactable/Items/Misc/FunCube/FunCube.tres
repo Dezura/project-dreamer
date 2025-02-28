@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_rlj6f")
 identifer = "fun_cube"
-visualName = "Fun Cube"
+visual_name = "Fun Cube"
 description = "A very thoughtful cube indeed, it's pretty cool."
 stackable = true
 maxStackSize = 5

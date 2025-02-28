@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://d24sskc1tsf1y"]
+
+[ext_resource type="Shader" uid="uid://do7an2283qlte" path="res://Textures/spatial_outline.gdshader" id="1_vj4wk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vj4wk"]
+render_priority = 0
+shader = ExtResource("1_vj4wk")
+shader_parameter/outline_color = Color(1, 0, 0, 1)
+shader_parameter/outline_width = 6.9
+shader_parameter/constant_width = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cudsb"]
+next_pass = SubResource("ShaderMaterial_vj4wk")
+
+[sub_resource type="BoxMesh" id="BoxMesh_cudsb"]
+material = SubResource("StandardMaterial3D_cudsb")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_cudsb")

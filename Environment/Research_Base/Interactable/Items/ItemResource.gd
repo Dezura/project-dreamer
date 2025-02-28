@@ -2,7 +2,7 @@ class_name ItemResource
 extends Resource
 
 @export_placeholder("Identifier") var identifer: String
-@export_placeholder("Enter UI name here") var visualName: String
+@export_placeholder("Enter UI name here") var visual_name: String
 @export_multiline var description: String
 @export_category(" ")
 @export var stackable := false

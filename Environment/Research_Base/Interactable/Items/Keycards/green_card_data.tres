@@ -40,10 +40,10 @@ shadow_mesh = SubResource("ArrayMesh_hixeb")
 [resource]
 script = ExtResource("1_yhci8")
 identifer = "green_card"
-visualName = "Green Card"
+visual_name = "Green Card"
 description = "This keycard might open something... It's pretty low level"
 stackable = false
 maxStackSize = 1
 type = 0
 mesh = SubResource("ArrayMesh_7fo8q")
-metadata/_custom_type_script = ExtResource("1_yhci8")
+metadata/_custom_type_script = "uid://cqkf0aijcej0c"

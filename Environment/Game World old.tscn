@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://vnp01ntnn2tf"]
 
-[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://Entities/Player/character.tscn" id="1_ntj2i"]
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://Entities/Protagonist/Protagonist.tscn" id="1_ntj2i"]
 [ext_resource type="Texture2D" uid="uid://dh01y6sna4170" path="res://Assets/map2.png" id="2_gaaea"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ibme6"]
