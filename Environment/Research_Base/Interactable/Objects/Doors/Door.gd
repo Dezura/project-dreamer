@@ -9,9 +9,9 @@ var _is_opened : bool = false
 func _ready() -> void:
 	super()
 	
-	_highlight_values[HighlightState.PASSIVE_RANGE].highlight_opacity /= 2
-	_highlight_values[HighlightState.PASSIVE_RANGE].outline_opacity /= 6.0
-	_highlight_values[HighlightState.ACTIVE_SELECT].outline_opacity /= 1.5
+	_highlight_values[HighlightState.PASSIVE_RANGE].highlight_opacity /= 2.0
+	_highlight_values[HighlightState.PASSIVE_RANGE].outline_opacity /= 8.0
+	_highlight_values[HighlightState.ACTIVE_SELECT].outline_opacity /= 2.5
 
 func _process(delta: float) -> void:
 	super(delta)

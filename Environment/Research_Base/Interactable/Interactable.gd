@@ -14,7 +14,7 @@ var currently_selected : bool = false
 @export_category("")
 
 var _player_is_in_radius : bool = false
-var _player_radius_distance := 4.0
+var _player_radius_distance := 3.0
 @export var _interact_meshes : Array[MeshInstance3D]
 
 enum HighlightState {
@@ -40,7 +40,7 @@ var _highlight_values : Dictionary = {
 		"enabled": true,
 		"color": Color.WHITE,
 		"outline_enabled": true,
-		"highlight_opacity": 0.06,
+		"highlight_opacity": 0.02,
 		"outline_opacity": 0.2
 	},
 	HighlightState.NEUTRAL: {

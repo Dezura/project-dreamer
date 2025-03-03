@@ -1,6 +1,5 @@
-[gd_scene load_steps=23 format=4 uid="uid://re723q2wgqky"]
+[gd_scene load_steps=21 format=4 uid="uid://re723q2wgqky"]
 
-[ext_resource type="Shader" uid="uid://b4dhp4wr42co1" path="res://Environment/Post Processing/psx_post_processing.gdshader" id="1_613un"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://Entities/Protagonist/Protagonist.tscn" id="1_677kc"]
 [ext_resource type="PackedScene" uid="uid://cowxwf163lgcr" path="res://Environment/Research_Base/Interactable/Objects/Doors/scene_door.tscn" id="4_372r3"]
 [ext_resource type="PackedScene" uid="uid://i86xexw7c1xm" path="res://Environment/Research_Base/Interactable/Objects/Doors/cutscene_door.tscn" id="4_613un"]
@@ -16,29 +15,23 @@
 [ext_resource type="PackedScene" uid="uid://7gd5rl4uux62" path="res://Environment/Research_Base/Rooms/s9-hall.tscn" id="13_qfpw3"]
 [ext_resource type="PackedScene" uid="uid://bpxmp3ny6cgwe" path="res://Environment/Research_Base/Interactable/Items/Misc/FunCube/fun_cube.tscn" id="15_372r3"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4013k"]
-shader = ExtResource("1_613un")
-shader_parameter/enabled = true
-shader_parameter/dithering = true
-shader_parameter/colors = 14
-shader_parameter/dither_size = 1
-
 [sub_resource type="Environment" id="Environment_0pvlj"]
 background_mode = 1
 ambient_light_source = 2
-ambient_light_color = Color(0.08, 0.11, 0.2, 1)
+ambient_light_color = Color(0.12, 0.14, 0.2, 1)
 ambient_light_energy = 0.2
 reflected_light_source = 1
-tonemap_mode = 2
+tonemap_mode = 3
 ssil_radius = 6.0
 ssil_sharpness = 0.0
 ssil_normal_rejection = 0.0
 glow_enabled = true
 glow_intensity = 2.0
 glow_strength = 0.75
+glow_bloom = 0.3
 adjustment_enabled = true
-adjustment_contrast = 1.02
-adjustment_saturation = 1.1
+adjustment_contrast = 0.98
+adjustment_saturation = 0.95
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_rfr4q"]
 
@@ -112,27 +105,11 @@ shadow_mesh = SubResource("ArrayMesh_lnhar")
 
 [node name="World" type="Node3D"]
 
-[node name="Retro Viewport" type="SubViewportContainer" parent="."]
-material = SubResource("ShaderMaterial_4013k")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch = true
-
-[node name="SubViewport" type="SubViewport" parent="Retro Viewport"]
-handle_input_locally = false
-msaa_3d = 1
-physics_object_picking = true
-size = Vector2i(640, 420)
-render_target_update_mode = 4
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Retro Viewport/SubViewport"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0pvlj")
 camera_attributes = SubResource("CameraAttributesPractical_rfr4q")
 
-[node name="Player" parent="Retro Viewport/SubViewport" instance=ExtResource("1_677kc")]
+[node name="Player" parent="." instance=ExtResource("1_677kc")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.327703, 0)
 base_speed = 2.7
 sprint_speed = 3.9
@@ -144,7 +121,7 @@ RIGHT = "moveRight"
 FORWARD = "moveForward"
 BACKWARD = "moveBackward"
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Retro Viewport/SubViewport/Player"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.89509, 0)
 layers = 3
 light_color = Color(0.1, 0.175, 0.2, 1)
@@ -153,119 +130,131 @@ shadow_enabled = true
 omni_range = 10.0
 omni_attenuation = 0.0
 
-[node name="map" type="Node3D" parent="Retro Viewport/SubViewport"]
+[node name="map" type="Node3D" parent="."]
 
-[node name="doorways" type="Node3D" parent="Retro Viewport/SubViewport/map"]
+[node name="doorways" type="Node3D" parent="map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.15256e-07)
 
-[node name="basic_door#1" parent="Retro Viewport/SubViewport/map/doorways" node_paths=PackedStringArray("connectedRoomA", "connectedRoomB") instance=ExtResource("4_613un")]
-transform = Transform3D(4.4505e-07, 0, 1, 0, 1, 0, -1, 0, 4.4505e-07, -5.13609e-07, 0, 11.75)
-connectedRoomA = NodePath("../../sector_1/s1-room")
-connectedRoomB = NodePath("../../sector_1-closet/s3-room")
-
-[node name="basic_door#2" parent="Retro Viewport/SubViewport/map/doorways" node_paths=PackedStringArray("connectedRoomA", "connectedRoomB") instance=ExtResource("4_613un")]
+[node name="basic_door#2" parent="map/doorways" node_paths=PackedStringArray("connectedRoomA", "connectedRoomB") instance=ExtResource("4_613un")]
 transform = Transform3D(4.4505e-07, 0, 1, 0, 1, 0, -1, 0, 4.4505e-07, 3, 0, 21.75)
 connectedRoomA = NodePath("../../sector_1-closet/s3-room")
 connectedRoomB = NodePath("../../hallway_a/s8-hall")
 
-[node name="basic_door#3" parent="Retro Viewport/SubViewport/map/doorways" node_paths=PackedStringArray("connectedRoomA", "connectedRoomB") instance=ExtResource("4_613un")]
+[node name="basic_door#3" parent="map/doorways" node_paths=PackedStringArray("connectedRoomA", "connectedRoomB") instance=ExtResource("4_613un")]
 transform = Transform3D(4.4505e-07, 0, 1, 0, 1, 0, -1, 0, 4.4505e-07, 15.5, 0, 21.75)
 connectedRoomA = NodePath("../../sector_1/s2-room")
 connectedRoomB = NodePath("../../hallway_a/s8-hall")
 
-[node name="scene_door#1" parent="Retro Viewport/SubViewport/map/doorways" node_paths=PackedStringArray("connectedRoomA", "connectedRoomB") instance=ExtResource("4_372r3")]
-transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 6.75, 0, -7)
-connectedRoomA = NodePath("../../sector_1/s1-room")
-connectedRoomB = NodePath("../../sector_1/s2-room")
-
-[node name="basic_door#5" parent="Retro Viewport/SubViewport/map/doorways" node_paths=PackedStringArray("connectedRoomA", "connectedRoomB") instance=ExtResource("4_613un")]
-transform = Transform3D(1, 0, -6.3573e-08, 0, 1, 0, 6.3573e-08, 0, 1, 24.25, 0, -0.999999)
-connectedRoomA = NodePath("../../sector_1/s2-room")
-connectedRoomB = NodePath("../../sector_2/s5-room")
-
-[node name="scene_door#2" parent="Retro Viewport/SubViewport/map/doorways" instance=ExtResource("4_372r3")]
-transform = Transform3D(1, 0, -6.3573e-08, 0, 1, 0, 6.3573e-08, 0, 1, 26.25, 4, -14.5)
-
-[node name="scene_door#3" parent="Retro Viewport/SubViewport/map/doorways" instance=ExtResource("4_372r3")]
-transform = Transform3D(1, 0, -6.3573e-08, 0, 1, 0, 6.3573e-08, 0, 1, 6.75, 4, -14.5)
-
-[node name="basic_door#4" parent="Retro Viewport/SubViewport/map/doorways" node_paths=PackedStringArray("connectedRoomA", "connectedRoomB") instance=ExtResource("4_613un")]
+[node name="basic_door#4" parent="map/doorways" node_paths=PackedStringArray("connectedRoomA", "connectedRoomB") instance=ExtResource("4_613un")]
 transform = Transform3D(-5.08624e-07, 0, 1, 0, 1, 0, -1, 0, -5.08624e-07, 12.5, 4, -10.75)
 connectedRoomA = NodePath("../../sector_1/s2-room")
 connectedRoomB = NodePath("../../hallway_a/s4-room")
 
-[node name="basic_door#6" parent="Retro Viewport/SubViewport/map/doorways" instance=ExtResource("4_613un")]
+[node name="basic_door#5" parent="map/doorways" node_paths=PackedStringArray("connectedRoomA", "connectedRoomB") instance=ExtResource("4_613un")]
+transform = Transform3D(1, 0, -6.3573e-08, 0, 1, 0, 6.3573e-08, 0, 1, 24.25, 0, -0.999999)
+connectedRoomA = NodePath("../../sector_1/s2-room")
+connectedRoomB = NodePath("../../sector_2/s5-room")
+
+[node name="basic_door#6" parent="map/doorways" node_paths=PackedStringArray("connectedRoomA", "connectedRoomB") instance=ExtResource("4_613un")]
 transform = Transform3D(1, 0, -6.3573e-08, 0, 1, 0, 6.3573e-08, 0, 1, 51.25, 0, -5)
+connectedRoomA = NodePath("../../sector_2/s5-room")
+connectedRoomB = NodePath("../../sector_3/s7-room")
 
-[node name="basic_door#8" parent="Retro Viewport/SubViewport/map/doorways" instance=ExtResource("4_613un")]
-transform = Transform3D(2.70205e-07, 0, -1, 0, 1, 0, 1, 0, 2.70205e-07, 57.5, 0, -10.75)
-
-[node name="scene_door#4" parent="Retro Viewport/SubViewport/map/doorways" instance=ExtResource("4_372r3")]
-transform = Transform3D(1, 0, -6.3573e-08, 0, 1, 0, 6.3573e-08, 0, 1, 41.25, 0, 13)
-
-[node name="basic_door#7" parent="Retro Viewport/SubViewport/map/doorways" instance=ExtResource("4_613un")]
+[node name="basic_door#7" parent="map/doorways" node_paths=PackedStringArray("connectedRoomA", "connectedRoomB") instance=ExtResource("4_613un")]
 transform = Transform3D(-5.08624e-07, 0, 1, 0, 1, 0, -1, 0, -5.08624e-07, 57.5, 0, 21.75)
+connectedRoomA = NodePath("../../sector_3/s7-room")
+connectedRoomB = NodePath("../../hallway_a/s8-hall")
 
-[node name="door_frame_013" type="MeshInstance3D" parent="Retro Viewport/SubViewport/map/doorways"]
+[node name="basic_door#8" parent="map/doorways" node_paths=PackedStringArray("connectedRoomA", "connectedRoomB") instance=ExtResource("4_613un")]
+transform = Transform3D(2.70205e-07, 0, -1, 0, 1, 0, 1, 0, 2.70205e-07, 57.5, 0, -10.75)
+connectedRoomA = NodePath("../../sector_3/s7-room")
+connectedRoomB = NodePath("../../hallway_a/s9-hall")
+
+[node name="scene_door#1" parent="map/doorways" node_paths=PackedStringArray("connectedRoomA", "connectedRoomB") instance=ExtResource("4_372r3")]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 6.75, 0, -7)
+connectedRoomA = NodePath("../../sector_1/s1-room")
+connectedRoomB = NodePath("../../sector_1/s2-room")
+
+[node name="scene_door#2" parent="map/doorways" node_paths=PackedStringArray("connectedRoomA", "connectedRoomB") instance=ExtResource("4_372r3")]
+transform = Transform3D(1, 0, -6.3573e-08, 0, 1, 0, 6.3573e-08, 0, 1, 26.25, 4, -14.5)
+connectedRoomA = NodePath("../../hallway_a/s4-room")
+connectedRoomB = NodePath("../../hallway_a/s9-hall")
+
+[node name="scene_door#3" parent="map/doorways" node_paths=PackedStringArray("connectedRoomA", "connectedRoomB") instance=ExtResource("4_372r3")]
+transform = Transform3D(1, 0, -6.3573e-08, 0, 1, 0, 6.3573e-08, 0, 1, 6.75, 4, -14.5)
+connectedRoomA = NodePath("../../hallway_a/s4-room")
+connectedRoomB = NodePath("../../hallway_a/s8-hall")
+
+[node name="scene_door#4" parent="map/doorways" node_paths=PackedStringArray("connectedRoomA", "connectedRoomB") instance=ExtResource("4_372r3")]
+transform = Transform3D(1, 0, -6.3573e-08, 0, 1, 0, 6.3573e-08, 0, 1, 41.25, 0, 13)
+connectedRoomA = NodePath("../../sector_2/s5-room")
+connectedRoomB = NodePath("../../sector_2/s6-room")
+
+[node name="door_frame_013" type="MeshInstance3D" parent="map/doorways"]
 transform = Transform3D(-9.33813e-07, 0, 1, 0, 1, 0, -1, 0, -9.33813e-07, 63.75, 0, 25.5)
 mesh = SubResource("ArrayMesh_gtor0")
 skeleton = NodePath("")
 
-[node name="door_frame_014" type="MeshInstance3D" parent="Retro Viewport/SubViewport/map/doorways"]
+[node name="door_frame_014" type="MeshInstance3D" parent="map/doorways"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.25, 4, 9)
 mesh = SubResource("ArrayMesh_qfpw3")
 skeleton = NodePath("")
 
-[node name="door_frame_015" type="MeshInstance3D" parent="Retro Viewport/SubViewport/map/doorways"]
+[node name="door_frame_015" type="MeshInstance3D" parent="map/doorways"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.25, 4, -0.500001)
 mesh = SubResource("ArrayMesh_skpt6")
 skeleton = NodePath("")
 
-[node name="sector_1" type="Node3D" parent="Retro Viewport/SubViewport/map"]
+[node name="sector_1" type="Node3D" parent="map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.500001)
 
-[node name="s2-room" parent="Retro Viewport/SubViewport/map/sector_1" node_paths=PackedStringArray("attached_doors") instance=ExtResource("5_f0tyy")]
+[node name="s1-room" parent="map/sector_1" node_paths=PackedStringArray("attached_doors") groups=["Rooms"] instance=ExtResource("6_gtor0")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, 0, -7.5)
+attached_doors = [NodePath("../../doorways/scene_door#1")]
+
+[node name="FunCube" parent="map/sector_1/s1-room" instance=ExtResource("15_372r3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 1, 5)
+
+[node name="s2-room" parent="map/sector_1" node_paths=PackedStringArray("attached_doors") groups=["Rooms"] instance=ExtResource("5_f0tyy")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.5, 0, -7.5)
 attached_doors = [NodePath("../../doorways/scene_door#1"), NodePath("../../doorways/basic_door#4"), NodePath("../../doorways/basic_door#5"), NodePath("../../doorways/basic_door#3")]
 
-[node name="s1-room" parent="Retro Viewport/SubViewport/map/sector_1" node_paths=PackedStringArray("attached_doors") instance=ExtResource("6_gtor0")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, 0, -7.5)
-attached_doors = [NodePath("../../doorways/scene_door#1"), NodePath("../../doorways/basic_door#1")]
-
-[node name="sector_1-closet" type="Node3D" parent="Retro Viewport/SubViewport/map"]
+[node name="sector_1-closet" type="Node3D" parent="map"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.21238e-07, 0, 17)
 
-[node name="s3-room" parent="Retro Viewport/SubViewport/map/sector_1-closet" node_paths=PackedStringArray("attached_doors") instance=ExtResource("7_372r3")]
+[node name="s3-room" parent="map/sector_1-closet" node_paths=PackedStringArray("attached_doors") groups=["Rooms"] instance=ExtResource("7_372r3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 0, 1.96701e-07)
-attached_doors = [NodePath("../../doorways/basic_door#1"), NodePath("../../doorways/basic_door#2")]
+attached_doors = [NodePath("../../doorways/basic_door#2")]
 
-[node name="sector_2" type="Node3D" parent="Retro Viewport/SubViewport/map"]
+[node name="sector_2" type="Node3D" parent="map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -0.999998)
 
-[node name="s5-room" parent="Retro Viewport/SubViewport/map/sector_2" node_paths=PackedStringArray("attached_doors") instance=ExtResource("8_372r3")]
+[node name="s5-room" parent="map/sector_2" node_paths=PackedStringArray("attached_doors") groups=["Rooms"] instance=ExtResource("8_372r3")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
-attached_doors = [NodePath("../../doorways/basic_door#5")]
+attached_doors = [NodePath("../../doorways/basic_door#5"), NodePath("../../doorways/basic_door#6"), NodePath("../../doorways/scene_door#4")]
 
-[node name="s6-room" parent="Retro Viewport/SubViewport/map/sector_2" instance=ExtResource("9_372r3")]
+[node name="s6-room" parent="map/sector_2" node_paths=PackedStringArray("attached_doors") groups=["Rooms"] instance=ExtResource("9_372r3")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 0, 14)
+attached_doors = [NodePath("../../doorways/scene_door#4")]
 
-[node name="sector_3" type="Node3D" parent="Retro Viewport/SubViewport/map"]
+[node name="sector_3" type="Node3D" parent="map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, 0, -5)
 
-[node name="s7-room" parent="Retro Viewport/SubViewport/map/sector_3" instance=ExtResource("10_f0tyy")]
+[node name="s7-room" parent="map/sector_3" node_paths=PackedStringArray("attached_doors") groups=["Rooms"] instance=ExtResource("10_f0tyy")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+attached_doors = [NodePath("../../doorways/basic_door#8"), NodePath("../../doorways/basic_door#6"), NodePath("../../doorways/basic_door#7")]
 
-[node name="hallway_a" type="Node3D" parent="Retro Viewport/SubViewport/map"]
+[node name="hallway_a" type="Node3D" parent="map"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.5, 4, -11.5)
 
-[node name="s4-room" parent="Retro Viewport/SubViewport/map/hallway_a" instance=ExtResource("11_372r3")]
+[node name="s4-room" parent="map/hallway_a" node_paths=PackedStringArray("attached_doors") groups=["Rooms"] instance=ExtResource("11_372r3")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+attached_doors = [NodePath("../../doorways/basic_door#4"), NodePath("../../doorways/scene_door#2"), NodePath("../../doorways/scene_door#3")]
 
-[node name="s8-hall" parent="Retro Viewport/SubViewport/map/hallway_a" instance=ExtResource("12_gtor0")]
+[node name="s8-hall" parent="map/hallway_a" node_paths=PackedStringArray("attached_doors") groups=["Rooms"] instance=ExtResource("12_gtor0")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, -4, 34)
+attached_doors = [NodePath("../../doorways/basic_door#7"), NodePath("../../doorways/basic_door#2"), NodePath("../../doorways/basic_door#3"), NodePath("../../doorways/scene_door#3")]
 
-[node name="s9-hall" parent="Retro Viewport/SubViewport/map/hallway_a" instance=ExtResource("13_qfpw3")]
+[node name="s9-hall" parent="map/hallway_a" node_paths=PackedStringArray("attached_doors") groups=["Rooms"] instance=ExtResource("13_qfpw3")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 14.5, 0, -3)
-
-[node name="FunCube" parent="." instance=ExtResource("15_372r3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 5)
+attached_doors = [NodePath("../../doorways/scene_door#2"), NodePath("../../doorways/basic_door#8")]

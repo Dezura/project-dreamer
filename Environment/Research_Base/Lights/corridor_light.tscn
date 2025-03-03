@@ -66,8 +66,6 @@ data = PackedVector3Array(0, -0.0313, -0.1042, -0.8438, -0.0313, -0.1563, -0.843
 
 [node name="corridor_light" type="StaticBody3D"]
 script = ExtResource("1_j7ifl")
-lightColorMat = ExtResource("2_ism1f")
-lightMultiplier = 0.7
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
 cast_shadow = 0
@@ -82,8 +80,7 @@ shape = SubResource("ConcavePolygonShape3D_bl11b")
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.5, 0)
 layers = 3
-light_color = Color(0.45, 0.761667, 1, 1)
-light_energy = 0.21
+light_energy = 0.8
 shadow_enabled = true
 omni_range = 7.0
 omni_attenuation = 1.25

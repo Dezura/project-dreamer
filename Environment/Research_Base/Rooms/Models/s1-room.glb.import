@@ -38,6 +38,16 @@ _subresources={
 "use_external/enabled": false,
 "use_external/path": "uid://cor7sf7gl3itm"
 }
+},
+"meshes": {
+"s1-room_s1-room": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://Environment/Research_Base/Rooms/Models/s1-room.res"
+}
 }
 }
 gltf/naming_version=1
