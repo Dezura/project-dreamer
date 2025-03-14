@@ -1,12 +1,13 @@
-[gd_scene load_steps=24 format=3 uid="uid://cc1m2a1obsyn4"]
+[gd_scene load_steps=25 format=3 uid="uid://cc1m2a1obsyn4"]
 
 [ext_resource type="Script" uid="uid://hj5rlbpaj6br" path="res://Entities/Protagonist/Player.gd" id="1_0ns6n"]
 [ext_resource type="PackedScene" uid="uid://cggqb75a8w8r" path="res://addons/debug_menu/debug_menu.tscn" id="2_tpw1c"]
-[ext_resource type="Script" uid="uid://disutconlfdev" path="res://Common/InventoryManager.gd" id="2_yoipn"]
+[ext_resource type="Script" uid="uid://disutconlfdev" path="res://Common/InventoryData.gd" id="2_yoipn"]
 [ext_resource type="Script" uid="uid://cqkf0aijcej0c" path="res://Environment/Research_Base/Interactable/Items/ItemResource.gd" id="3_1ra1p"]
 [ext_resource type="Script" uid="uid://b1rvg56p7p5kd" path="res://Entities/Protagonist/EditorModule.gd" id="3_v3ckk"]
 [ext_resource type="Resource" uid="uid://b1jvb3meaf6c3" path="res://Environment/Research_Base/Interactable/Items/Misc/FunCube/FunCube.tres" id="4_a23xo"]
 [ext_resource type="PackedScene" uid="uid://dhikqgv1exdfa" path="res://UI/GUI.tscn" id="4_xmgso"]
+[ext_resource type="Resource" uid="uid://b4pciwvj0q5ml" path="res://Environment/Research_Base/Interactable/Items/Keycards/green_card_data.tres" id="5_a23xo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp17n"]
 albedo_color = Color(0.909804, 0.596078, 0, 1)
@@ -168,7 +169,7 @@ tracks/0/keys = PackedFloat32Array(0.35, 1, 0, 0, 0)
 
 [sub_resource type="Animation" id="Animation_1stwv"]
 resource_name = "sprint"
-length = 0.8
+length = 1.5
 loop_mode = 1
 step = 0.05
 tracks/0/type = "position_3d"
@@ -177,7 +178,7 @@ tracks/0/enabled = true
 tracks/0/path = NodePath("Camera")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0.05, 1, 0, 0, 0, 0.45, 1, 0, -0.125, 0)
+tracks/0/keys = PackedFloat32Array(0.05, 1, 0.04, 0, 0, 0.45, 1, 0.04, -0.16, 0, 0.8, 1, -0.04, 0, 0, 1.2, 1, -0.04, -0.16, 0)
 
 [sub_resource type="Animation" id="Animation_3y0ra"]
 resource_name = "Walk"
@@ -321,10 +322,11 @@ JUMP_ANIMATION = NodePath("Head/JumpAnimation")
 CROUCH_ANIMATION = NodePath("CrouchAnimation")
 COLLISION_MESH = NodePath("Collision")
 
-[node name="Inventory" type="Node" parent="."]
+[node name="InventoryData" type="Node" parent="."]
 script = ExtResource("2_yoipn")
 item_database = Dictionary[String, ExtResource("3_1ra1p")]({
-"fun_cube": ExtResource("4_a23xo")
+"fun_cube": ExtResource("4_a23xo"),
+"green_card": ExtResource("5_a23xo")
 })
 
 [node name="GUI" parent="." instance=ExtResource("4_xmgso")]

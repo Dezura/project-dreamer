@@ -25,8 +25,7 @@ func _on_door_open_interaction(initial_room: Room, target_room: Room) -> void:
 	_prep_camera_position()
 	
 	# Disable player for cutscene
-	g.gui_manager.hide_elements()
-	g.gui_manager.hide_interaction()
+	g.gui.turn_off_hud()
 	g.player.clear_selected_interactable()
 	g.player.immobile = true
 	g.player.interaction_disabled = true
@@ -38,11 +37,11 @@ func _on_door_open_interaction(initial_room: Room, target_room: Room) -> void:
 	await g.wait_for_animation_end($CutsceneAnimation, "pan_in_front_of_door")
 	
 	# Wait for player to click on knob
-	g.gui_manager.show_mouse()
+	g.gui.cursor_ui.show_mouse()
 	_door_knob.clickable = true
 	await $big_side/knob/Area3D.clicked
 	set_mesh_highlight($big_side/knob, HighlightState.NEUTRAL)
-	g.gui_manager.hide_mouse()
+	g.gui.cursor_ui.hide_mouse()
 	_door_knob.clickable = false
 	
 	# Move through the door
@@ -54,13 +53,14 @@ func _on_door_open_interaction(initial_room: Room, target_room: Room) -> void:
 	g.player._on_entered_room(target_room)
 	
 	# Reveal UI and player control again
-	g.gui_manager.show_elements()
-	g.player.get_node("GUI/BlackscreenCover/FadeAnimation").play("fade_out")
+	g.gui.turn_on_hud()
+	g.gui.get_node("BlackscreenCover").color = Color(0, 0, 0, 1)
+	g.gui.get_node("BlackscreenCover/FadeAnimation").play("fade_out")
+	
 	g.player.immobile = false
 	g.player.interaction_disabled = false
 	# Set camera back to player
 	$"Camera Side Pivot/Camera3D".current = false
-	
 	# Start door close after player is in control
 	await get_tree().create_timer(0.5).timeout
 	close_door()

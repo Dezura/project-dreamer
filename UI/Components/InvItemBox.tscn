@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxgm6xdehi2ll"]
+
+[ext_resource type="Script" uid="uid://dn6k3irx1a3pm" path="res://UI/Components/InvItemBox.gd" id="1_h1rkg"]
+
+[node name="InvItemBox" type="Button"]
+custom_minimum_size = Vector2(130, 0)
+offset_right = 170.0
+offset_bottom = 31.0
+focus_mode = 0
+mouse_filter = 1
+theme_override_constants/outline_size = 4
+theme_override_constants/h_separation = 300
+toggle_mode = true
+text = "Item Name"
+script = ExtResource("1_h1rkg")
+
+[node name="QuantityLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -42.0
+offset_right = -5.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 8
+theme_override_font_sizes/font_size = 12
+text = "x2"
+horizontal_alignment = 2
+
+[node name="ClickOptions" type="PopupMenu" parent="."]
+auto_translate_mode = 1
+size = Vector2i(20, 8)
+theme_override_constants/outline_size = 3
+theme_override_constants/separator_outline_size = 3
+theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_separator_size = 12
+allow_search = false
+
+[connection signal="index_pressed" from="ClickOptions" to="." method="_on_popup_menu_clicked"]

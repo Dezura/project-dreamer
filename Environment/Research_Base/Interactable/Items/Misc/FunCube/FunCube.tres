@@ -9,4 +9,4 @@ visual_name = "Fun Cube"
 description = "A very thoughtful cube indeed, it's pretty cool."
 stackable = true
 maxStackSize = 5
-type = 4
+type = 1

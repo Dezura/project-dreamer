@@ -52,7 +52,9 @@ func enable_lights() -> void:
 	for light in _room_lights:
 		light.turn_on()
 
+# Set each individual main light to match overall room light color and strength values
 func _update_room_light_values():
+	# Make sure children under room_light holder are accurate before setting
 	if $room_lights.get_child_count() != _room_lights.size(): _room_lights.assign($room_lights.get_children())
 	for light in _room_lights:
 			if light != null:

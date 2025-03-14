@@ -110,7 +110,7 @@ environment = SubResource("Environment_0pvlj")
 camera_attributes = SubResource("CameraAttributesPractical_rfr4q")
 
 [node name="Player" parent="." instance=ExtResource("1_677kc")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.327703, 0)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 19, 0.327703, 0)
 base_speed = 2.7
 sprint_speed = 3.9
 acceleration = 7.0
@@ -212,12 +212,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.500001)
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, 0, -7.5)
 attached_doors = [NodePath("../../doorways/scene_door#1")]
 
-[node name="FunCube" parent="map/sector_1/s1-room" instance=ExtResource("15_372r3")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 1, 5)
-
 [node name="s2-room" parent="map/sector_1" node_paths=PackedStringArray("attached_doors") groups=["Rooms"] instance=ExtResource("5_f0tyy")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.5, 0, -7.5)
 attached_doors = [NodePath("../../doorways/scene_door#1"), NodePath("../../doorways/basic_door#4"), NodePath("../../doorways/basic_door#5"), NodePath("../../doorways/basic_door#3")]
+
+[node name="fun_cube" parent="map/sector_1/s2-room" instance=ExtResource("15_372r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, -14.5)
+
+[node name="fun_cube2" parent="map/sector_1/s2-room" instance=ExtResource("15_372r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1, -14.5)
+
+[node name="fun_cube3" parent="map/sector_1/s2-room" instance=ExtResource("15_372r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1, -14.5)
+
+[node name="fun_cube4" parent="map/sector_1/s2-room" instance=ExtResource("15_372r3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, -13.5)
 
 [node name="sector_1-closet" type="Node3D" parent="map"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -7.21238e-07, 0, 17)

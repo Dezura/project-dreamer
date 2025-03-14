@@ -1,4 +1,4 @@
-class_name InventoryManager
+class_name InventoryData
 extends Node
 
 @export var item_database: Dictionary[String, ItemResource]
@@ -36,3 +36,9 @@ func has_item(item_name: String, quantity: int = 1) -> bool:
 		if item["item_name"] == item_name and item["quantity"] >= quantity:
 			return true
 	return false
+
+func get_held_items() -> Dictionary[String, int]: # Item name, quantity
+	var return_list : Dictionary[String, int]
+	for item in _current_inventory:
+		return_list[item["item_name"]] = item["quantity"]
+	return return_list

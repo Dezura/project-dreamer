@@ -8,7 +8,7 @@ func _on_interaction_pressed() -> void:
 	super()
 	
 	g.debug_print(" Picked up item!", g.TextColor.ORANGE)
-	g.inventory.add_item(item_data.identifer)
+	g.inventory_data.add_item(item_data.identifer)
 	disable_pickup()
 	if respawnable:
 		await get_tree().create_timer(2.75).timeout

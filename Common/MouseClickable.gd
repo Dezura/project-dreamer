@@ -4,13 +4,13 @@ extends CollisionObject3D
 @export var clickable : bool = true:
 	set(state):
 		clickable = state
-		if !clickable or g.gui_manager == null: return
+		if !clickable or g.gui == null: return
 		if mouse_hovering:
 			mouse_entered.emit()
-			g.gui_manager.set_cursor_shape(GUI.CustomCursorState.HOVER_POINT)
+			g.gui.cursor_ui.set_cursor_shape(CursorUI.CustomCursorState.HOVER_POINT)
 		else:
 			mouse_exited.emit()
-			g.gui_manager.set_cursor_shape(GUI.CustomCursorState.DEFAULT)
+			g.gui.cursor_ui.set_cursor_shape(CursorUI.CustomCursorState.DEFAULT)
 
 signal clicked
 
@@ -26,9 +26,9 @@ func _input_event(camera: Camera3D, event: InputEvent, event_position: Vector3, 
 func _mouse_enter() -> void:
 	mouse_hovering = true
 	if !clickable: return
-	g.gui_manager.set_cursor_shape(GUI.CustomCursorState.HOVER_POINT)
+	g.gui.cursor_ui.set_cursor_shape(CursorUI.CustomCursorState.HOVER_POINT)
 
 func _mouse_exit() -> void:
 	mouse_hovering = false
 	if !clickable: return
-	g.gui_manager.set_cursor_shape(GUI.CustomCursorState.DEFAULT)
+	g.gui.cursor_ui.set_cursor_shape(CursorUI.CustomCursorState.DEFAULT)

@@ -1,8 +1,8 @@
 extends Node
 
 var player : Player
-var gui_manager : GUI
-var inventory : InventoryManager
+var gui : GUI
+var inventory_data : InventoryData
 
 enum CollisionLayers{
 	MAP_COLLISSION = 1 << 0,
@@ -40,8 +40,8 @@ enum TextColor{
 
 func _ready() -> void:
 	player = get_node("/root").find_child("Player", true, false)
-	gui_manager = get_node("/root").find_child("GUI", true, false)
-	inventory = get_node("/root").find_child("Inventory", true, false)
+	gui = get_node("/root").find_child("GUI", true, false)
+	inventory_data = get_node("/root").find_child("InventoryData", true, false)
 
 # Helper functions
 func wait_for_animation_end(anim_player: AnimationPlayer, anim_name: String) -> void:

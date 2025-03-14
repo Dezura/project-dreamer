@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bpxmp3ny6cgwe"]
+[gd_scene load_steps=6 format=3 uid="uid://bpxmp3ny6cgwe"]
 
-[ext_resource type="Script" uid="uid://dno2seiq3tnc2" path="res://Environment/Research_Base/Interactable/Items/ItemPickup.gd" id="1_phnnt"]
+[ext_resource type="Script" uid="uid://cix6blidl8yo" path="res://Environment/Research_Base/Interactable/Items/ItemPickup.gd" id="1_phnnt"]
 [ext_resource type="Resource" uid="uid://b1jvb3meaf6c3" path="res://Environment/Research_Base/Interactable/Items/Misc/FunCube/FunCube.tres" id="2_dpp17"]
-[ext_resource type="Material" uid="uid://dro7p4j10m1va" path="res://Textures/interactive_highlight.tres" id="3_4n6ki"]
 [ext_resource type="Material" uid="uid://juev8e4nu2i1" path="res://Textures/Protagonist_mat.tres" id="4_ewogt"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ryehn"]
@@ -22,7 +21,6 @@ interaction_text = "Pick Up"
 _interact_meshes = [NodePath("MeshInstance3D")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-material_overlay = ExtResource("3_4n6ki")
 mesh = SubResource("BoxMesh_ryehn")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

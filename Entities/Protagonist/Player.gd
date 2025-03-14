@@ -8,14 +8,22 @@ var _selected_interactable : Interactable
 func _process(delta: float) -> void:
 	super(delta)
 	
-	# Update raycast to check if an interactable should be highlighted
-	if Input.is_action_just_pressed("ui_cancel"):
+	# Pretty much just debug code
+	if Input.is_action_just_pressed("ui_cancel") and !g.gui.inventory_ui.is_menu_enabled:
 		match Input.mouse_mode:
 			Input.MOUSE_MODE_CAPTURED:
-				g.gui_manager.show_mouse()
+				g.gui.cursor_ui.show_mouse()
 			Input.MOUSE_MODE_VISIBLE:
-				g.gui_manager.hide_mouse()
+				g.gui.cursor_ui.hide_mouse()
 	
+	if Input.is_action_just_pressed("Open Inventory") and (!interaction_disabled or g.gui.inventory_ui.is_menu_enabled):
+		g.gui.inventory_ui.toggle_menu()
+		
+		# Disable control if inventory is open
+		immobile = g.gui.inventory_ui.is_menu_enabled
+		interaction_disabled = g.gui.inventory_ui.is_menu_enabled
+	
+	# Update raycast to check if an interactable should be highlighted
 	if !interaction_disabled: 
 		var interactable := query_interactable()
 		# Run for every frame interactable is selected
@@ -25,9 +33,9 @@ func _process(delta: float) -> void:
 				_selected_interactable = interactable
 				interactable.selected.emit(true)
 				# Set GUI text to match current interactable
-				g.gui_manager.set_interaction_title(interactable.interaction_title)
-				g.gui_manager.set_interaction_choice(interactable.interaction_text)
-				g.gui_manager.show_interaction()
+				g.gui.interaction_ui.set_interaction_title(interactable.interaction_title)
+				g.gui.interaction_ui.set_interaction_choice(interactable.interaction_text)
+				g.gui.interaction_ui.set_menu(true)
 			
 			# Otherwise keep checking for input every frame
 			if Input.is_action_just_pressed("Interact"):
@@ -53,7 +61,7 @@ func query_interactable() -> Interactable:
 
 func clear_selected_interactable():
 	_selected_interactable.selected.emit(false)
-	g.gui_manager.hide_interaction()
+	g.gui.interaction_ui.set_menu(false)
 	_selected_interactable = null
 
 func _on_entered_room(newRoom : Room):

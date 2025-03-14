@@ -40,7 +40,7 @@ var _highlight_values : Dictionary = {
 		"enabled": true,
 		"color": Color.WHITE,
 		"outline_enabled": true,
-		"highlight_opacity": 0.02,
+		"highlight_opacity": 0.1,
 		"outline_opacity": 0.2
 	},
 	HighlightState.NEUTRAL: {
