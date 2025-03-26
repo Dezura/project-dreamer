@@ -20,12 +20,15 @@ config/icon="res://icon.svg"
 
 Toolkit="*res://addons/godottoolkit/toolkit.gd"
 DebugMenu="*res://addons/debug_menu/debug_menu.tscn"
-g="*res://Misc/Globals.gd"
+g="*res://src/common/globals.gd"
 
 [debug]
 
 gdscript/warnings/unused_variable=0
 gdscript/warnings/unused_parameter=0
+gdscript/warnings/untyped_declaration=1
+gdscript/warnings/unsafe_property_access=1
+gdscript/warnings/unsafe_method_access=1
 
 [display]
 
@@ -44,15 +47,26 @@ enabled=PackedStringArray("res://addons/debug_menu/plugin.cfg", "res://addons/ex
 [file_customization]
 
 folder_colors={
-"res://Assets/": "blue",
-"res://Common/": "gray",
-"res://Entities/": "red",
-"res://Environment/": "teal",
-"res://Environment/Post Processing/": "purple",
-"res://Environment/Research_Base/Interactable/": "red",
-"res://Environment/Research_Base/Interactable/Items/": "yellow",
-"res://Textures/": "pink",
-"res://addons/": "gray"
+"res://_deprecated/": "gray",
+"res://addons/": "gray",
+"res://assets/": "green",
+"res://src/": "blue",
+"res://src/common/_res/": "orange",
+"res://src/entities/": "red",
+"res://src/entities/protagonist/_res/": "orange",
+"res://src/items/": "yellow",
+"res://src/items/_res/": "orange",
+"res://src/items/keycards/_res/": "orange",
+"res://src/map/": "purple",
+"res://src/map/_res/": "orange",
+"res://src/map/interactables/": "yellow",
+"res://src/map/interactables/doors/_res/": "orange",
+"res://src/map/props/_res/": "orange",
+"res://src/map/props/lights/_res/": "orange",
+"res://src/map/rooms/_res/": "orange",
+"res://src/post_processing/": "pink",
+"res://src/ui/": "teal",
+"res://src/ui/_res/": "orange"
 }
 
 [importer_defaults]
