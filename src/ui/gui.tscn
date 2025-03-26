@@ -1,0 +1,302 @@
+[gd_scene load_steps=14 format=3 uid="uid://dhikqgv1exdfa"]
+
+[ext_resource type="Script" uid="uid://icu036qyx44q" path="res://src/ui/gui.gd" id="1_plgwl"]
+[ext_resource type="Shader" uid="uid://dhvq7ujahyg5d" path="res://src/post_processing/screen_vhs_shader.gdshader" id="1_wjkhb"]
+[ext_resource type="Script" uid="uid://d72248pa5vht" path="res://src/ui/_res/cursor_ui.gd" id="2_u703e"]
+[ext_resource type="Script" uid="uid://df88h2hh86lk5" path="res://src/ui/_res/inventory_ui.gd" id="3_ffukj"]
+[ext_resource type="Script" uid="uid://bdsd683sqd42f" path="res://src/ui/_res/interaction_ui.gd" id="3_sf8lx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1ry3x"]
+font_size = 10
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dl5f7"]
+bg_color = Color(0, 0, 0, 0.470588)
+
+[sub_resource type="Animation" id="Animation_p5bn2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tryg7"]
+resource_name = "blackout"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3oaeu"]
+resource_name = "fade_in"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_l60vi"]
+resource_name = "fade_out"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ake0c"]
+_data = {
+&"RESET": SubResource("Animation_p5bn2"),
+&"blackout": SubResource("Animation_tryg7"),
+&"fade_in": SubResource("Animation_3oaeu"),
+&"fade_out": SubResource("Animation_l60vi")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2h5bw"]
+shader = ExtResource("1_wjkhb")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.02
+shader_parameter/scanlines_width = 0.05
+shader_parameter/grille_opacity = 0.0
+shader_parameter/resolution = Vector2(8000, 6000)
+shader_parameter/pixelate = false
+shader_parameter/roll = false
+shader_parameter/roll_speed = 3.0
+shader_parameter/roll_size = 10.0
+shader_parameter/roll_variation = 1.3
+shader_parameter/distort_intensity = 0.001
+shader_parameter/noise_opacity = 0.005
+shader_parameter/noise_speed = 3.0
+shader_parameter/static_noise_intensity = 0.02
+shader_parameter/aberration = 4.75e-08
+shader_parameter/brightness = 1.3
+shader_parameter/discolor = false
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.05
+shader_parameter/vignette_opacity = 0.7
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_plgwl")
+
+[node name="CursorUI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("2_u703e")
+
+[node name="HUD" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Reticle" type="CenterContainer" parent="HUD"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="dot" type="Polygon2D" parent="HUD/Reticle"]
+polygon = PackedVector2Array(-1, -1, 1, -1, 1, 1, -1, 1)
+
+[node name="shadow" type="Polygon2D" parent="HUD/Reticle/dot"]
+show_behind_parent = true
+color = Color(0, 0, 0, 1)
+offset = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-1.5, -1.5, 1.5, -1.5, 1.5, 1.5, -1.5, 1.5)
+
+[node name="InteractionUI" type="Control" parent="HUD"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_sf8lx")
+
+[node name="ObjectTitle" type="Label" parent="HUD/InteractionUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 7.0
+offset_top = -18.0
+offset_right = 99.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "ObjectName"
+label_settings = SubResource("LabelSettings_1ry3x")
+vertical_alignment = 2
+
+[node name="Divider" type="ColorRect" parent="HUD/InteractionUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -1.0
+offset_right = 79.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Shadow" type="ColorRect" parent="HUD/InteractionUI/Divider"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -0.5
+offset_right = 34.0
+offset_bottom = 1.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.784314)
+
+[node name="InteractionChoice" type="Label" parent="HUD/InteractionUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = 1.0
+offset_right = 135.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "[E] Interact"
+label_settings = SubResource("LabelSettings_1ry3x")
+vertical_alignment = 2
+
+[node name="InventoryUI" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dl5f7")
+script = ExtResource("3_ffukj")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="InventoryUI"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -106.0
+offset_top = 90.0
+offset_right = 106.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Items" type="VBoxContainer" parent="InventoryUI/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 3
+alignment = 1
+
+[node name="EmptyMessage" type="Label" parent="InventoryUI/ScrollContainer/Items"]
+layout_mode = 2
+text = "Inventory is empty"
+
+[node name="BlackscreenCover" type="ColorRect" parent="."]
+top_level = true
+z_index = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="FadeAnimation" type="AnimationPlayer" parent="BlackscreenCover"]
+libraries = {
+&"": SubResource("AnimationLibrary_ake0c")
+}
+
+[node name="VHS_Shader" type="ColorRect" parent="."]
+top_level = true
+z_index = 8
+material = SubResource("ShaderMaterial_2h5bw")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

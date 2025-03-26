@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpxmp3ny6cgwe"]
+
+[ext_resource type="Script" uid="uid://cix6blidl8yo" path="res://src/items/_res/item_pickup.gd" id="1_phnnt"]
+[ext_resource type="Resource" uid="uid://b1jvb3meaf6c3" path="res://src/items/misc/fun_cube/fun_cube_data.tres" id="2_dpp17"]
+[ext_resource type="Material" uid="uid://bug8jhjhm2cwa" path="res://src/entities/protagonist/_res/protagonist.material" id="3_rg5dd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ryehn"]
+material = ExtResource("3_rg5dd")
+size = Vector3(0.25, 0.25, 0.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2psdl"]
+size = Vector3(0.25, 0.25, 0.25)
+
+[node name="fun_cube" type="StaticBody3D" node_paths=PackedStringArray("_interact_meshes")]
+collision_layer = 2
+script = ExtResource("1_phnnt")
+item_data = ExtResource("2_dpp17")
+respawnable = true
+interaction_title = "Fun Cube"
+interaction_text = "Pick Up"
+_interact_meshes = [NodePath("MeshInstance3D")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ryehn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_2psdl")

@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=4 uid="uid://nokxqbfd0doq"]
+
+[ext_resource type="Script" uid="uid://be5vilp33ws82" path="res://src/map/props/lights/_res/configurable_light.gd" id="1_o3j33"]
+[ext_resource type="Material" uid="uid://jwvseq8x5pt1" path="res://src/map/_res/lazy_unwrap/uv_basic_interior.material" id="2_8pm30"]
+[ext_resource type="Material" uid="uid://dbm5pi5qwoymf" path="res://src/map/props/lights/_res/dynamic_light.material" id="3_xsw4a"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1uofo"]
+_surfaces = [{
+"aabb": AABB(-0.1875, -0.0625, -0.1875, 0.375, 0.0625, 0.375),
+"format": 34359742465,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAgAEAAMAAAAFAAEABQAGAAEAAwAHAAAABQAAAAcACAADAAQACAAHAAMACAAEAAkABQAHAAoACAALAAcABQAMAAYABQAKAAwADAANAAYADgAMAAoADAAOAA0ADgAKAA8AEAANAA4AEQALAAgAEQAPAAsACQARAAgACQASABEAEQATAA8ADgAPABMAEwARABIAEAAOABMAEwASABAA"),
+"name": "Minimal UV Tech",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("AAAAPgAAgL0AAEA+AAAAvgAAAAAAAEA+AAAAPgAAAAAAAEA+AABAPgAAgL0AAAA+AABAPgAAAAAAAAA+AAAAvgAAgL0AAEA+AABAvgAAAAAAAAA+AAAAPgAAgL0AAAA+AABAPgAAgL0AAAC+AABAPgAAAAAAAAC+AAAAvgAAgL0AAAA+AAAAPgAAgL0AAAC+AABAvgAAgL0AAAA+AABAvgAAAAAAAAC+AABAvgAAgL0AAAC+AAAAvgAAgL0AAAC+AAAAvgAAAAAAAEC+AAAAPgAAgL0AAEC+AAAAPgAAAAAAAEC+AAAAvgAAgL0AAEC+")
+}, {
+"aabb": AABB(-0.125, -0.09375, -0.125, 0.25, 0.03125, 0.25),
+"format": 34359742465,
+"index_count": 30,
+"index_data": PackedByteArray("AgAGAAAABgAEAAAAAAAEAAEAAAABAAIABgAFAAQAAgABAAMABwAFAAYAAgAHAAYABwADAAUAAgADAAcA"),
+"lods": [0.110713, PackedByteArray("AAABAAIAAgABAAMAAgADAAAAAAAEAAEAAAADAAUAAAAFAAQA")],
+"name": "Emissive_Light",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AADAvQAAwL0AAMA9AAAAPgAAgL0AAAA+AADAPQAAwL0AAMA9AAAAPgAAgL0AAAC+AAAAvgAAgL0AAAA+AAAAvgAAgL0AAAC+AADAvQAAwL0AAMC9AADAPQAAwL0AAMC9")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dtdvi"]
+resource_name = "room_light-spotlight_room_light-square_001"
+_surfaces = [{
+"aabb": AABB(-0.1875, -0.0625, -0.1875, 0.375, 0.0625, 0.375),
+"attribute_data": PackedByteArray("AABsPwAAeD8AAGw/AACAPwAAbD8AAIA/AABsPwAAeD8AAGw/AAB4PwAAbD8AAIA/AABsPwAAgD8AAGw/AAB4PwAAbD8AAHg/AABsPwAAgD8AAGw/AACAPwAAbD8AAHg/AABsPwAAgD8AAGw/AAB4PwAAbD8AAHg/AABsPwAAgD8AAGw/AAB4PwAAbD8AAIA/AABsPwAAgD8AAGw/AAB4PwAAbD8AAIA/AABsPwAAeD8AAGw/AAB4PwAAbD8AAIA/AABsPwAAgD8AAGw/AAB4PwAAbD8AAHg/AABsPwAAgD8AAGw/AAB4PwAAbD8AAIA/AABsPwAAgD8AAGw/AAB4Pxz8bz8sAHg/HPxrPywAfD8c/Gs/LAB4Pxz8az8sAHg/HPxrPxYAgD8c/Gs/FgCAPxz8az8sAHg/HPxrPywAeD8c/Gs/FgCAPxz8az8sAHg/HPxrPxYAgD8c/Gs/LAB4Pxz8az8sAHg/HPxrPywAeD8c/G8/LAB4Pxz8az8sAHw/HPxvPywAeD8c/Gs/LAB8P///az8AAHg/AABsPwAAfD8AAHA/AAB4Pw=="),
+"format": 34359742487,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIwAiACQAIwAkACUAJgAkACcAJgAoACQAKQAqACgAKQArACoALAAlACoALAAtACUALgAvAC0AMAAxACsAMgAzADQA"),
+"material": ExtResource("2_8pm30"),
+"name": "Minimal UV Tech",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 53,
+"vertex_data": PackedByteArray("AAAAPgAAgL0AAEA+AAAAvgAAAAAAAEA+AAAAPgAAAAAAAEA+AAAAvgAAgL0AAEA+AABAvgAAgL0AAAA+AABAvgAAAAAAAAC+AABAvgAAAAAAAAA+AABAvgAAgL0AAAC+AAAAvgAAgL0AAEC+AAAAPgAAAAAAAEC+AAAAvgAAAAAAAEC+AAAAPgAAgL0AAEC+AAAAPgAAAAAAAEA+AABAPgAAgL0AAAA+AAAAPgAAgL0AAEA+AABAPgAAAAAAAAA+AAAAvgAAgL0AAEA+AABAvgAAAAAAAAA+AAAAvgAAAAAAAEA+AABAvgAAgL0AAAA+AAAAvgAAAAAAAEC+AABAvgAAgL0AAAC+AAAAvgAAgL0AAEC+AABAvgAAAAAAAAC+AABAPgAAAAAAAAC+AAAAPgAAgL0AAEC+AABAPgAAgL0AAAC+AAAAPgAAAAAAAEC+AABAPgAAgL0AAAC+AABAPgAAAAAAAAA+AABAPgAAAAAAAAC+AABAPgAAgL0AAAA+AABAPgAAgL0AAAA+AAAAPgAAgL0AAAA+AAAAPgAAgL0AAEA+AAAAvgAAgL0AAEA+AAAAPgAAgL0AAAA+AAAAvgAAgL0AAAA+AABAPgAAgL0AAAC+AABAPgAAgL0AAAA+AAAAPgAAgL0AAAC+AAAAPgAAgL0AAEC+AAAAvgAAgL0AAAC+AAAAvgAAgL0AAEC+AABAvgAAgL0AAAC+AABAvgAAgL0AAAA+AAAAvgAAgL0AAEA+AAAAvgAAgL0AAAA+AABAvgAAgL0AAAC+AAAAvgAAgL0AAAC+AAAAPgAAgL0AAEC+AAAAPgAAgL0AAAC+AABAPgAAgL0AAAC+/3//f////z//f/9/////P/9//3////8//3//f////z8AAP9/////vwAA/3////+/AAD/f////78AAP9/////v/////////+//////////7//////////v/////////+//7//f////z//v/9/////P/+//3////8//7//f////z//P/9/////P/8//3////8//z//f////z//P/9/////PwAA/7////+/AAD/v////78AAP+/////vwAA/7////+/////v////7////+/////v////7////+/////v////7////9/////v////3////+/////f////7////9/////v/9/AAD////f/38AAP///9//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA/7//v/9/AAD/v/+//38AAP8//7//fwAA/z//v/9/AAD/v/8//38AAP+//z//fwAA/7//Pw==")
+}, {
+"aabb": AABB(-0.125, -0.09375, -0.125, 0.25, 0.03125, 0.25),
+"attribute_data": PackedByteArray("AAAAPgAAYD4AAAA+AAB4PgAAAD4AAGA+AAAAPgAAeD4AAAA+AABgPgAAAD4AAHg+AAAAPgAAYD4AAAA+AAB4PgAAAD4AAHg+AAAAPgAAeD4AAAA+AABQPgAAAD4AAFA+AAAAPgAAUD4AAAA+AABQPgAAAD4AAHg+AAAAPgAAYD4AAAA+AABgPgAAAD4AAGA+AAAAPgAAYD4AAAA+AAB4Pg=="),
+"format": 34359742487,
+"index_count": 30,
+"index_data": PackedByteArray("CgALAAwACgANAAsAAAABAAIAAAADAAEABAAOAA8ABAAHAA4AEAAIABEAEAAFAAgAEgAJAAYAEgATAAkA"),
+"lods": [0.110713, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUABgAFAAgABgAIAAkA")],
+"name": "Emissive_Light",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("AADAvQAAwL0AAMA9AAAAPgAAgL0AAAA+AADAPQAAwL0AAMA9AAAAvgAAgL0AAAA+AADAPQAAwL0AAMA9AAAAPgAAgL0AAAC+AADAvQAAwL0AAMA9AAAAPgAAgL0AAAA+AAAAvgAAgL0AAAC+AAAAvgAAgL0AAAA+AADAPQAAwL0AAMA9AADAvQAAwL0AAMC9AADAvQAAwL0AAMA9AADAPQAAwL0AAMC9AAAAPgAAgL0AAAC+AADAPQAAwL0AAMC9AADAPQAAwL0AAMC9AADAvQAAwL0AAMC9AADAvQAAwL0AAMC9AAAAvgAAgL0AAAC+/3//P////z//f/8/////P/9//z////8//3//P////z//v/8/////v/+/AAD///+//z//P////7//v/8/////v/+/AAD///+//z//P////7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/+//z////+//7//P////7//vwAA////v/+/AAD///+//z//P////7//P/8/////vw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_1uofo")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qs63y"]
+data = PackedVector3Array(0.125, -0.0625, 0.1875, -0.125, 0, 0.1875, 0.125, 0, 0.1875, 0.125, -0.0625, 0.1875, -0.125, -0.0625, 0.1875, -0.125, 0, 0.1875, -0.1875, -0.0625, 0.125, -0.1875, 0, -0.125, -0.1875, 0, 0.125, -0.1875, -0.0625, 0.125, -0.1875, -0.0625, -0.125, -0.1875, 0, -0.125, -0.125, -0.0625, -0.1875, 0.125, 0, -0.1875, -0.125, 0, -0.1875, -0.125, -0.0625, -0.1875, 0.125, -0.0625, -0.1875, 0.125, 0, -0.1875, 0.125, 0, 0.1875, 0.1875, -0.0625, 0.125, 0.125, -0.0625, 0.1875, 0.125, 0, 0.1875, 0.1875, 0, 0.125, 0.1875, -0.0625, 0.125, -0.125, -0.0625, 0.1875, -0.1875, 0, 0.125, -0.125, 0, 0.1875, -0.125, -0.0625, 0.1875, -0.1875, -0.0625, 0.125, -0.1875, 0, 0.125, -0.125, 0, -0.1875, -0.1875, -0.0625, -0.125, -0.125, -0.0625, -0.1875, -0.125, 0, -0.1875, -0.1875, 0, -0.125, -0.1875, -0.0625, -0.125, 0.1875, 0, -0.125, 0.125, -0.0625, -0.1875, 0.1875, -0.0625, -0.125, 0.1875, 0, -0.125, 0.125, 0, -0.1875, 0.125, -0.0625, -0.1875, 0.1875, -0.0625, -0.125, 0.1875, 0, 0.125, 0.1875, 0, -0.125, 0.1875, -0.0625, -0.125, 0.1875, -0.0625, 0.125, 0.1875, 0, 0.125, 0.1875, -0.0625, 0.125, 0.125, -0.0625, 0.125, 0.125, -0.0625, 0.1875, -0.125, -0.0625, 0.1875, 0.125, -0.0625, 0.1875, 0.125, -0.0625, 0.125, -0.125, -0.0625, 0.1875, 0.125, -0.0625, 0.125, -0.125, -0.0625, 0.125, 0.1875, -0.0625, -0.125, 0.125, -0.0625, 0.125, 0.1875, -0.0625, 0.125, 0.1875, -0.0625, -0.125, 0.125, -0.0625, -0.125, 0.125, -0.0625, 0.125, 0.125, -0.0625, -0.1875, -0.125, -0.0625, -0.125, 0.125, -0.0625, -0.125, 0.125, -0.0625, -0.1875, -0.125, -0.0625, -0.1875, -0.125, -0.0625, -0.125, -0.1875, -0.0625, -0.125, -0.125, -0.0625, 0.125, -0.125, -0.0625, -0.125, -0.1875, -0.0625, -0.125, -0.1875, -0.0625, 0.125, -0.125, -0.0625, 0.125, -0.125, -0.0625, 0.1875, -0.125, -0.0625, 0.125, -0.1875, -0.0625, 0.125, -0.1875, -0.0625, -0.125, -0.125, -0.0625, -0.125, -0.125, -0.0625, -0.1875, 0.125, -0.0625, -0.1875, 0.125, -0.0625, -0.125, 0.1875, -0.0625, -0.125, 0.0938, -0.0938, 0.0938, -0.0938, -0.0938, -0.0938, -0.0938, -0.0938, 0.0938, 0.0938, -0.0938, 0.0938, 0.0938, -0.0938, -0.0938, -0.0938, -0.0938, -0.0938, -0.0938, -0.0938, 0.0938, 0.125, -0.0625, 0.125, 0.0938, -0.0938, 0.0938, -0.0938, -0.0938, 0.0938, -0.125, -0.0625, 0.125, 0.125, -0.0625, 0.125, 0.0938, -0.0938, 0.0938, 0.125, -0.0625, -0.125, 0.0938, -0.0938, -0.0938, 0.0938, -0.0938, 0.0938, 0.125, -0.0625, 0.125, 0.125, -0.0625, -0.125, 0.0938, -0.0938, -0.0938, -0.125, -0.0625, -0.125, -0.0938, -0.0938, -0.0938, 0.0938, -0.0938, -0.0938, 0.125, -0.0625, -0.125, -0.125, -0.0625, -0.125, -0.0938, -0.0938, -0.0938, -0.125, -0.0625, 0.125, -0.0938, -0.0938, 0.0938, -0.0938, -0.0938, -0.0938, -0.125, -0.0625, -0.125, -0.125, -0.0625, 0.125)
+
+[node name="spotlight" type="StaticBody3D"]
+script = ExtResource("1_o3j33")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+cast_shadow = 0
+mesh = SubResource("ArrayMesh_dtdvi")
+skeleton = NodePath("")
+surface_material_override/1 = ExtResource("3_xsw4a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+visible = false
+shape = SubResource("ConcavePolygonShape3D_qs63y")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
+layers = 3
+light_energy = 0.8
+shadow_enabled = true
+distance_fade_begin = 12.9
+omni_range = 20.0
+omni_attenuation = 0.8

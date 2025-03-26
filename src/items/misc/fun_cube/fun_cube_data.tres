@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemResource" load_steps=2 format=3 uid="uid://b1jvb3meaf6c3"]
+
+[ext_resource type="Script" uid="uid://cqkf0aijcej0c" path="res://src/items/_res/item_resource.gd" id="1_rlj6f"]
+
+[resource]
+script = ExtResource("1_rlj6f")
+identifer = "fun_cube"
+visual_name = "Fun Cube"
+description = "A very thoughtful cube indeed, it's pretty cool."
+stackable = true
+maxStackSize = 5
+type = 1
