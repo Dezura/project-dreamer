@@ -24,25 +24,27 @@ func _post_import(scene: Node) -> Object:
 	for node: MeshInstance3D in mesh_instances: # Fix and replace materials in each mesh
 		fix_import_materials(node)
 		
+		# Get res path
 		var mesh_data_name: String
 		if mesh_instances.size() == 1:
 			mesh_data_name = get_source_file().get_file().split('.')[0]
 			node.mesh.resource_name = mesh_data_name
 		else:
-			node.mesh.resource_name = node.mesh.resource_name.to_snake_case()
+			node.mesh.resource_name = node.name.to_snake_case()
 			mesh_data_name = node.mesh.resource_name
-		
 		var res_save_file_path: String = get_source_file_directory() + '/' + mesh_data_name + ".mesh"
-		var status: int = ResourceSaver.save(node.mesh, res_save_file_path)
+		
+		# Save to file
+		var status: int = ResourceSaver.save(node.mesh, res_save_file_path, ResourceSaver.FLAG_REPLACE_SUBRESOURCE_PATHS)
+		if DEBUG_MODE: print(error_string(status))
 		if status == OK:
+			node.mesh.take_over_path(res_save_file_path)
 			if mesh_instances.size() == 1:
-				print_rich("[color=cyan]Saved single mesh resource as file name '%s.mesh'!" % mesh_data_name)
+				print_rich("[color=cyan]Saved single mesh resource '%s.mesh' at path '%s' !" % [mesh_data_name, get_source_file_directory()])
 			else:
-				print_rich("[color=cyan]Saved multi mesh resource as derivative name '%s.mesh'!" % mesh_data_name)
+				print_rich("[color=cyan]Saved multi mesh resource as derivative '%s.mesh' at path '%s'!" % [mesh_data_name, get_source_file_directory()])
 		else:
 			print_rich("[color=red] Error while saving mesh (%s)" % error_string(status))
-		
-		node.mesh = ResourceLoader.load(res_save_file_path)
 	return scene
 
 

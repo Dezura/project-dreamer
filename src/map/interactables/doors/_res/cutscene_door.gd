@@ -66,7 +66,7 @@ func _door_open_interaction(initial_room: Room, target_room: Room) -> void:
 	close_door()
 	
 	# Unload old room since door has fully closed
-	await g.wait_for_animation_end(_cutscene_animation, "door_close")
+	await g.wait_for_animation_end(_door_animations, "door_close")
 	initial_room.unload_area()
 #endregion
 

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dp22u12rtu88o"
+uid="uid://b8xinleoemia7"
 path="res://.godot/imported/model_collection.blend-ae06610a9eb583b6089539b9c1c7b238.scn"
 
 [deps]
@@ -32,7 +32,14 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"Corridor": {
+"use_external/enabled": false,
+"use_external/path": "uid://cor7sf7gl3itm"
+}
+}
+}
 blender/nodes/visible=2
 blender/nodes/active_collection_only=false
 blender/nodes/punctual_lights=false

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bal2cdll7xkij"
+uid="uid://cyghbiktek0ct"
 path="res://.godot/imported/s2_room.glb-bc38b9aca1fe0edbecc5a088082e6a49.scn"
 
 [deps]
@@ -33,10 +33,14 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path="uid://1km1o4co7dg2"
 _subresources={
-"materials": {
-"Corridor": {
-"use_external/enabled": false,
-"use_external/path": "uid://cor7sf7gl3itm"
+"meshes": {
+"s2_room_s2_room": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"save_to_file/enabled": false,
+"save_to_file/path": "res://src/map/rooms/_res/models/s2_room_s2_room.res"
 }
 }
 }
