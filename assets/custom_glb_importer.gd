@@ -16,8 +16,8 @@ const DEBUG_MODE := false
 
 func _post_import(scene: Node) -> Object:
 	if not get_source_file().split('/')[2] == "src":
-		print_rich("[color=red] File placed outside of 'res://src'... Skipping")
-		return
+		print_rich("[color=red] File placed outside of 'res://src'... Skipping (%s)" % get_source_file())
+		return scene
 	
 	var mesh_instances := scene.find_children("*", "MeshInstance3D")
 	
