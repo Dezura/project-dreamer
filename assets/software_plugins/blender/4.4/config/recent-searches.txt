@@ -1,0 +1,155 @@
+Mesh ▸ Cube
+   Corridor Deco.png.001
+ F Corridor Texture.png
+ F Map Deco 1.png
+ 0 Corridor Deco.png.001
+Generate ▸ Subdivision Surface
+   Image_0
+   human t-pose reference.png
+Mesh ▸ Shading ▸ Flat Faces
+Select ▸ Select Linked ▸ Linked Flat Faces
+   Torso Material
+   Torso Texture
+ F Protagonist_albedo.png.001
+ F Items1_x96albedo.png
+Object ▸ Set Origin ▸ Origin to Center of Mass (Volume)
+Image* ▸ Transform ▸ Flip Horizontally
+Image* ▸ Transform ▸ Flip Vertically
+UV ▸ UVs to grid with respect to shape|Alt E
+ F Protagonist_albedo.png
+View ▸ Align View ▸ Center View to Cursor
+   Protagonist_mat.001
+View ▸ Align View ▸ View Lock to Active
+View ▸ Align View ▸ View Lock Clear
+  door_frame
+  s2-doorgap.001
+  corridor_light
+ F Corridor Deco.png
+ F mUV_Light-mat
+ F Items1_albedo.png
+ F mUV_Light-albedo.png
+Normals ▸ Weighted Normal
+Proportional Editing Falloff (Shift O) ▸ Sphere
+ F Corridor
+ F Corridor.png
+ F Emissive_Light
+ F Minimal UV Tech
+ F Minimal UV Tech.png
+   Minimal UV Tech.png
+   mUV_Light-albedo.png
+ F Corridor Deco
+ F Items1_x96mat
+ F Corridor Deco Light
+ F Protagonist_mat
+ 0 Corridor Deco Light.001
+   Corridor Deco Light
+Select ▸ Select Active Camera
+View ▸ Cameras ▸ Set Active Object as Camera|Ctrl Numpad 0
+ F lrs_interior.png
+  s4-corner.002
+  s4-doorgap.002
+ F uv_basic_interior.png
+UV ▸ Move UVs by Pixels
+UV ▸ Snap UVs to Pixels
+UV ▸ Scale UVs by Pixels
+UV ▸ Snap UV Island Bounds to Pixels
+UV (U) ▸ Pack Islands Pixel Margin
+ F pattern_2.png
+UV (U) ▸ Unwrap Pixel Perfect ▸ Normal Direction
+UV ▸ Snap ▸ Group to Pixel
+UV (U) ▸ Unwrap Pixel Perfect ▸ X Direction
+UV (U) ▸ Unwrap Pixel Perfect ▸ Auto Direction
+UV (U) ▸ Unwrap ▸ Follow Active Quads
+UV (U) ▸ Unwrap ▸ Conformal
+UV (U) ▸ Unwrap ▸ Angle Based
+UV (U) ▸ Unwrap ▸ Cube Projection
+UV (U) ▸ Unwrap ▸ Minimum Stretch
+UV (U) ▸ Scale UVs by Pixels
+Image ▸ Pack
+UV ▸ Pack Islands
+  s1-ceiling.001
+ F placeholder_3
+ F placeholder_2
+ F placeholder_1
+ F pattern_3.png
+ F checker_2.png
+   solid_1.png
+   checker_1.png
+  s5-corner.001
+  s4-doorgap.001
+  s9-doorgap.001
+  s8-doorgap.001
+   uv_basic_interior.png
+Generate ▸ Boolean
+UV (U) ▸ Unwrap ▸ Smart UV Project
+Mesh ▸ Normals (Alt N) ▸ Recalculate Inside|Shift Ctrl N
+Edit ▸ Batch Rename...|Ctrl F2
+File ▸ Export ▸ glTF 2.0 (.glb/.gltf)
+L  uv_basic_interior.png|[materials_library.blend]
+L  props_1.png|[materials_library.blend]
+   props_1.png
+File ▸ External Data ▸ Edit Linked Library
+  Scene
+  Scene.001
+  s2_doorgap.002
+L  checker_1.png|[materials_library.blend]
+Generate ▸ Mirror
+  s8_doorgap.007
+0 s8_enddoorgap
+   protagonist_albedo.png
+L  checker_4.png|[materials_library.blend]
+  s8_enddoorgap.001
+UV ▸ Snap ▸ Selected to Pixels
+  s8_doorgap.001
+  s9_doorgap.004
+  s8_corner.006
+  s9_corner.006
+  s9_corner.001
+0 s9_corner.006
+Select ▸ Select Linked ▸ Object Data|Shift L
+  s9_doorgap.002
+Object ▸ Link/Transfer Data (Ctrl L) ▸ Link Object Data
+  s9_cbend.001
+  s8_wall.01
+  s8_wall.016
+  s8_wall.021
+  s8_end_doorgap.001
+  s8_inny_doorgap.001
+  s9_inny_doorgap.001
+  s4_doorgap.002
+   protagonist
+  s8_cbend.001
+0 s8_cbend.002
+  s8_corner.001
+  s8_corner.002
+  s8_cbend.002
+  s9_corner.002
+  s9_cbend.002
+ F items_1
+ F checker_1
+ F checker_2
+ F checker_3
+ F checker_4
+ F dynamic_light
+ F lrs_interior
+ F props_1
+ F multi_checker_1
+ F protagonist
+ F uv_basic_interior
+ F solid_1
+L0 multi_checker_1|[materials_library.blend]
+L0 color_4|[materials_library.blend]
+L  solid_1|[materials_library.blend]
+L  checker_2|[materials_library.blend]
+UV ▸ Pack Islands Pixel Margin
+UV (U) ▸ Snap UV Island Bounds to Pixels
+UV (U) ▸ Snap UVs to Pixels
+L  checker_3.png|[materials_library.blend]
+L0 solid_1|[materials_library.blend]
+View ▸ Cameras ▸ Active Camera|Numpad 0
+View (`) ▸ View Camera|Numpad 0
+Object ▸ Set Origin ▸ Origin to 3D Cursor
+Mesh ▸ Snap ▸ Origin to Selected
+L  checker_1|[materials_library.blend]
+L  checker_4|[materials_library.blend]
+L  checker_3|[materials_library.blend]
