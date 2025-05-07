@@ -22,7 +22,6 @@ shape = SubResource("BoxShape3D_booyp")
 mesh = ExtResource("2_c5sj0")
 
 [node name="room_collision" parent="." index="2"]
-visible = true
 shape = SubResource("ConcavePolygonShape3D_mstlk")
 
 [node name="room_light-spotlight6" parent="room_lights" index="0" instance=ExtResource("2_uvvtq")]

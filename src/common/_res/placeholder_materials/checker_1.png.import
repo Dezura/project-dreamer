@@ -15,7 +15,7 @@ dest_files=["res://.godot/imported/checker_1.png-c8d141037f1539aef7f60d1e2e77d13
 
 [params]
 
-compress/mode=3
+compress/mode=4
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

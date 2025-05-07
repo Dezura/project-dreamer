@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6o7m8isowraf"
-path.s3tc="res://.godot/imported/multi_checker_1.png-630c4933acc73aef43b99a2018b42947.s3tc.ctex"
+path="res://.godot/imported/multi_checker_1.png-630c4933acc73aef43b99a2018b42947.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://src/common/_res/placeholder_materials/multi_checker_1.png"
-dest_files=["res://.godot/imported/multi_checker_1.png-630c4933acc73aef43b99a2018b42947.s3tc.ctex"]
+dest_files=["res://.godot/imported/multi_checker_1.png-630c4933acc73aef43b99a2018b42947.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=3
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

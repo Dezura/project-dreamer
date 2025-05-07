@@ -57,7 +57,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="Retro Viewport"]
 handle_input_locally = false
-size = Vector2i(640, 420)
+size = Vector2i(550, 310)
 render_target_update_mode = 4
 
 [node name="Player" parent="Retro Viewport/SubViewport" instance=ExtResource("2_v6jdr")]

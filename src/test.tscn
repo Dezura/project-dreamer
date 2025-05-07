@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://del3texdqmdnt"]
+
+[ext_resource type="Shader" uid="uid://b4dhp4wr42co1" path="res://src/post_processing/psx_post_processing.gdshader" id="1_a2ug0"]
+[ext_resource type="PackedScene" uid="uid://re723q2wgqky" path="res://src/game_world.tscn" id="2_osw1l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_osw1l"]
+shader = ExtResource("1_a2ug0")
+shader_parameter/enabled = true
+shader_parameter/dithering = true
+shader_parameter/colors = 16
+shader_parameter/dither_size = 1
+
+[node name="Game" type="Node3D"]
+
+[node name="Retro Viewport" type="SubViewportContainer" parent="."]
+material = SubResource("ShaderMaterial_osw1l")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Retro Viewport"]
+handle_input_locally = false
+size = Vector2i(550, 310)
+size_2d_override = Vector2i(1020, 875)
+render_target_update_mode = 4
+
+[node name="World" parent="Retro Viewport/SubViewport" instance=ExtResource("2_osw1l")]

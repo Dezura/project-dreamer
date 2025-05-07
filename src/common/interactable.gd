@@ -15,7 +15,7 @@ enum HighlightState {
 @export_category("")
 @export var _interact_meshes: Array[MeshInstance3D]
 
-var interaction_disabled := false:
+@export var interaction_disabled := false:
 	set = set_interaction_disabled
 var currently_selected := false
 var current_highlight_state := HighlightState.NEUTRAL:
@@ -70,7 +70,8 @@ func _process(delta: float) -> void:
 
 func set_interaction_disabled(value: bool) -> void:
 	interaction_disabled = value
-	check_current_highlight_state()
+	if not Engine.is_editor_hint():
+		check_current_highlight_state()
 
 
 func set_current_highlight_state(value: HighlightState) -> void:

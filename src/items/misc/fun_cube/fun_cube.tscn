@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cix6blidl8yo" path="res://src/items/_res/item_pickup.gd" id="1_phnnt"]
 [ext_resource type="Resource" uid="uid://b1jvb3meaf6c3" path="res://src/items/misc/fun_cube/fun_cube_data.tres" id="2_dpp17"]
-[ext_resource type="Material" uid="uid://bug8jhjhm2cwa" path="res://src/entities/protagonist/_res/protagonist.material" id="3_rg5dd"]
+[ext_resource type="Material" uid="uid://dxupd8d1hbnd2" path="res://src/common/_res/placeholder_materials/multi_checker_1.material" id="3_rg5dd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ryehn"]
 material = ExtResource("3_rg5dd")
