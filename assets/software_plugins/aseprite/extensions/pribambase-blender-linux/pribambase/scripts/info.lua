@@ -1,1 +1,0 @@
-print("config_path=" .. app.fs.userConfigPath .. ";")
